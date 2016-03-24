@@ -1,0 +1,14 @@
+{
+  "name": "Portfolio",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "latest",
+    "json3": "latest",
+	"jquery": "latest",
+    "bootstrap-sass-official": "latest",
+    "angular-touch": "latest",
+    "lodash": "latest",
+    "angular-bootstrap": "latest",
+    "font-awesome": "latest"
+  }
+}
