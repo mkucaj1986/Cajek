@@ -9,7 +9,6 @@ var path = require('path');
 var rev = require('gulp-rev');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
-var uglifycss = require('gulp-uglifycss');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var _ = require('lodash');
@@ -29,11 +28,6 @@ gulp.task('build', ['clean', 'sass'], function() {
 // GO PRODUCTION
 gulp.task('prod', ['minify-css'], function() {
 
-});
-
-// START SERVER
-gulp.task('serve-dev', ['clean', 'sass', 'inject'], function() {
-    serve(true /*isDev*/ );
 });
 
 // CLEAN
@@ -64,18 +58,13 @@ gulp.task('minify-css', function() {
         .pipe(gulp.dest(config.build));
 });
 
-
-gulp.task('inject', ['saas'], function() {
-    log('Wire up css into the html, after files are ready');
-
-    return gulp
-        .src(config.index)
-        .pipe(inject(config.css))
-        .pipe(gulp.dest(config.client));
+// START SERVER
+gulp.task('serve-dev', function() {
+    serve(true /*isDev*/ );
 });
 
 // ALL GULP FUNCTIONS
-function serve(isDev, specRunner) {
+function serve(isDev) {
     var debug = args.debug || args.debugBrk;
     var debugMode = args.debug ? '--debug' : args.debugBrk ? '--debug-brk' : '';
     var nodeOptions = getNodeOptions(isDev);
@@ -102,7 +91,6 @@ function serve(isDev, specRunner) {
         })
         .on('start', function() {
             log('*** nodemon started');
-            startBrowserSync(isDev, specRunner);
         })
         .on('crash', function() {
             log('*** nodemon crashed: script crashed for some reason');
