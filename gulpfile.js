@@ -1,11 +1,16 @@
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
+var cleanCSS = require('gulp-clean-css');
 var del = require('del');
 var glob = require('glob');
 var gulp = require('gulp');
 var path = require('path');
+var rev = require('gulp-rev');
 var sass = require('gulp-sass');
+var uglify = require('gulp-uglify');
+var uglifycss = require('gulp-uglifycss');
+var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var _ = require('lodash');
 var $ = require('gulp-load-plugins')({
@@ -16,18 +21,60 @@ var colors = $.util.colors;
 var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 
-gulp.task('serve-dev',['sass'], function() {
-    serve(true /*isDev*/);
+// BUILD
+gulp.task('build', ['clean', 'sass'], function() {
+
 });
 
-gulp.task('sass', function () {
- return gulp.src(config.scss)
-  .pipe(sourcemaps.init())
-  .pipe(sass().on('error', sass.logError))
-  .pipe(sourcemaps.write('./maps'))
-  .pipe(gulp.dest(config.temp));
+// GO PRODUCTION
+gulp.task('prod', ['minify-css'], function() {
+
 });
 
+// START SERVER
+gulp.task('serve-dev', ['clean', 'sass', 'inject'], function() {
+    serve(true /*isDev*/ );
+});
+
+// CLEAN
+gulp.task('clean', function(done) {
+    var delconfig = [].concat(config.build, config.temp);
+    log('Cleaning: ' + $.util.colors.blue(delconfig));
+    del(delconfig, done);
+});
+
+// SYLES
+gulp.task('sass', function() {
+    return gulp.src(config.scss)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.temp));
+});
+
+gulp.task('minify-css', function() {
+    return gulp.src(config.css)
+        .pipe(sourcemaps.init())
+        .pipe(cleanCSS())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(rev())
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.build));
+});
+
+
+gulp.task('inject', ['saas'], function() {
+    log('Wire up css into the html, after files are ready');
+
+    return gulp
+        .src(config.index)
+        .pipe(inject(config.css))
+        .pipe(gulp.dest(config.client));
+});
+
+// ALL GULP FUNCTIONS
 function serve(isDev, specRunner) {
     var debug = args.debug || args.debugBrk;
     var debugMode = args.debug ? '--debug' : args.debugBrk ? '--debug-brk' : '';
@@ -64,6 +111,7 @@ function serve(isDev, specRunner) {
             log('*** nodemon exited cleanly');
         });
 }
+
 function getNodeOptions(isDev) {
     return {
         script: config.nodeServer,
