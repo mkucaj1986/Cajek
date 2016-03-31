@@ -5,6 +5,8 @@ var del = require('del');
 var glob = require('glob');
 var gulp = require('gulp');
 var path = require('path');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
 var _ = require('lodash');
 var $ = require('gulp-load-plugins')({
     lazy: true
@@ -14,8 +16,16 @@ var colors = $.util.colors;
 var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 
-gulp.task('serve-dev', function() {
+gulp.task('serve-dev',['sass'], function() {
     serve(true /*isDev*/);
+});
+
+gulp.task('sass', function () {
+ return gulp.src(config.scss)
+  .pipe(sourcemaps.init())
+  .pipe(sass().on('error', sass.logError))
+  .pipe(sourcemaps.write('./maps'))
+  .pipe(gulp.dest(config.temp));
 });
 
 function serve(isDev, specRunner) {

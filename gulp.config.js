@@ -29,7 +29,7 @@ module.exports = function() {
         js: [
             client + '**/*.js'
         ],
-        scss: client + 'styles/styles.scss',
+        scss: client + 'styles/main.scss',
         root: root,
         server: server,
         source: 'src/',
