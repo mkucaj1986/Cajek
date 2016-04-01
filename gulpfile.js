@@ -5,7 +5,9 @@ var cleanCSS = require('gulp-clean-css');
 var del = require('del');
 var glob = require('glob');
 var gulp = require('gulp');
+var gulpSequence = require('gulp-sequence');
 var path = require('path');
+var inject = require('gulp-inject');
 var rev = require('gulp-rev');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
@@ -15,37 +17,39 @@ var _ = require('lodash');
 var $ = require('gulp-load-plugins')({
     lazy: true
 });
-
 var colors = $.util.colors;
 var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
-
 // BUILD
-gulp.task('build', ['clean', 'sass'], function() {
-
+gulp.task('build', function(cb) {
+      gulpSequence(['sass'], 'index')(cb);
 });
-
 // GO PRODUCTION
-gulp.task('prod', ['minify-css'], function() {
-
-});
-
+gulp.task('prod', ['minify-css'], function() {});
 // CLEAN
 gulp.task('clean', function(done) {
     var delconfig = [].concat(config.build, config.temp);
     log('Cleaning: ' + $.util.colors.blue(delconfig));
     del(delconfig, done);
 });
-
-// SYLES
-gulp.task('sass', function() {
+// INJECT
+gulp.task('index', function() {
+    var target = gulp.src(config.layout);
+    // It's not necessary to read the files (will speed up things), we're only after their paths:
+    var sources = gulp.src(config.css, {
+        read: false
+    });
+    return target.pipe(inject(sources))
+        .pipe(gulp.dest(config.clientLayout));
+});
+// STYLES
+gulp.task('sass', function(done) {
     return gulp.src(config.scss)
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(config.temp));
+        .pipe(gulp.dest(config.temp), done);
 });
-
 gulp.task('minify-css', function() {
     return gulp.src(config.css)
         .pipe(sourcemaps.init())
@@ -57,27 +61,22 @@ gulp.task('minify-css', function() {
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.build));
 });
-
 // START SERVER
-gulp.task('serve-dev', function() {
+gulp.task('dev', ['build'], function() {
     serve(true /*isDev*/ );
 });
-
 // ALL GULP FUNCTIONS
 function serve(isDev) {
     var debug = args.debug || args.debugBrk;
     var debugMode = args.debug ? '--debug' : args.debugBrk ? '--debug-brk' : '';
     var nodeOptions = getNodeOptions(isDev);
-
     if (debug) {
         runNodeInspector();
         nodeOptions.nodeArgs = [debugMode + '=5858'];
     }
-
     if (args.verbose) {
         console.log(nodeOptions);
     }
-
     return $.nodemon(nodeOptions)
         .on('restart', ['vet'], function(ev) {
             log('*** nodemon restarted');
@@ -133,5 +132,4 @@ function log(msg) {
         $.util.log($.util.colors.blue(msg));
     }
 }
-
 module.exports = gulp;

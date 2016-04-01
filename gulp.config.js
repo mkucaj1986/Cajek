@@ -18,13 +18,16 @@ module.exports = function() {
             './*.js'
         ],
         build: './build/',
+        buildSrc: './temp/src/',
         client: client,
+        clientLayout: client + 'views/',
         css: temp + 'main.css',
         fonts: bower.directory + 'font-awesome/fonts/**/*.*',
         hbs: client + '**/*.hbs',
         hbstemplates: clientApp + '**/*.hbs',
         images: client + 'images/**/*.*',
         index: client + 'index.hbs',
+        layout: client + 'views/layout.hbs',
         // app js, with no specs
         js: [
             client + '**/*.js'
@@ -33,6 +36,7 @@ module.exports = function() {
         root: root,
         server: server,
         source: 'src/',
+        sourceCopy: 'src/**',
         temp: temp,
         /**
          * browser sync
