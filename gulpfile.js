@@ -22,7 +22,7 @@ var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 // BUILD
 gulp.task('build', function(cb) {
-      gulpSequence(['sass'], 'index')(cb);
+    gulpSequence(['sass'], 'index')(cb);
 });
 // GO PRODUCTION
 gulp.task('prod', ['minify-css'], function() {});
@@ -90,6 +90,7 @@ function serve(isDev) {
         })
         .on('start', function() {
             log('*** nodemon started');
+            startBrowserSync(isDev);
         })
         .on('crash', function() {
             log('*** nodemon crashed: script crashed for some reason');
@@ -97,6 +98,66 @@ function serve(isDev) {
         .on('exit', function() {
             log('*** nodemon exited cleanly');
         });
+}
+/**
+ * Optimize the code and re-load browserSync
+ */
+gulp.task('browserSyncReload', function(cb) {
+    gulpSequence(['sass'], 'index', browserSync.reload)(cb);
+});
+/**
+ * When files change, log it
+ * @param  {Object} event - event that fired
+ */
+function changeEvent(event) {
+    var srcPattern = new RegExp('/.*(?=/' + config.source + ')/');
+    log('File ' + event.path.replace(srcPattern, '') + ' ' + event.type);
+}
+/**
+ * Start BrowserSync
+ * --nosync will avoid browserSync
+ */
+function startBrowserSync(isDev, specRunner) {
+    if (args.nosync || browserSync.active) {
+        return;
+    }
+
+    log('Starting BrowserSync on port ' + port);
+
+    // If build: watches the files, builds, and restarts browser-sync.
+    // If dev: watches less, compiles it to css, browser-sync handles reload
+    if (isDev) {
+        log('watch dev');
+        gulp.watch([config.scss, config.js, config.serverJS, config.hbs], ['browserSyncReload'])
+            .on('change', changeEvent);
+    } else {
+        gulp.watch([config.scss, ], ['browserSyncReload'])
+            .on('change', changeEvent);
+    }
+
+    var options = {
+        proxy: 'localhost:' + port,
+        port: 3000,
+        files: isDev ? [
+            config.client + '**/*.*',
+            '!' + config.scss,
+            config.temp + '**/*.css'
+        ] : [],
+        ghostMode: { // these are the defaults t,f,t,t
+            clicks: true,
+            location: false,
+            forms: true,
+            scroll: true
+        },
+        injectChanges: true,
+        logFileChanges: true,
+        logLevel: 'debug',
+        logPrefix: 'gulp-patterns',
+        notify: true,
+        reloadDelay: 0 //1000
+    };
+
+    browserSync(options);
 }
 
 function getNodeOptions(isDev) {

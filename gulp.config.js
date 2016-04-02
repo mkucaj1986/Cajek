@@ -32,9 +32,10 @@ module.exports = function() {
         js: [
             client + '**/*.js'
         ],
-        scss: client + 'styles/main.scss',
+        scss: client + 'styles/**/*.scss',
         root: root,
         server: server,
+        serverJS: server + '**/*.js',
         source: 'src/',
         sourceCopy: 'src/**',
         temp: temp,
