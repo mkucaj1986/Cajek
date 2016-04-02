@@ -14,6 +14,7 @@ var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
+var wiredep = require('wiredep').stream;
 var _ = require('lodash');
 var $ = require('gulp-load-plugins')({
     lazy: true
@@ -64,10 +65,40 @@ gulp.task('minify-js', function(done) {
 });
 // STYLES
 gulp.task('sass', function(done) {
-    return gulp.src(config.scss)
-        .pipe(sourcemaps.init())
+
+    var injectAppFiles = gulp.src('./src/client/styles/**/*.scss', {
+        read: false
+    });
+    var injectGlobalFiles = gulp.src('./src/client/styles/global/**/*.scss', {
+        read: false
+    });
+
+    function transformFilepath(filepath) {
+        return '@import "' + filepath + '";';
+    }
+
+    var injectAppOptions = {
+        transform: transformFilepath,
+        starttag: '// inject:app',
+        endtag: '// endinject',
+        addRootSlash: false
+    };
+
+    var injectGlobalOptions = {
+        transform: transformFilepath,
+        starttag: '// inject:global',
+        endtag: '// endinject',
+        addRootSlash: false
+    };
+
+    return gulp.src(config.mainscss)
+        .pipe(wiredep())
+             .pipe(sourcemaps.init())
+        .pipe(inject(injectGlobalFiles, injectGlobalOptions))
+        .pipe(inject(injectAppFiles, injectAppOptions))
         .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write('./maps'))
+                .pipe(sourcemaps.write('./maps'))
+        // .pipe(csso())
         .pipe(gulp.dest(config.temp), done);
 });
 gulp.task('minify-css', function() {
@@ -83,7 +114,6 @@ gulp.task('minify-css', function() {
 });
 // inject bower components
 gulp.task('wiredep', function () {
-  var wiredep = require('wiredep').stream;
   gulp.src(config.layout)
     .pipe(wiredep())
     .pipe(gulp.dest(config.clientLayout));

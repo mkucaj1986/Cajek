@@ -34,6 +34,7 @@ module.exports = function() {
             client + '**/*.js'
         ],
         scss: client + 'styles/**/*.scss',
+        mainscss: client + 'styles/main.scss',
         root: root,
         server: server,
         serverJS: server + '**/*.js',

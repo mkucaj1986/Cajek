@@ -4,7 +4,7 @@
   "dependencies": {
     "angular": "~1.5.3",
     "json3": "~3.3.2",
-    "bootstrap-sass-official": "~3.3.6",
+    "bootstrap-sass-official": "latest",
     "angular-touch": "~1.5.3",
     "lodash": "~4.7.0",
     "angular-bootstrap": "~1.2.5",
