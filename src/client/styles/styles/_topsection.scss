@@ -74,7 +74,6 @@
     right: 0;
     height: 517px;
     @media screen and (max-width: $mobile) {
-        min-height: 216px;
         height: auto;
     }
     .top-bg-box {
@@ -83,8 +82,9 @@
         height: 517px;
         width: 100%;
         @media screen and (max-width: $mobile) {
-            background-size: contain;
+            background-size: cover;
             height: 100%;
+            min-height: 215px;
         }
     }
 }
