@@ -24,7 +24,7 @@
     "gulp": "latest",
     "gulp-clean-css": "^2.0.4",
     "gulp-coffee": "latest",
-    "gulp-concat": "latest",
+    "gulp-concat": "^2.6.0",
     "gulp-csslint": "latest",
     "gulp-inject": "^4.0.0",
     "gulp-jshint": "^2.0.0",

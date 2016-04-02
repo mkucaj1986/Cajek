@@ -22,6 +22,7 @@ module.exports = function() {
         client: client,
         clientLayout: client + 'views/',
         css: temp + 'main.css',
+        minjs: temp + 'application.js',
         fonts: bower.directory + 'font-awesome/fonts/**/*.*',
         hbs: client + '**/*.hbs',
         hbstemplates: clientApp + '**/*.hbs',

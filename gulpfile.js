@@ -1,6 +1,7 @@
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
+var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var del = require('del');
 var glob = require('glob');
@@ -25,7 +26,10 @@ gulp.task('build', function(cb) {
     gulpSequence(['sass'], 'index')(cb);
 });
 // GO PRODUCTION
-gulp.task('prod', ['minify-css'], function() {});
+gulp.task('prod', function(cb) {
+    gulpSequence(['minify-css'], 'minify-js')(cb);
+});
+
 // CLEAN
 gulp.task('clean', function(done) {
     var delconfig = [].concat(config.build, config.temp);
@@ -34,8 +38,6 @@ gulp.task('clean', function(done) {
 });
 // INJECT
 gulp.task('index', function() {
-    log(config.js)
-    log(config.css)
     var target = gulp.src(config.layout);
     // It's not necessary to read the files (will speed up things), we're only after their paths:
     var sources = gulp.src([config.css, './src/client/**/*.js'], {
@@ -46,11 +48,19 @@ gulp.task('index', function() {
 });
 // ScRIPTS
 gulp.task('scripts', function(done) {
-    return gulp.src(config.scss)
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(sourcemaps.write('./maps'))
+    return gulp.src(config.js)
+        .pipe(concat('application.js'))
+        .pipe(uglify())
         .pipe(gulp.dest(config.temp), done);
+});
+gulp.task('minify-js', function(done) {
+    return gulp.src(config.minjs)
+        .pipe(sourcemaps.init())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.build));
 });
 // STYLES
 gulp.task('sass', function(done) {
