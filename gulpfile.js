@@ -34,13 +34,23 @@ gulp.task('clean', function(done) {
 });
 // INJECT
 gulp.task('index', function() {
+    log(config.js)
+    log(config.css)
     var target = gulp.src(config.layout);
     // It's not necessary to read the files (will speed up things), we're only after their paths:
-    var sources = gulp.src(config.css, {
+    var sources = gulp.src([config.css, './src/client/**/*.js'], {
         read: false
     });
     return target.pipe(inject(sources))
         .pipe(gulp.dest(config.clientLayout));
+});
+// ScRIPTS
+gulp.task('scripts', function(done) {
+    return gulp.src(config.scss)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.temp), done);
 });
 // STYLES
 gulp.task('sass', function(done) {
