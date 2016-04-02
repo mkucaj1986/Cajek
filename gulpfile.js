@@ -24,7 +24,7 @@ var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 // BUILD
 gulp.task('build', function(cb) {
-    gulpSequence(['sass'], 'index','wiredep')(cb);
+    gulpSequence(['sass'], 'index', 'wiredep', 'fonts')(cb);
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
@@ -66,7 +66,7 @@ gulp.task('minify-js', function(done) {
 // STYLES
 gulp.task('sass', function(done) {
 
-    var injectAppFiles = gulp.src('./src/client/styles/**/*.scss', {
+    var injectAppFiles = gulp.src('./src/client/styles/styles/**/*.scss', {
         read: false
     });
     var injectGlobalFiles = gulp.src('./src/client/styles/global/**/*.scss', {
@@ -93,11 +93,11 @@ gulp.task('sass', function(done) {
 
     return gulp.src(config.mainscss)
         .pipe(wiredep())
-             .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(inject(injectGlobalFiles, injectGlobalOptions))
         .pipe(inject(injectAppFiles, injectAppOptions))
         .pipe(sass().on('error', sass.logError))
-                .pipe(sourcemaps.write('./maps'))
+        .pipe(sourcemaps.write('./maps'))
         // .pipe(csso())
         .pipe(gulp.dest(config.temp), done);
 });
@@ -113,11 +113,23 @@ gulp.task('minify-css', function() {
         .pipe(gulp.dest(config.build));
 });
 // inject bower components
-gulp.task('wiredep', function () {
-  gulp.src(config.layout)
-    .pipe(wiredep())
-    .pipe(gulp.dest(config.clientLayout));
+gulp.task('wiredep', function() {
+    gulp.src(config.layout)
+        .pipe(wiredep())
+        .pipe(gulp.dest(config.clientLayout));
 });
+// FONTS
+/**
+ * Copy fonts
+ * @return {Stream}
+ */
+gulp.task('fonts', function() {
+    log('Copying fonts');
+    return gulp
+        .src(config.fonts)      
+        .pipe(gulp.dest(config.build + 'fonts'));
+});
+
 // START SERVER
 gulp.task('dev', ['build'], function() {
     serve(true /*isDev*/ );
@@ -159,9 +171,7 @@ function serve(isDev) {
 /**
  * Optimize the code and re-load browserSync
  */
-gulp.task('browserSyncReload', function(cb) {
-    gulpSequence(['sass'], 'index', browserSync.reload)(cb);
-});
+ gulp.task('browserSyncReload', ['sass'], browserSync.reload);
 /**
  * When files change, log it
  * @param  {Object} event - event that fired
@@ -183,18 +193,15 @@ function startBrowserSync(isDev, specRunner) {
 
     // If build: watches the files, builds, and restarts browser-sync.
     // If dev: watches less, compiles it to css, browser-sync handles reload
-    if (isDev) {
-        log('watch dev');
-        gulp.watch([config.scss, config.js, config.serverJS, config.hbs], ['browserSyncReload'])
-            .on('change', changeEvent);
-    } else {
-        gulp.watch([config.scss, ], ['browserSyncReload'])
-            .on('change', changeEvent);
-    }
+
+
+    gulp.watch([config.scss, config.js, config.serverJS, config.hbs], ['browserSyncReload'])
+        .on('change', changeEvent);
+
 
     var options = {
         proxy: 'localhost:' + port,
-        port: 3000,
+        port: 3001,
         files: isDev ? [
             config.client + '**/*.*',
             '!' + config.scss,

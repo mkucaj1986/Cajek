@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({
     extended: false
 }));
 app.use(cookieParser());
-
+app.use(express.static(path.join(__dirname, '../client/')));
 /**
  * Get port from environment and store in Express.
  */

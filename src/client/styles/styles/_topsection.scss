@@ -1,0 +1,37 @@
+.top-section {
+    display: inline-block;
+    height: $full-height;
+    position: $posrel;
+    width: 100%;
+}
+
+.top-bg {
+    position: $posabs;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 517px;
+    @media screen and (max-width: 768px) {
+    min-height: 216px;
+    height: auto;
+	}
+    .top-bg-box {
+        position: $posrel;
+        background: transparent url('../src/client/assets/img/top-section/top-bg.png') no-repeat center 0;
+        height: 517px;
+        width:100%;
+        @media screen and (max-width: 768px) {
+            background-size: contain;
+            height:100%;
+        }
+        // .left-top-bg {
+        //     background: transparent url('../src/client/assets/img/top-section/top-bg.png') no-repeat 0 0;
+        //     height: 517px;
+        // }
+        // .right-top-bg {
+        //     background: transparent url('../src/client/assets/img/top-section/header-background-michael.jpg') no-repeat 0 0;
+        //     height: 768px;
+        // }
+    }
+}
