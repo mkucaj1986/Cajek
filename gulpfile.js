@@ -23,7 +23,7 @@ var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 // BUILD
 gulp.task('build', function(cb) {
-    gulpSequence(['sass'], 'index')(cb);
+    gulpSequence(['sass'], 'index','wiredep')(cb);
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
@@ -80,6 +80,13 @@ gulp.task('minify-css', function() {
         .pipe(rev())
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.build));
+});
+// inject bower components
+gulp.task('wiredep', function () {
+  var wiredep = require('wiredep').stream;
+  gulp.src(config.layout)
+    .pipe(wiredep())
+    .pipe(gulp.dest(config.clientLayout));
 });
 // START SERVER
 gulp.task('dev', ['build'], function() {

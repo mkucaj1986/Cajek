@@ -10,6 +10,9 @@
         <!-- endinject -->
     </head>
     <body>
+        <header>
+            a logo
+        </header>
         <section id="top-section" class="top-section">
             <!-- BEGIN page-specific content -->
             {{{body}}}
@@ -17,9 +20,18 @@
         </section>
         <footer id="footer" class="footer">
         </footer>
-         <!-- inject:js -->
-         <script src="/src/client/js/app.js"></script>
-         <script src="/src/client/js/controllers/mainCtrl.js"></script>
-         <!-- endinject -->
+        <!-- inject:js -->
+        <script src="/src/client/js/app.js"></script>
+        <script src="/src/client/js/controllers/mainCtrl.js"></script>
+        <!-- endinject -->
+        <!-- bower:js -->
+        <script src="../../../bower_components/angular/angular.js"></script>
+        <script src="../../../bower_components/json3/lib/json3.js"></script>
+        <script src="../../../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../../../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+        <script src="../../../bower_components/angular-touch/angular-touch.js"></script>
+        <script src="../../../bower_components/lodash/lodash.js"></script>
+        <script src="../../../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+        <!-- endbower -->
     </body>
 </html>
