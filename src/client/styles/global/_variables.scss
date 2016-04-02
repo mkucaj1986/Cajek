@@ -5,6 +5,7 @@ $posrel: absolute;
 // RWD
 $mobile: 767px;
 
-@media screen and (max-width: mobile) {
-min-height: 216px;
+@media screen and (max-width: $mobile) {
+      margin-right: 0;
+    margin-bottom: 20px;
 }
