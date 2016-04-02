@@ -4,12 +4,20 @@
     position: $posrel;
     width: 100%;
     @media screen and (max-width: $mobile) {
-        min-height: 600px;
+        min-height: 480px;
+        padding: 0 15px;
+    }
+    h2 {
+        margin: 0;
+        font-size: 26px;
     }
     .scroller {
         border: 0;
-        padding: 0;
+        padding: 15px 0 0 0;
         margin: 0;
+        @media screen and (max-width: $mobile) {
+            padding: 10px 0 0 0;
+        }
     }
     .block-center {
         color: #fff;
@@ -25,20 +33,25 @@
         margin: 0 auto;
         text-align: center;
         @media screen and (max-width: $mobile) {
-            top: 10%;
-            -webkit-transform: translateY(-10%);
-            -moz-transform: translateY(-10%);
-            -ms-transform: translateY(-10%);
-            -o-transform: translateY(-10%);
-            transform: translateY(-10%);
+            top: 15%;
+            -webkit-transform: translateY(-15%);
+            -moz-transform: translateY(-15%);
+            -ms-transform: translateY(-15%);
+            -o-transform: translateY(-15%);
+            transform: translateY(-15%);
         }
         .text-primary {
             color: #E2C41E;
+            display: inline-block;
+            @media screen and (max-width: $mobile) {
+                display: inline;
+            }
         }
         p {
             margin: 0 0 40px;
             @media screen and (max-width: $mobile) {
-                margin: 0 0 25px;
+                margin: 0 0 15px;
+                font-size: 16px;
             }
         }
     }
