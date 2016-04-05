@@ -24,7 +24,7 @@ var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 // BUILD
 gulp.task('build', function(cb) {
-    gulpSequence(['sass'], 'index', 'javascript', 'wiredep', 'fonts')(cb);
+    gulpSequence(['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
