@@ -24,7 +24,7 @@ var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 // BUILD
 gulp.task('build', function(cb) {
-    gulpSequence(['sass'], 'index', 'wiredep', 'fonts')(cb);
+    gulpSequence(['sass'], 'index', 'javascript', 'wiredep', 'fonts')(cb);
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
@@ -37,14 +37,31 @@ gulp.task('clean', function(done) {
     log('Cleaning: ' + $.util.colors.blue(delconfig));
     del(delconfig, done);
 });
-// INJECT
+// INJECT Styles
 gulp.task('index', function() {
     var target = gulp.src(config.layout);
     // It's not necessary to read the files (will speed up things), we're only after their paths:
-    var sources = gulp.src([config.css, './src/client/**/*.js'], {
+    var sources = gulp.src(config.css, {
         read: false
     });
     return target.pipe(inject(sources))
+        .pipe(gulp.dest(config.clientLayout));
+});
+// INJECT JS
+gulp.task('javascript', function() {
+    var target = gulp.src(config.js);
+
+    function transformFilepath(filepath) {
+        return '<script src="' + filepath + '"' + '></script>';
+    }
+
+    var javascriptOptions = {
+        transform: transformFilepath,
+        addRootSlash: false
+    };
+
+    return gulp.src(config.layout)
+        .pipe(inject(target, javascriptOptions))
         .pipe(gulp.dest(config.clientLayout));
 });
 // ScRIPTS
@@ -114,8 +131,11 @@ gulp.task('minify-css', function() {
 });
 // inject bower components
 gulp.task('wiredep', function() {
+    var bowerOptions = {
+        ignorePath: '../../../'
+    };
     gulp.src(config.layout)
-        .pipe(wiredep())
+        .pipe(wiredep(bowerOptions))
         .pipe(gulp.dest(config.clientLayout));
 });
 // FONTS
@@ -126,7 +146,7 @@ gulp.task('wiredep', function() {
 gulp.task('fonts', function() {
     log('Copying fonts');
     return gulp
-        .src(config.fonts)      
+        .src(config.fonts)
         .pipe(gulp.dest('./fonts'));
 });
 
@@ -171,7 +191,7 @@ function serve(isDev) {
 /**
  * Optimize the code and re-load browserSync
  */
- gulp.task('browserSyncReload', ['sass'], browserSync.reload);
+gulp.task('browserSyncReload', ['sass'], browserSync.reload);
 /**
  * When files change, log it
  * @param  {Object} event - event that fired
