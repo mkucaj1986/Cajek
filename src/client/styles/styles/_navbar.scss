@@ -1,6 +1,8 @@
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
+    @include navbarSticky-transition;
+    @include borderColor-transition;
     .navbar-brand {
         color: #fff;
     }
@@ -21,6 +23,23 @@
                 &:hover {
                     background-color: transparent;
                     color: #1da7a3;
+                }
+            }
+        }
+    }
+}
+
+.sticky-header {
+    .sticky-nav {
+        background-color: $white-color;
+        border-bottom: 3px solid $gold-color;
+        .navbar-brand {
+            color: $black-color;
+        }
+        .navbar-nav {
+            li {
+                a {
+                    color: $black-color;
                 }
             }
         }
