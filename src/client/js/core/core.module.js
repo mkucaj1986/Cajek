@@ -6,6 +6,7 @@
             /* Angular modules */
             'ngAnimate',
             'ngSanitize',
+            'duScroll'
         ]);
     console.log('core');
 
