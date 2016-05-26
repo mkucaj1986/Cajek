@@ -3,8 +3,9 @@
     height: $full-height;
     position: $posrel;
     width: 100%;
+    min-height: 768px;
     @media screen and (max-width: $mobile) {
-        min-height: 470px;
+        min-height: 490px;
         padding: 0 15px;
     }
     h2 {

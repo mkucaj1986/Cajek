@@ -6,65 +6,30 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <meta name="description" content="" />
         <!-- inject:css -->
+        <link rel="stylesheet" href="/.tmp/main.css">
         <!-- endinject -->
     </head>
     <body data-ng-controller="homeCtrl as home">
-        <header>
-            <nav class="navbar navbar-default navbar-fixed-top">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="#">Project name</a>
-                    </div>
-                    <div id="navbar" class="navbar-collapse collapse">
-                        <ul class="nav navbar-nav pull-right">
-                            <li class="active"><a href="#">HOME</a></li>
-                            <li><a href="#about">ABOUT</a></li>
-                            <li><a href="#contact">CONTACT</a></li>
-                        </ul>
-                        </div><!--/.nav-collapse -->
-                    </div>
-                </nav>
-            </header>
-            <section id="top-section" class="top-section">
-                <div class="block-center">
-                    <h2 class="main-title">Michal Kucaj <span class="text-primary">FRONT END</span> DEVELOPER</h2>
-                    <blockquote class="scroller">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora voluptatem ?</p>
-                        <div class="top-buttons-box">
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <a class="btn btn-light btn-bordered btn-lg" href="">Dowiedz się więcej</a>
-                            </div>
-                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                                <a href="" target="_blank" class="btn btn-primary btn-lg">Portfolio</a>
-                            </div>
-                        </div>
-                    </blockquote>
-                </div>
-                <div class="container">
-                    <div class="top-bg">
-                        <div class="top-bg-box">
-                        </div>
-                    </div>
-                </div>
-            </section>
-         {{!--    <section id="first-section" class="first-section">
-                <div class="container">
-                    <!-- BEGIN page-specific content -->
-                    {{{body}}}
-                    <!-- END page-specific content -->
-                </div>
-            </section> --}}
-            <footer id="footer" class="footer">
-            </footer>
-            <!-- bower:js -->
-            <!-- endbower -->
-            <!-- inject:js -->
-            <!-- endinject -->
-        </body>
-    </html>
+        <!-- BEGIN page-specific content -->
+        {{{body}}}
+        <!-- END page-specific content -->
+    </div>
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbower -->
+    <!-- inject:js -->
+    <script src="src/client/js/app.module.js"></script>
+    <script src="src/client/js/core/core.module.js"></script>
+    <script src="src/client/js/layout/layout.module.js"></script>
+    <script src="src/client/js/layout/home/home.controller.js"></script>
+    <!-- endinject -->
+</body>
+</html>
