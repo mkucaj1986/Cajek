@@ -1,8 +1,7 @@
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
-    @include navbarSticky-transition;
-    @include borderColor-transition;
+    @include navbarSticky-transition (background-color 500ms linear, border-color 2000ms ease);
     .navbar-brand {
         color: #fff;
     }

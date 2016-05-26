@@ -7,7 +7,6 @@
     function navbarDirective($window) {
         var directive = {
             link: link,
-            controllerAs: 'vm',
             restrict: 'EAC'
         };
         return directive;
