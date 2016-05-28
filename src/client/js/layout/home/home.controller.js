@@ -23,5 +23,6 @@
             var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 53);
         };
+        vm.date = new Date();
     }
 })();

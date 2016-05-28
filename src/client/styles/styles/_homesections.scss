@@ -1,6 +1,24 @@
-.first-section {
-    min-height: 1250px;
+.partials {
     display: inline-block;
-    background-color: #ccc;
+    position: relative;
     width: 100%;
+    .sections {
+        display: inline-block;
+        padding: 30px 0;
+        width: 100%;
+    }
+    .first-section {
+        background-color: #ccc;
+    }
+    .profile {
+        background: #161616;
+        color: #fff;
+    }
+}
+
+// FOOTER
+.footer {
+    background: #f5f5f5;
+    padding: 40px 0;
+    color: #666666;
 }
