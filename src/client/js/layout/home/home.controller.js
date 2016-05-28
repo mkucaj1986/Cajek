@@ -6,9 +6,14 @@
         .controller('homeCtrl', homeCtrl);
 
     /* @ngInject */
-    function homeCtrl($document) {
+    function homeCtrl($document, loadService) {
         var vm = this;
         console.log('home ctrl');
+
+        vm.loadPlugins = function() {
+            loadService.niceScroll();
+        };
+        vm.loadPlugins();
 
         vm.toTheTop = function() {
             $document.scrollTopAnimated(0, 700).then(function() {});
