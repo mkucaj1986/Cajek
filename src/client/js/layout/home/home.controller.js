@@ -19,7 +19,8 @@
             $document.scrollTopAnimated(0, 700).then(function() {});
         };
 
-        vm.scrollToElement = function(element) {
+        vm.scrollToElement = function(element, $event) {
+        	$event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 53);
         };
