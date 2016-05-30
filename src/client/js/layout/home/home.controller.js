@@ -6,7 +6,7 @@
         .controller('homeCtrl', homeCtrl);
 
     /* @ngInject */
-    function homeCtrl($document, loadService) {
+    function homeCtrl($document, $location, $anchorScroll, loadService) {
         var vm = this;
         console.log('home ctrl');
 
@@ -20,10 +20,16 @@
         };
 
         vm.scrollToElement = function(element, $event) {
-        	$event.preventDefault();
+        	vm.path = $location.url(element);
+            $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 53);
         };
+
         vm.date = new Date();
+
+        vm.getNavClass = function(viewLocation) {
+            return viewLocation === $location.path();
+        };
     }
 })();
