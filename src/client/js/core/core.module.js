@@ -6,7 +6,8 @@
             /* Angular modules */
             'ngAnimate',
             'ngSanitize',
-            'duScroll'
+            'duScroll',
+            'ui.router'
         ]);
     console.log('core');
 
