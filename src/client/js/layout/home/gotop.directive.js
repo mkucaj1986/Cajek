@@ -14,7 +14,7 @@
         function link(scope, element, attrs, vm) {
             angular.element($window).bind("scroll", function() {
                 var currentScroll = $(this).scrollTop();
-                if (currentScroll >= 100) {
+                if (currentScroll >= 300) {
                     scope.goUpArrow = true;
                 } else {
                     scope.goUpArrow = false;
