@@ -8,6 +8,7 @@
 
     function config($urlRouterProvider, $locationProvider, $anchorScrollProvider) {
         // use the HTML5 History API
+        $anchorScrollProvider.disableAutoScrolling();
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
         console.log('config');
@@ -19,9 +20,10 @@
         }
         $rootScope.$on('duScrollspy:becameActive', function($event, $element, $target) {
             //Automaticly update location
+            $event.preventDefault();
             var hash = $element.prop('hash');
             if (hash) {
-                history.replaceState({}, '', hash);
+                history.replaceState(null, null, hash);
             }
         });
     }
