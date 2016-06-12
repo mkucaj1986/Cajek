@@ -13,8 +13,8 @@
         color: #fff;
         font-size: 48px;
         text-align: center;
-        .welcome-box{
-        	padding:140px 0;
+        .welcome-box {
+            padding: 140px 0;
         }
         .text-primary {
             color: #E2C41E;
@@ -33,9 +33,24 @@
     }
 }
 
+.go-up-arrow {
+    background: transparent url('../../src/client/assets/img/icons/go-up-arrow.png') no-repeat 0 0;
+    cursor:pointer;
+    display: block;
+    height: 64px;
+    width: 64px;
+    position: fixed;
+    right:9px;
+    bottom:9px;
+
+    -webkit-animation: showElementOpacity 2s ease forwards;
+     -o-animation: showElementOpacity 2s ease forwards;
+     animation: showElementOpacity 2s ease forwards;
+}
+
 // FOOTER
 .footer {
-	border:1px solid #000;
+    border: 1px solid #000;
     background: #f5f5f5;
     padding: 40px 0;
     color: #666666;
