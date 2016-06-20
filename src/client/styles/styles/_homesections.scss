@@ -17,8 +17,55 @@
         .welcome-box {
             padding: 140px 0;
         }
-        .text-primary {
-            color: #E2C41E;
+        .welcome-bottom{
+            color:$black-color;
+            font-size: 28px;
+            line-height: 1.3em;
+            text-align: center;
+        }
+        .welcome-bottom-specialise{
+            color: $white-color;
+            font-size: 24px;
+            padding:20px 0 0 0;
+
+            .special-box-txt{
+                margin: 0 0 20px 0;
+            }
+            .step1{
+                background: #fff url('../src/client/assets/img/icons/html-css.png') no-repeat center 15px;
+            }
+            .step2{
+                background: #fff url('../src/client/assets/img/icons/javascript.png') no-repeat center 15px;
+            }
+            .step3{
+                background: #fff url('../src/client/assets/img/icons/mean.png') no-repeat center 15px;
+            }
+            .special-box{
+                background-color: $white-color;
+                border-radius: 15px;
+                padding: 15px;
+                display: block;
+                height: 150px;
+                width: 250px;
+                margin: 0 auto;
+                position: relative;
+                &:before{
+                    content: '';
+                    position: absolute;
+                    width: 12px;
+                    display: block;
+                    height: 0;
+                    border: 15px solid #fff;
+                    border-top: 0 solid transparent !important;
+                    border-right: 20px solid transparent !important;
+                    border-left: 20px solid transparent !important;
+                    left: 0;
+                    top: -15px;
+                    margin: 0 auto;
+                    float: none;
+                    right: 0;
+                }
+            }
         }
     }
     .profile {

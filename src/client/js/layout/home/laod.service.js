@@ -25,7 +25,7 @@
                     scrollspeed: 70,
                     mousescrollstep: 50,
                     smoothscroll: true,
-                    zindex: 9999
+                    zindex: 99999999
                 });
             });
         }
