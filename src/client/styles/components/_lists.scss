@@ -1,4 +1,5 @@
 .main-list-box {
+    font-size: 1.5em;
     .main-list-header {
         font-size: 32px;
         margin-left: -20px;
@@ -7,10 +8,26 @@
     ul {
         padding: 0 0 0 20px;
         li {
-            font-size: 1.5em;
             padding: 0 0 10px 0;
         }
     }
+
+    .work-box {
+    	li{
+    		padding:0 0 5px 0;
+    		a{
+    			font-size: 1em;
+    			text-decoration: none;
+    		}
+    	}
+        .font-m-size {
+            color: #585858;
+        }
+        .font-black{
+        	padding:0;
+        }
+    }
+
 }
 
 .skills-list {
@@ -23,3 +40,4 @@
         }
     }
 }
+
