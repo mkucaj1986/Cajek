@@ -1,15 +1,12 @@
 $full-height: 100vh;
 $posabs: absolute;
 $posrel: relative;
-
-// RWD
+// RWSD
 $mobile: 767px;
-
-@media screen and (max-width: $mobile) {
-      margin-right: 0;
-    margin-bottom: 20px;
-}
+$tabletV: 991px;
 // COLORS
+$main-background: #2c2c28;
 $black-color: #000;
 $white-color: #fff;
-$gold-color: #E2C41E;;
+$gold-color: #E2C41E;
+

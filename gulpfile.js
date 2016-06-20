@@ -89,6 +89,9 @@ gulp.task('sass', function(done) {
     var injectGlobalFiles = gulp.src('./src/client/styles/global/**/*.scss', {
         read: false
     });
+    var injectComponentsFiles = gulp.src('./src/client/styles/components/**/*.scss', {
+        read: false
+    });
 
     function transformFilepath(filepath) {
         return '@import "' + filepath + '";';
@@ -108,11 +111,19 @@ gulp.task('sass', function(done) {
         addRootSlash: false
     };
 
+    var injectComponentsOptions = {
+        transform: transformFilepath,
+        starttag: '// inject:components',
+        endtag: '// endinject',
+        addRootSlash: false
+    };
+
     return gulp.src(config.mainscss)
         .pipe(wiredep())
         .pipe(sourcemaps.init())
         .pipe(inject(injectGlobalFiles, injectGlobalOptions))
         .pipe(inject(injectAppFiles, injectAppOptions))
+        .pipe(inject(injectComponentsFiles, injectComponentsOptions))
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('./maps'))
         // .pipe(csso())

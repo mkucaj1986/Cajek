@@ -51,7 +51,7 @@
             transform: translateY(-15%);
         }
         .text-primary {
-            color: #E2C41E;
+            color: $gold-color;
             display: inline-block;
             @media screen and (max-width: $mobile) {
                 display: inline;
