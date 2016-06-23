@@ -16,6 +16,7 @@
         font-size: 48px;
         text-align: center;
         .welcome-box {
+            background: transparent url('../src/client/assets/img/code/3.png') no-repeat center top;
             padding: 140px 0 60px;
         }
         .welcome-bottom{
@@ -80,9 +81,16 @@
             }
         }
     }
+    // Profile
     .profile {
         background-color: #161616;
         color: #fff;
+        .code-2{
+            background: transparent url('../src/client/assets/img/code/2.png') no-repeat center top;
+            display:block;
+            width: 350px;
+            height: 350px;
+        }
     }
     // SKILLS
     .skills {
