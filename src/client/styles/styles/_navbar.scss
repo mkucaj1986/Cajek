@@ -33,6 +33,9 @@
     .sticky-nav {
         background-color: $white-color;
         border-bottom: 3px solid $gold-color;
+        -moz-box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        -webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 3px 5px rgba(0,0,0,0.1);
         .navbar-brand {
             color: $black-color;
         }
