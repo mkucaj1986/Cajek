@@ -9,13 +9,14 @@
         width: 100%;
         min-height: 960px;
     }
+    // FIRST SECTIOBN
     .first-section {
         background-color: #38ABE2;
         color: #fff;
         font-size: 48px;
         text-align: center;
         .welcome-box {
-            padding: 140px 0;
+            padding: 140px 0 60px;
         }
         .welcome-bottom{
             color:$black-color;
@@ -42,14 +43,24 @@
                 background: #fff url('../src/client/assets/img/icons/mean.png') no-repeat center 15px;
             }
             .special-box{
+                -moz-box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.35);
+                -webkit-box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.35);
+                box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.35);
                 background-color: $white-color;
                 border-radius: 15px;
                 padding: 15px;
                 display: block;
-                height: 150px;
+                height: 210px;
                 width: 250px;
                 margin: 0 auto;
                 position: relative;
+                .special-box-inside{
+                    color: #1f1f1f;
+                    font-size: 14px;
+                    text-align: center;
+                    padding: 88px 0 0 0;
+                    display: block;
+                }
                 &:before{
                     content: '';
                     position: absolute;
@@ -73,8 +84,15 @@
         background-color: #161616;
         color: #fff;
     }
+    // SKILLS
     .skills {
         color: #fff;
+        .skills-wrapp{
+            display:block;
+            width: 100%;
+            max-width: 486px;
+            margin: 0 auto;
+        }
     }
     .work-education {
         background-color: $white-color;
@@ -83,7 +101,7 @@
     .work-box{
         width:500px;
         margin:0 auto;
-        padding:30px 0 0 0;
+        padding:30px 0 0 100px;
     }
 }
 

@@ -126,7 +126,6 @@ gulp.task('sass', function(done) {
         .pipe(inject(injectComponentsFiles, injectComponentsOptions))
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('./maps'))
-        // .pipe(csso())
         .pipe(gulp.dest(config.temp), done);
 });
 gulp.task('minify-css', function() {
@@ -184,7 +183,7 @@ function serve(isDev) {
             setTimeout(function() {
                 browserSync.notify('reloading now ...');
                 browserSync.reload({
-                    stream: false
+                    stream: true
                 });
             }, config.browserReloadDelay);
         })
@@ -249,7 +248,7 @@ function startBrowserSync(isDev, specRunner) {
         logLevel: 'debug',
         logPrefix: 'gulp-patterns',
         notify: true,
-        reloadDelay: 0 //1000
+        reloadDelay: 1000 //1000
     };
 
     browserSync(options);

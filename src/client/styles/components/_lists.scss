@@ -16,8 +16,12 @@
     	li{
     		padding:0 0 5px 0;
     		a{
-    			font-size: 1em;
+    			font-size: 0.9em;
     			text-decoration: none;
+    			color: #d2aa8a;
+    			&:hover{
+    				color: #af7342;
+    			}
     		}
     	}
         .font-m-size {
