@@ -19,31 +19,30 @@
             background: transparent url('../src/client/assets/img/code/3.png') no-repeat center top;
             padding: 140px 0 60px;
         }
-        .welcome-bottom{
-            color:$black-color;
+        .welcome-bottom {
+            color: $black-color;
             font-size: 28px;
             font-family: 'latoblack';
             line-height: 1.3em;
             text-align: center;
         }
-        .welcome-bottom-specialise{
+        .welcome-bottom-specialise {
             color: $white-color;
             font-size: 24px;
-            padding:20px 0 0 0;
-
-            .special-box-txt{
+            padding: 20px 0 0 0;
+            .special-box-txt {
                 margin: 0 0 20px 0;
             }
-            .step1{
+            .step1 {
                 background: #fff url('../src/client/assets/img/icons/html-css.png') no-repeat center 15px;
             }
-            .step2{
+            .step2 {
                 background: #fff url('../src/client/assets/img/icons/javascript.png') no-repeat center 15px;
             }
-            .step3{
+            .step3 {
                 background: #fff url('../src/client/assets/img/icons/mean.png') no-repeat center 15px;
             }
-            .special-box{
+            .special-box {
                 -moz-box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.35);
                 -webkit-box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.35);
                 box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.35);
@@ -55,14 +54,14 @@
                 width: 250px;
                 margin: 0 auto;
                 position: relative;
-                .special-box-inside{
+                .special-box-inside {
                     color: #1f1f1f;
                     font-size: 14px;
                     text-align: center;
                     padding: 88px 0 0 0;
                     display: block;
                 }
-                &:before{
+                &:before {
                     content: '';
                     position: absolute;
                     width: 12px;
@@ -85,9 +84,9 @@
     .profile {
         background-color: #161616;
         color: #fff;
-        .code-2{
+        .code-2 {
             background: transparent url('../src/client/assets/img/code/2.png') no-repeat center top;
-            display:block;
+            display: block;
             width: 350px;
             height: 350px;
         }
@@ -95,8 +94,8 @@
     // SKILLS
     .skills {
         color: #fff;
-        .skills-wrapp{
-            display:block;
+        .skills-wrapp {
+            display: block;
             width: 100%;
             max-width: 486px;
             margin: 0 auto;
@@ -106,26 +105,25 @@
         background-color: $white-color;
         color: $black-color;
     }
-    .work-box{
-        width:500px;
-        margin:0 auto;
-        padding:30px 0 0 100px;
+    .work-box {
+        width: 500px;
+        margin: 0 auto;
+        padding: 30px 0 0 100px;
     }
 }
 
 .go-up-arrow {
     background: transparent url('../../src/client/assets/img/icons/go-up-arrow.png') no-repeat 0 0;
-    cursor:pointer;
+    cursor: pointer;
     display: block;
     height: 64px;
     width: 64px;
     position: fixed;
-    right:9px;
-    bottom:9px;
-
+    right: 9px;
+    bottom: 9px;
     -webkit-animation: showElementOpacity 1s ease forwards;
-     -o-animation: showElementOpacity 1s ease forwards;
-     animation: showElementOpacity 1s ease forwards;
+    -o-animation: showElementOpacity 1s ease forwards;
+    animation: showElementOpacity 1s ease forwards;
 }
 
 // FOOTER
@@ -134,7 +132,12 @@
     background: #f5f5f5;
     padding: 40px 0;
     color: #666666;
-    .copy{
+    .copy {
         font-size: 1.5em;
     }
+    .icon {
+        font-style: normal;
+        font-weight: normal;
+        line-height: 1;
+    }    
 }
