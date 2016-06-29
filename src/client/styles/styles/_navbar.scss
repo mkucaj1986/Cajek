@@ -4,6 +4,13 @@
     @include navbarSticky-transition (background-color 500ms linear, border-color 2000ms ease);
     .navbar-brand {
         color: #fff;
+        &:focus {
+            color: #1da7a3;
+            outline:0;
+        }
+        &:hover {
+            color: #1da7a3;
+        }
     }
     .navbar-nav {
         .active {
