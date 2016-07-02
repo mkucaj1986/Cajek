@@ -5,11 +5,10 @@
     .navbar-brand {
         color: #fff;
         &:focus {
-            color: #1da7a3;
-            outline:0;
+            color: #000;
         }
         &:hover {
-            color: #1da7a3;
+            color: #000;
         }
     }
     .navbar-nav {
@@ -29,7 +28,7 @@
                 font-size: 1.6em;
                 &:hover {
                     background-color: transparent;
-                    color: #1da7a3;
+                    color: #222222;
                 }
             }
         }
