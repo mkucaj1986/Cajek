@@ -1,8 +1,18 @@
 <footer id="footer" class="footer">
 	<div class="container">
-		<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 copy">
-			@{{home.date | date:'yyyy'}} Michal Kucaj
-		</div>
+		<div class="clearfix"></div>
+		
+		<ul class="footer-nav">
+			<li>
+				<a href="#first-section" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('first-section', $event)">Welcome</a>
+			</li>
+			<li><a href="#profile" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('profile', $event)">Profile</a></li>
+			<li><a href="#skills" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('skills', $event)">Skills</a></li>
+			<li><a href="#work-education" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('work-education', $event)">Work & Education</a></li>
+			<li><a target="_new" href="src/files/michalkucajcv.pdf">CV</a></li>
+			<li><a href="#contact" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('contact', $event)">Contact</a></li>
+		</ul>
+		
 		<div class="center-block social-box">
 			<ul class="center-block">
 				<li>
@@ -30,6 +40,11 @@
 					</a>
 				</li>
 			</ul>
+		</div>
+	</div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copy">
+		<div class="container">
+		© {{home.date | date:'yyyy'}} Michal Kucaj
 		</div>
 	</div>
 </footer>
