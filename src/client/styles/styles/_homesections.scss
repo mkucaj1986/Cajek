@@ -100,10 +100,26 @@
             max-width: 486px;
             margin: 0 auto;
         }
+        .skills-code-block{
+            background: transparent url('../src/client/assets/img/code/4.png') no-repeat center top;
+            display:block;
+            height:400px;
+        }
     }
+    // WORK && EDUCATION
     .work-education {
         background-color: $white-color;
         color: $black-color;
+        position: relative;
+        .we-code-block{
+            background: transparent url('../src/client/assets/img/code/5.png') no-repeat center top;
+            display:block;
+            height:187px;
+            width:550px;
+            position:absolute;
+            right: 5%;
+            top: 3%;
+        }
     }
     .work-box {
         width: 500px;
