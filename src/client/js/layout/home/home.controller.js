@@ -27,6 +27,15 @@
         };
 
         vm.date = new Date();
-
+        // CONTACT FORM
+        vm.invalidClass = false;
+        vm.sendEmail = function(contactForm) {
+            vm.submitClicked = true;
+            if (contactForm.$valid) {
+                console.log('mailSent');
+            } else {
+                vm.invalidClass = true;
+            }
+        };
     }
 })();
