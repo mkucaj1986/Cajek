@@ -37,5 +37,9 @@
                 vm.invalidClass = true;
             }
         };
+
+        vm.isActive = function(route) {
+            return route === $location.url();
+        };
     }
 })();
