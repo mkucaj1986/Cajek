@@ -12,8 +12,12 @@
 
         vm.loadPlugins = function() {
             loadService.niceScroll();
+            loadService.fullPage();
         };
-        vm.loadPlugins();
+
+        angular.element($document).ready(function() {
+            vm.loadPlugins();
+        });
 
         vm.toTheTop = function($event) {
             $event.preventDefault();
@@ -28,11 +32,13 @@
 
         vm.date = new Date();
         // CONTACT FORM
+        vm.data = {};
         vm.invalidClass = false;
         vm.sendEmail = function(contactForm) {
             vm.submitClicked = true;
             if (contactForm.$valid) {
                 console.log('mailSent');
+                console.log(vm.data);
             } else {
                 vm.invalidClass = true;
             }
@@ -53,5 +59,6 @@
             }
             return age;
         };
+
     }
 })();

@@ -9,5 +9,12 @@ router.get('/', function(req, res, next) {
     };
     res.render('index', vm);
 });
+/* GET Contact page. */
+router.get('/contactForm', function(req, res, next) {
+	var vm = {
+	    title: 'Contact Page'
+	};
+    res.render('contactForm', vm);
+});
 
 module.exports = router;

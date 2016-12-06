@@ -1,4 +1,4 @@
-<section id="top-section" class="top-section">
+<section id="top-section" class="top-section section">
     <div class="hello-world"></div>
     <div class="block-center">
         <h2 class="main-title">Michal Kucaj <span class="text-primary">FRONT END</span> DEVELOPER</h2>
@@ -22,12 +22,12 @@
     </div>
 </section>
 <!--FIRST SECTION-->
-<section id="first-section" class="sections first-section">
+<section id="first-section" class="sections first-section section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
                 Hi! my name is Michael <br />
-                I'm a 29 year old <br />
+                I'm a <span data-ng-bind="home.calculateAge('1986/10/29')"></span> year old <br />
                 <span class="text-primary">FRONT END</span> DEVELOPER
                 nice to meet you!
             </div>
@@ -82,7 +82,7 @@
     </div>
 </section>
 <!--PROFILE-->
-<section id="profile" class="sections profile">
+<section id="profile" class="sections profile section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -111,7 +111,7 @@
     </div>
 </section>
 <!--SKILLS-->
-<section id="skills" class="sections skills">
+<section id="skills" class="sections skills section">
     <div class="container">
         <div class="row">
             <div class="skills-wrapp">
@@ -151,7 +151,7 @@
     </div>
 </section>
 <!--WORK & EDUCATION-->
-<section id="work-education" class="sections work-education">
+<section id="work-education" class="sections work-education section">
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
@@ -193,14 +193,14 @@
     </div>
 </section>
 <!--CONTACT-->
-<section id="contact" class="sections contact">
+<section id="contact" class="sections contact section">
     <div class="container">
         <h1>Contact Form</h1>
         <div class="contact-box center-block">
             <form name="contactForm"> 
                 <div class="form-group">
                     <label for="">Name</label>
-                    <input data-ng-model="name" name="name" type="text" placeholder="name" required/>
+                    <input data-ng-model="home.data.name" name="name" type="text" placeholder="name" required/>
                     <div class="clearfix"></div>
                     <div class="validation-message-box" data-ng-show="home.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">
                         <span class="validation-message-invalid" data-ng-show="home.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">Please provide your name</span>
@@ -208,7 +208,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Email:</label>
-                    <input data-ng-model="email" name="email" type="email" placeholder="email" required/>
+                    <input data-ng-model="home.data.email" name="email" type="email" placeholder="email" required/>
                     <div class="clearfix"></div>
                     <div class="validation-message-box" data-ng-show="home.submitClicked && contactForm.email.$error.required || contactForm.email.$error.email || contactForm.email.$error.$touched">
                         <span class="validation-message-invalid" data-ng-show="home.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched">Please provide your email</span>
@@ -217,7 +217,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Message:</label>
-                    <textarea data-ng-model="message" name="message" name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
+                    <textarea data-ng-model="home.data.message" name="message" name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
                     <div class="clearfix"></div>
                     <div class="validation-message-box" data-ng-show="home.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">
                         <span class="validation-message-invalid" data-ng-show="home.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">Please provide your message</span>
