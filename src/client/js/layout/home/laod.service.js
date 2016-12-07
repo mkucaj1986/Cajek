@@ -6,7 +6,7 @@
         .factory('loadService', loadService);
 
     /* @ngInject */
-    function loadService() {
+    function loadService($document) {
         var service = {
             niceScroll: niceScroll,
             fullPage: fullPage
@@ -31,31 +31,85 @@
             });
         }
 
-        function fullPage() {
-            var page = new FullPage("#main-sections", {
-                onLeave: function(index) {
-                    console.log(index);
-                },
+        function fullPage(element) {
+            $document = $document[0];
+            var fullPagePlugin = {
+                index: 0,
+                sections: '.section',
+                init: initFn,
+                destroy: destroyFn
+            };
+            // Element
+            this.el = document.getElementById(element);
+            // Index
+            this.index = fullPagePlugin.index;
+            // Sections
+            this.sections = fullPagePlugin.sections;
 
-                afterLoad: function(index) {
-                    console.log(index);
+            var moveUp = function() {
+                if (this.index > 0) {
+                    this.move(this.index - 1);
                 }
+            };
 
-            });
+            var moveDown = function() {
+                if ((this.index + 1) < this.sections.length) {
+                    this.move(this.index + 1);
+                }
+            };
+            var makeActive = function(index, sections) {
+                var paginationLinks = document.querySelectorAll('.slide-navigation li a');
+                var sections = document.querySelectorAll(sections);
+                for (var i = 0; i < sections.length; i++) {
+                    jQuery(sections[i]).removeClass('is-active');
+                    jQuery(paginationLinks[i]).removeClass('is-active');
+                }
+                jQuery(sections[index]).addClass('is-active');
+                jQuery(paginationLinks[index]).addClass('is-active');
 
-            var moveToTop = document.getElementById("moveToTop");
-            var moveToLast = document.getElementById("moveToLast");
+            };
 
-            // moveToTop.addEventListener('click', function(e) {
-            //     page.moveTo(0);
-            //     e.preventDefault();
-            // });
+            function initFn() {
+                var index = this.index;
+                var sections = this.sections;
+                $document.addEventListener('keydown', keydown);
+                $document.addEventListener('mousewheel', mousewheel);
+                $document.addEventListener('DOMMouseScroll', dOMMouseScroll);
+                makeActive(index, sections);
+            }
 
-            // moveToLast.addEventListener('click', function(e) {
-            //     page.moveTo(3);
-            //     e.preventDefault();
-            // });
+            function destroyFn() {
+                $document.removeEventListener('keydown', keydown);
+                $document.removeEventListener('mousewheel', mousewheel);
+                $document.removeEventListener('DOMMouseScroll', dOMMouseScroll);
+            }
 
+            function mousewheel(event) {
+                var time = new Date().getTime();
+                var delta = event.wheelDelta || -event.detail;
+                var index = fullPagePlugin.index;
+                if (delta < 0) {
+                    moveDown();
+                } else {
+                    moveUp();
+                }
+            }
+
+            function keydown() {
+                // body...
+                debugger;
+            }
+
+            function dOMMouseScroll() {
+                // body...
+                debugger;
+            }
+
+            function startFullPage() {
+                fullPagePlugin.init();
+            }
+            startFullPage();
+            return this;
         }
 
     }

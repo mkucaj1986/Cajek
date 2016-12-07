@@ -12,12 +12,8 @@
 
         vm.loadPlugins = function() {
             loadService.niceScroll();
-            loadService.fullPage();
+            loadService.fullPage('main-sections');
         };
-
-        angular.element($document).ready(function() {
-            vm.loadPlugins();
-        });
 
         vm.toTheTop = function($event) {
             $event.preventDefault();
@@ -59,6 +55,8 @@
             }
             return age;
         };
-
+        angular.element($document).ready(function() {
+            vm.loadPlugins();
+        });
     }
 })();

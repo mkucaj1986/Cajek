@@ -1,5 +1,6 @@
 <!-- LAYOUT -->
 <div ng-include="'src/client/views/header/header.hbs'" data-ng-cloak></div>
-<div id="main-sections" class="partials" ng-include="'src/client/views/content.hbs'" data-ng-cloak></div>
+<div id="main-sections" full-page class="partials" ng-include="'src/client/views/content.hbs'" data-ng-cloak></div>
 <div class="partials" ng-include="'src/client/views/footer.hbs'" data-ng-cloak></div>
 <div gotop-directive id="go-up-arrow" class="go-up-arrow" data-ng-click="home.toTheTop($event)" data-ng-show="goUpArrow" data-ng-cloak></div>
+
