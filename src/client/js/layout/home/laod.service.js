@@ -6,7 +6,7 @@
         .factory('loadService', loadService);
 
     /* @ngInject */
-    function loadService($document) {
+    function loadService($rootScope, $document) {
         var service = {
             niceScroll: niceScroll,
             fullPage: fullPage
@@ -35,9 +35,11 @@
             $document = $document[0];
             var fullPagePlugin = {
                 index: 0,
+                lastAnimation: 0,
                 section: '.section',
                 init: initFn,
-                destroy: destroyFn
+                destroy: destroyFn,
+                animationDuration: 700
             };
             // Element
             var el = document.getElementById(element);
@@ -45,7 +47,9 @@
             var index = fullPagePlugin.index;
             // Sections 
             var sections = document.querySelectorAll(fullPagePlugin.section);
-
+            // Last Animation 
+            var lastAnimation = fullPagePlugin.lastAnimation;
+            // CORE FUNCTIONS
             function moveUp() {
                 if (index > 0) {
                     index = index - 1;
@@ -83,8 +87,11 @@
                 bodyTag.appendChild(pagination);
             };
             var move = function(index) {
-                index = index;
                 makeActive(index, sections);
+                var sectiontoMove = document.querySelectorAll('.is-active');
+                sectiontoMove = sectiontoMove[0].id;
+                jQuery(el).css('Transition', 'transform ' + fullPagePlugin.animationDuration + 'ms'); 
+                $rootScope.$broadcast("scrollPage", sectiontoMove);
             };
 
             function initFn() {
@@ -106,28 +113,31 @@
                 var time = new Date().getTime();
                 var delta = event.wheelDelta || -event.detail;
                 var index = fullPagePlugin.index;
+                if (time - Math.abs(lastAnimation) < fullPagePlugin.animationDuration) {
+                    return;
+                }
+
                 if (delta < 0) {
                     moveDown();
                 } else {
                     moveUp();
                 }
+                lastAnimation = time;
             }
 
             function keydown() {
                 // body...
-                debugger;
             }
 
             function dOMMouseScroll() {
                 // body...
-                debugger;
             }
 
             function startFullPage() {
                 fullPagePlugin.init();
             }
             startFullPage();
-            return this;
+            return fullPagePlugin;
         }
 
     }

@@ -6,7 +6,7 @@
         .controller('homeCtrl', homeCtrl);
 
     /* @ngInject */
-    function homeCtrl($document, $timeout, $location, $anchorScroll, loadService) {
+    function homeCtrl($rootScope, $document, $timeout, $location, $anchorScroll, loadService) {
         var vm = this;
         console.log('home ctrl');
 
@@ -25,6 +25,11 @@
             var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 53);
         };
+        $rootScope.$on("scrollPage", function($event, el) {
+            $timeout(function() {
+                vm.scrollToElement(el, $event);
+            });
+        });
 
         vm.date = new Date();
         // CONTACT FORM
@@ -55,7 +60,7 @@
             }
             return age;
         };
-        $timeout( function(){
+        $timeout(function() {
             vm.loadPlugins();
         });
     }
