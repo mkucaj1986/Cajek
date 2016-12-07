@@ -6,7 +6,7 @@
         .controller('homeCtrl', homeCtrl);
 
     /* @ngInject */
-    function homeCtrl($document, $location, $anchorScroll, loadService) {
+    function homeCtrl($document, $timeout, $location, $anchorScroll, loadService) {
         var vm = this;
         console.log('home ctrl');
 
@@ -55,7 +55,7 @@
             }
             return age;
         };
-        angular.element($document).ready(function() {
+        $timeout( function(){
             vm.loadPlugins();
         });
     }

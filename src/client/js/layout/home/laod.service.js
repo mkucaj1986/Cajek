@@ -35,31 +35,34 @@
             $document = $document[0];
             var fullPagePlugin = {
                 index: 0,
-                sections: '.section',
+                section: '.section',
                 init: initFn,
                 destroy: destroyFn
             };
             // Element
-            this.el = document.getElementById(element);
+            var el = document.getElementById(element);
             // Index
-            this.index = fullPagePlugin.index;
-            // Sections
-            this.sections = fullPagePlugin.sections;
+            var index = fullPagePlugin.index;
+            // Sections 
+            var sections = document.querySelectorAll(fullPagePlugin.section);
 
-            var moveUp = function() {
-                if (this.index > 0) {
-                    this.move(this.index - 1);
+            function moveUp() {
+                if (index > 0) {
+                    index = index - 1;
+                    move(index);
                 }
-            };
+                return index;
+            }
 
-            var moveDown = function() {
-                if ((this.index + 1) < this.sections.length) {
-                    this.move(this.index + 1);
+            function moveDown() {
+                if ((index) < sections.length - 1) {
+                    index = index + 1;
+                    move(index);
                 }
-            };
+                return index;
+            }
             var makeActive = function(index, sections) {
                 var paginationLinks = document.querySelectorAll('.slide-navigation li a');
-                var sections = document.querySelectorAll(sections);
                 for (var i = 0; i < sections.length; i++) {
                     jQuery(sections[i]).removeClass('is-active');
                     jQuery(paginationLinks[i]).removeClass('is-active');
@@ -68,13 +71,28 @@
                 jQuery(paginationLinks[index]).addClass('is-active');
 
             };
+            var paginationHTML = function(sections) {
+                var paginationList = '';
+                var bodyTag = jQuery('body')[0];
+                var pagination = document.createElement('ul');
+                for (var i = 0; i < sections.length; i++) {
+                    paginationList += '<li><a data-index=\"' + i + '\" href=\"#' + i + '"\></a></li>';
+                }
+                pagination.setAttribute('class', 'slide-navigation');
+                pagination.innerHTML = paginationList;
+                bodyTag.appendChild(pagination);
+            };
+            var move = function(index) {
+                index = index;
+                makeActive(index, sections);
+            };
 
             function initFn() {
                 var index = this.index;
-                var sections = this.sections;
                 $document.addEventListener('keydown', keydown);
                 $document.addEventListener('mousewheel', mousewheel);
                 $document.addEventListener('DOMMouseScroll', dOMMouseScroll);
+                paginationHTML(sections);
                 makeActive(index, sections);
             }
 
