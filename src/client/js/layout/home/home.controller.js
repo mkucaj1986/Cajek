@@ -31,9 +31,15 @@
         vm.scrollToElement = function(element, $event) {
             var anchorLinks = jQuery('.nav li a').removeClass('active');
             $event.preventDefault();
-            var someElement = angular.element(document.getElementById(element));
             var anchor = jQuery($event.target);
             anchor.addClass('active');
+            var someElement = angular.element(document.getElementById(element));
+            $document.scrollToElementAnimated(someElement, 33);
+        };
+
+        vm.scrollToElementFullpage = function(element, $event) {
+            $event.preventDefault();
+            var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 33);
         };
 
@@ -50,7 +56,7 @@
             if (hasClass) {
                 $timeout(function() {
                     $rootScope.$broadcast("updateLocation", anchorLink);
-                    vm.scrollToElement(el, $event);
+                    vm.scrollToElementFullpage(el, $event);
                 }, 100);
             }
             return vm.el;
