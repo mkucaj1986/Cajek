@@ -35,6 +35,12 @@
                     border-bottom: 5px solid $gold-color;
                 }
             }
+            .home-anchor {
+                &.active {
+                    color: $white-color !important;
+                    border-bottom: 5px solid $white-color;
+                }
+            }
         }
     }
 }

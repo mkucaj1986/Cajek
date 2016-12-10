@@ -44,7 +44,7 @@
                 $timeout(function() {
                     $rootScope.$broadcast("updateLocation", anchorLink);
                     vm.scrollToElement(el, $event);
-                }, 200);
+                }, 100);
             }
             return vm.el;
         });
