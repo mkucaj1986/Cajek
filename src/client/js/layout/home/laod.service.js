@@ -71,11 +71,11 @@
                 for (var i = 0; i < sections.length; i++) {
                     jQuery(sections[i]).removeClass('is-active');
                     jQuery(paginationLinks[i]).removeClass('is-active');
-                    jQuery(anchorLinks[i]).removeClass('active');
+                    // jQuery(anchorLinks[i]).removeClass('active');
                 }
                 jQuery(sections[index]).addClass('is-active');
                 jQuery(paginationLinks[index]).addClass('is-active');
-                jQuery(anchorLinks[index]).addClass('active');
+                // jQuery(anchorLinks[index]).addClass('active');
 
             };
             var paginationHTML = function(sections) {

@@ -10,7 +10,7 @@
         var vm = this;
         console.log('home ctrl');
 
-        vm.el = 'top-section';
+        vm.startingLocation = 'home';
         vm.loadPlugins = function() {
             loadService.niceScroll();
             loadService.fullPage('main-sections');
@@ -18,7 +18,10 @@
 
         vm.toTheTop = function($event) {
             $event.preventDefault();
+            var home = jQuery('.nav li a');
+            home = jQuery(home[0]);
             $document.scrollTopAnimated(0, 700).then(function() {});
+            home.addClass('active');
         };
 
         vm.scrollToElement = function(element, $event) {
@@ -26,9 +29,13 @@
             var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 33);
         };
+
+        vm.isScrollorClick = function() {
+            $rootScope.$broadcast("isNotScroll");
+        };
         $rootScope.$on('$locationChangeSuccess', scrollBasedOnLocationChangeEvent);
         $rootScope.$on("scrollPage", function($event, el, index) {
-            vm.el = el;
+            vm.startingLocation = el;
             var hasClass = jQuery('#' + el).hasClass('is-active');
             var anchorLink = jQuery('.nav li a');
             anchorLink = jQuery(anchorLink[index]);
@@ -42,9 +49,7 @@
             return vm.el;
         });
 
-        function scrollBasedOnLocationChangeEvent(angularEvent, newUrl, oldUrl, newState, oldState) {
-
-        }
+        function scrollBasedOnLocationChangeEvent(angularEvent, newUrl, oldUrl, newState, oldState) {}
         vm.date = new Date();
         // CONTACT FORM
         vm.data = {};
@@ -60,7 +65,7 @@
         };
 
         vm.isActive = function(route) {
-            return route === $location.url();
+            // return route === $location.url();
         };
 
         vm.calculateAge = function(dateString) {
