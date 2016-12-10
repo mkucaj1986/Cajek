@@ -67,12 +67,15 @@
             }
             var makeActive = function(index, sections) {
                 var paginationLinks = document.querySelectorAll('.slide-navigation li a');
+                var anchorLinks = document.querySelectorAll('.nav li a');
                 for (var i = 0; i < sections.length; i++) {
                     jQuery(sections[i]).removeClass('is-active');
                     jQuery(paginationLinks[i]).removeClass('is-active');
+                    jQuery(anchorLinks[i]).removeClass('active');
                 }
                 jQuery(sections[index]).addClass('is-active');
                 jQuery(paginationLinks[index]).addClass('is-active');
+                jQuery(anchorLinks[index]).addClass('active');
 
             };
             var paginationHTML = function(sections) {
@@ -91,7 +94,7 @@
                 var sectiontoMove = document.querySelectorAll('.is-active');
                 sectiontoMove = sectiontoMove[0].id;
                 jQuery(el).css('Transition', 'transform ' + fullPagePlugin.animationDuration + 'ms'); 
-                $rootScope.$broadcast("scrollPage", sectiontoMove);
+                $rootScope.$broadcast("scrollPage", sectiontoMove, index);
             };
 
             function initFn() {

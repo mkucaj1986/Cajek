@@ -6,10 +6,11 @@
         .controller('homeCtrl', homeCtrl);
 
     /* @ngInject */
-    function homeCtrl($rootScope, $document, $timeout, $location, $anchorScroll, loadService) {
+    function homeCtrl($window, $rootScope, $scope, $document, $timeout, $location, $anchorScroll, loadService) {
         var vm = this;
         console.log('home ctrl');
 
+        vm.el = 'top-section';
         vm.loadPlugins = function() {
             loadService.niceScroll();
             loadService.fullPage('main-sections');
@@ -23,14 +24,27 @@
         vm.scrollToElement = function(element, $event) {
             $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
-            $document.scrollToElementAnimated(someElement, 53);
+            $document.scrollToElementAnimated(someElement, 33);
         };
-        $rootScope.$on("scrollPage", function($event, el) {
-            $timeout(function() {
-                vm.scrollToElement(el, $event);
-            });
+        $rootScope.$on('$locationChangeSuccess', scrollBasedOnLocationChangeEvent);
+        $rootScope.$on("scrollPage", function($event, el, index) {
+            vm.el = el;
+            var hasClass = jQuery('#' + el).hasClass('is-active');
+            var anchorLink = jQuery('.nav li a');
+            anchorLink = jQuery(anchorLink[index]);
+            var hassWhiteColor = $location.url() === '/#skills' || $location.url() === '/#contact';
+            if (hasClass) {
+                $timeout(function() {
+                    $rootScope.$broadcast("updateLocation", anchorLink);
+                    vm.scrollToElement(el, $event);
+                }, 200);
+            }
+            return vm.el;
         });
 
+        function scrollBasedOnLocationChangeEvent(angularEvent, newUrl, oldUrl, newState, oldState) {
+
+        }
         vm.date = new Date();
         // CONTACT FORM
         vm.data = {};
@@ -62,6 +76,7 @@
         };
         $timeout(function() {
             vm.loadPlugins();
-        });
+        }, 500);
+
     }
 })();

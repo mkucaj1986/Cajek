@@ -14,14 +14,28 @@
         console.log('config');
     }
 
-    function runBlock($rootScope, $location) {
+    function runBlock($rootScope, $location, $timeout) {
         if (!window.history || !history.replaceState) {
             return;
         }
         $rootScope.$on('duScrollspy:becameActive', function($event, $element, $target) {
+            var disableSpy = {};
+            $rootScope.$on("scrollPage", function($event, el, index) {
+                disableSpy = true;
+                console.log('scroll page');
+            });
             //Automaticly update location
+            if(!disableSpy){
+                $event.preventDefault();
+                var hash = $element.prop('hash');
+                if (hash) {
+                    history.replaceState(null, null, hash);
+                }
+            }
+        });
+        $rootScope.$on("updateLocation", function($event, el) {
             $event.preventDefault();
-            var hash = $element.prop('hash');
+            var hash = el.prop('hash');
             if (hash) {
                 history.replaceState(null, null, hash);
             }
