@@ -16,6 +16,10 @@
             loadService.fullPage('main-sections');
         };
 
+        vm.portfolioClick = function() {
+            jQuery(".home-anchor").addClass('active');
+        };
+
         vm.toTheTop = function($event) {
             $event.preventDefault();
             var home = jQuery('.nav li a');
@@ -25,8 +29,11 @@
         };
 
         vm.scrollToElement = function(element, $event) {
+            var anchorLinks = jQuery('.nav li a').removeClass('active');
             $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
+            var anchor = jQuery($event.target);
+            anchor.addClass('active');
             $document.scrollToElementAnimated(someElement, 33);
         };
 
