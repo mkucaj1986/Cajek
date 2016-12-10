@@ -45,7 +45,14 @@
     }
 }
 
+#logo {
+    color: $white-color;
+}
+
 .sticky-header {
+    #logo {
+        color: #000;
+    }
     .sticky-nav {
         background-color: $white-color;
         border-bottom: 3px solid $gold-color;
