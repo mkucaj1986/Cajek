@@ -30,8 +30,15 @@
 
         vm.scrollToElement = function(element, $event) {
             var anchorLinks = jQuery('.nav li a').removeClass('active');
+            var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
             $event.preventDefault();
             var anchor = jQuery($event.target);
+            var anchorIndex = anchorLinks.index(anchor);
+            var anchorIndexPagination = anchorLinksPagination.index(anchor);
+            var anchorLinksTarget = jQuery(anchorLinks[anchorIndexPagination]);
+            var anchorLinksTargetPagination = jQuery(anchorLinksPagination[anchorIndex]);
+            anchorLinksTarget.addClass('active');
+            anchorLinksTargetPagination.addClass('active');
             anchor.addClass('active');
             var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 33);
@@ -46,12 +53,14 @@
         vm.isScrollorClick = function() {
             $rootScope.$broadcast("isNotScroll");
         };
-        $rootScope.$on('$locationChangeSuccess', scrollBasedOnLocationChangeEvent);
         $rootScope.$on("scrollPage", function($event, el, index) {
             vm.startingLocation = el;
             var hasClass = jQuery('#' + el).hasClass('is-active');
             var anchorLink = jQuery('.nav li a');
             anchorLink = jQuery(anchorLink[index]);
+            var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
+            var anchorLinksTargetPagination = jQuery(anchorLinksPagination[index]);
+            anchorLinksTargetPagination.addClass('active');
             var hassWhiteColor = $location.url() === '/#skills' || $location.url() === '/#contact';
             if (hasClass) {
                 $timeout(function() {
@@ -62,7 +71,6 @@
             return vm.el;
         });
 
-        function scrollBasedOnLocationChangeEvent(angularEvent, newUrl, oldUrl, newState, oldState) {}
         vm.date = new Date();
         // CONTACT FORM
         vm.data = {};
