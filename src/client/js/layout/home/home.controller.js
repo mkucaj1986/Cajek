@@ -22,10 +22,14 @@
 
         vm.toTheTop = function($event) {
             $event.preventDefault();
+            var anchorLinks = jQuery('.nav li a').removeClass('active');
+            var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
             var home = jQuery('.nav li a');
             home = jQuery(home[0]);
             $document.scrollTopAnimated(0, 700).then(function() {});
             home.addClass('active');
+            var target = jQuery('.nav-pagination li a')[0];
+            jQuery(target).addClass('active');
         };
 
         vm.scrollToElement = function(element, $event) {
