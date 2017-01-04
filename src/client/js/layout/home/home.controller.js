@@ -19,7 +19,10 @@
         vm.portfolioClick = function() {
             jQuery(".home-anchor").addClass('active');
         };
-
+        vm.getMore = function () {
+            var target = jQuery('.nav li a')[1];
+            jQuery(target).addClass('active');
+        };
         vm.toTheTop = function($event) {
             $event.preventDefault();
             var anchorLinks = jQuery('.nav li a').removeClass('active');
