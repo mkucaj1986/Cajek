@@ -48,13 +48,13 @@
             anchorLinksTargetPagination.addClass('active');
             anchor.addClass('active');
             var someElement = angular.element(document.getElementById(element));
-            $document.scrollToElementAnimated(someElement, 33);
+            $document.scrollToElementAnimated(someElement, 33, 1100);
         };
 
         vm.scrollToElementFullpage = function(element, $event) {
             $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
-            $document.scrollToElementAnimated(someElement, 33);
+            $document.scrollToElementAnimated(someElement, 33, 1100);
         };
 
         vm.isScrollorClick = function() {
@@ -72,7 +72,7 @@
                 $timeout(function() {
                     $rootScope.$broadcast("updateLocation", anchorLink);
                     vm.scrollToElementFullpage(el, $event);
-                }, 70);
+                }, 90);
             }
             return vm.el;
         });
@@ -116,7 +116,7 @@
         }, function() {
             $timeout(function() {
                 changePaginationCircle();
-            });
+            }, 100);
         });
 
         function changePaginationCircle() {

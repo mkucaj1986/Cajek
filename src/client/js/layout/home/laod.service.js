@@ -39,7 +39,7 @@
                 section: '.section',
                 init: initFn,
                 destroy: destroyFn,
-                animationDuration: 700
+                animationDuration: 1100
             };
             // Element
             var el = document.getElementById(element);
@@ -82,46 +82,54 @@
                 makeActive(index, sections);
                 var sectiontoMove = document.querySelectorAll('.is-active');
                 sectiontoMove = sectiontoMove[0].id;
-                jQuery(el).css('Transition', 'transform ' + fullPagePlugin.animationDuration + 'ms'); 
+                jQuery(el).css('Transition', 'transform ' + fullPagePlugin.animationDuration + 'ms');
                 $rootScope.$broadcast("scrollPage", sectiontoMove, index);
             };
 
             function initFn() {
                 var index = this.index;
                 $document.addEventListener('keydown', keydown);
-                $document.addEventListener('mousewheel', mousewheel);
-                $document.addEventListener('DOMMouseScroll', dOMMouseScroll);
+                $document.addEventListener('mousewheel', mousewheel, false);
+                $document.addEventListener('DOMMouseScroll', mousewheel, false);
                 makeActive(index, sections);
             }
 
             function destroyFn() {
                 $document.removeEventListener('keydown', keydown);
-                $document.removeEventListener('mousewheel', mousewheel, {passive: true});
-                $document.removeEventListener('DOMMouseScroll', dOMMouseScroll);
+                $document.removeEventListener('mousewheel', mousewheel);
+                $document.removeEventListener('DOMMouseScroll', mousewheel);
             }
 
             function mousewheel(event) {
                 event.preventDefault();
                 var time = new Date().getTime();
-                var delta = event.wheelDelta || -event.detail;
+                var delta = 0;
+                if (!event) event = window.event;
+                if (event.wheelDelta) {
+                    delta = event.wheelDelta / 120;
+                    if (window.opera) delta = -delta;
+                } else if (event.detail) {
+                    delta = -event.detail / 3;
+                }
+                if (delta)
+                    handle(delta);
                 var index = fullPagePlugin.index;
                 if (time - Math.abs(lastAnimation) < fullPagePlugin.animationDuration) {
                     return;
                 }
-                
-                if (delta < 0) {
-                    moveDown();
-                } else {
-                    moveUp();
+
+                function handle(delta) {
+                    if (delta < 0) {
+                        moveDown();
+                    } else {
+                        moveUp();
+                    }
                 }
+
                 lastAnimation = time;
             }
 
             function keydown() {
-                // body...
-            }
-
-            function dOMMouseScroll() {
                 // body...
             }
 
