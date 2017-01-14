@@ -31,13 +31,13 @@
                     color: #222222;
                 }
                 &.active {
-                    color: $gold-color !important;
+                    color: $gold-color;
                     border-bottom: 5px solid $gold-color;
                 }
             }
             .home-anchor {
                 &.active {
-                    color: $white-color !important;
+                    color: $white-color;
                     border-bottom: 5px solid $white-color;
                 }
             }
@@ -68,6 +68,15 @@
                     color: $black-color;
                     &:hover {
                         color: $gold-color;
+                    }
+                    &.active {
+                        color: $gold-color;
+                    }
+                }
+                .home-anchor {
+                    &.active {
+                        color: $gold-color;
+                        border-bottom: 5px solid $gold-color;
                     }
                 }
             }
