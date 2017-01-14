@@ -19,7 +19,7 @@
         vm.portfolioClick = function() {
             jQuery(".home-anchor").addClass('active');
         };
-        vm.getMore = function () {
+        vm.getMore = function() {
             var target = jQuery('.nav li a')[1];
             jQuery(target).addClass('active');
         };
@@ -68,7 +68,6 @@
             var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
             var anchorLinksTargetPagination = jQuery(anchorLinksPagination[index]);
             anchorLinksTargetPagination.addClass('active');
-            var hassWhiteColor = $location.url() === '/#skills' || $location.url() === '/#contact';
             if (hasClass) {
                 $timeout(function() {
                     $rootScope.$broadcast("updateLocation", anchorLink);
@@ -111,5 +110,21 @@
             vm.loadPlugins();
         }, 500);
 
+
+        $scope.$watch(function() {
+            return $location.url();
+        }, function() {
+            changePaginationCircle();
+        });
+
+        function changePaginationCircle() {
+            var anchorLinksPagination = jQuery('.nav-pagination li a');
+            var hassWhiteColor = $location.url() === '/#work-education' || $location.url() === '/#contact';
+            if (hassWhiteColor) {
+                anchorLinksPagination.addClass('black-pagination-circle');
+            } else {
+                anchorLinksPagination.removeClass('black-pagination-circle');
+            }
+        }
     }
 })();
