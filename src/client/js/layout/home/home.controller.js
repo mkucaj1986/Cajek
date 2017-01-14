@@ -72,7 +72,7 @@
                 $timeout(function() {
                     $rootScope.$broadcast("updateLocation", anchorLink);
                     vm.scrollToElementFullpage(el, $event);
-                }, 100);
+                }, 70);
             }
             return vm.el;
         });
@@ -114,7 +114,9 @@
         $scope.$watch(function() {
             return $location.url();
         }, function() {
-            changePaginationCircle();
+            $timeout(function() {
+                changePaginationCircle();
+            });
         });
 
         function changePaginationCircle() {

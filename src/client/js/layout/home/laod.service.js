@@ -78,17 +78,6 @@
                 jQuery(anchorLinks[index]).addClass('active');
 
             };
-            // var paginationHTML = function(sections) {
-            //     var paginationList = '';
-            //     var bodyTag = jQuery('body')[0];
-            //     var pagination = document.createElement('ul');
-            //     for (var i = 0; i < sections.length; i++) {
-            //         paginationList += '<li><a data-index=\"' + i + '\" href=\"#' + i + '"\></a></li>';
-            //     }
-            //     pagination.setAttribute('class', 'slide-navigation');
-            //     pagination.innerHTML = paginationList;
-            //     bodyTag.appendChild(pagination);
-            // };
             var move = function(index) {
                 makeActive(index, sections);
                 var sectiontoMove = document.querySelectorAll('.is-active');
@@ -102,24 +91,24 @@
                 $document.addEventListener('keydown', keydown);
                 $document.addEventListener('mousewheel', mousewheel);
                 $document.addEventListener('DOMMouseScroll', dOMMouseScroll);
-                // paginationHTML(sections);
                 makeActive(index, sections);
             }
 
             function destroyFn() {
                 $document.removeEventListener('keydown', keydown);
-                $document.removeEventListener('mousewheel', mousewheel);
+                $document.removeEventListener('mousewheel', mousewheel, {passive: true});
                 $document.removeEventListener('DOMMouseScroll', dOMMouseScroll);
             }
 
             function mousewheel(event) {
+                event.preventDefault();
                 var time = new Date().getTime();
                 var delta = event.wheelDelta || -event.detail;
                 var index = fullPagePlugin.index;
                 if (time - Math.abs(lastAnimation) < fullPagePlugin.animationDuration) {
                     return;
                 }
-
+                
                 if (delta < 0) {
                     moveDown();
                 } else {

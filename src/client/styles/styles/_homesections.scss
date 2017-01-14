@@ -140,6 +140,7 @@
     -webkit-animation: showElementOpacity 1s ease forwards;
     -o-animation: showElementOpacity 1s ease forwards;
     animation: showElementOpacity 1s ease forwards;
+    z-index: 9999;
 }
 
 // FOOTER

@@ -66,6 +66,9 @@
             li {
                 a {
                     color: $black-color;
+                    &:hover {
+                        color: $gold-color;
+                    }
                 }
             }
         }
