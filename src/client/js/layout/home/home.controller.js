@@ -38,17 +38,19 @@
         };
 
         vm.scrollToElement = function(element, $event) {
-            var anchorLinks = jQuery('.nav li a').removeClass('active');
+            var listTarget = jQuery($event.target).parent().parent();
+            jQuery('.main-nav-links li a').removeClass('active');
+            var anchorLinks = jQuery(listTarget).find('li a');
+            var mainNavLinks = jQuery('#navbar ul').find('li a');
             var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
             $event.preventDefault();
             var anchor = jQuery($event.target);
             var anchorIndex = anchorLinks.index(anchor);
             var anchorIndexPagination = anchorLinksPagination.index(anchor);
-            var anchorLinksTarget = jQuery(anchorLinks[anchorIndexPagination]);
+            var anchorLinksTarget = jQuery(mainNavLinks[anchorIndex]);
             var anchorLinksTargetPagination = jQuery(anchorLinksPagination[anchorIndex]);
             anchorLinksTarget.addClass('active');
             anchorLinksTargetPagination.addClass('active');
-            anchor.addClass('active');
             var someElement = angular.element(document.getElementById(element));
             var isNotLogo = anchor[0].id !== 'logo';
             $document.scrollToElementAnimated(someElement, 33, 900);

@@ -2,14 +2,17 @@
 	<div class="container">
 		<div class="clearfix"></div>
 		
-		<ul class="footer-nav">
+		<ul class="footer-nav main-nav-links">
 			<li>
-				<a href="#welcome" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('welcome', $event)">Welcome</a>
+				<a class="home-anchor" href="#home" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('home', $event);home.isScrollorClick()">Home</a>
 			</li>
-			<li><a href="#profile" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('profile', $event)">Profile</a></li>
-			<li><a href="#skills" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('skills', $event)">Skills</a></li>
-			<li><a href="#work-education" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('work-education', $event)">Work & Education</a></li>
-			<li><a href="#contact" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('contact', $event)">Contact</a></li>
+			<li>
+				<a href="#welcome" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('welcome', $event);home.isScrollorClick()">Welcome</a>
+			</li>
+			<li><a href="#profile" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('profile', $event);home.isScrollorClick()">Profile</a></li>
+			<li><a href="#skills" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('skills', $event);home.isScrollorClick()">Skills</a></li>
+			<li><a href="#work-education" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('work-education', $event);home.isScrollorClick()">Work & Education</a></li>
+			<li><a href="#contact" du-smooth-scroll du-scrollspy data-ng-click="home.scrollToElement('contact', $event);home.isScrollorClick()">Contact</a></li>
 			<li><a target="_new" href="src/files/michalkucajcv.pdf">CV</a></li>
 		</ul>
 		
@@ -44,7 +47,7 @@
 	</div>
 	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 copy">
 		<div class="container">
-		© {{home.date | date:'yyyy'}} Michal Kucaj
+			© {{home.date | date:'yyyy'}} Michal Kucaj
 		</div>
 	</div>
 </footer>
