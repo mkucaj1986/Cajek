@@ -43,11 +43,14 @@
                 var hash = $element.prop('hash');
                 if (hash) {
                     history.replaceState(null, null, hash);
+                    changePaginationColor(hash);
                 }
             }
             if (anchorSpy.status === 'off') {
                 return false;
             }
+
+
         });
 
         $rootScope.$on("updateLocation", function($event, el) {
@@ -55,8 +58,19 @@
             var hash = el.prop('hash');
             if (hash) {
                 history.replaceState(null, null, hash);
+                changePaginationColor(hash);
             }
         });
+
+        function changePaginationColor(hash) {
+            var hassWhiteColor = hash === '#work-education' || hash === '#contact';
+            var anchorLinksPagination = jQuery('.nav-pagination li a');
+            if (hassWhiteColor) {
+                anchorLinksPagination.addClass('black-pagination-circle');
+            } else {
+                anchorLinksPagination.removeClass('black-pagination-circle');
+            }
+        }
     }
     //Automaticly update location
 

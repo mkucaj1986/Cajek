@@ -1,10 +1,8 @@
 (function() {
     'use strict';
-
     angular
         .module('app.layout')
         .factory('loadService', loadService);
-
     /* @ngInject */
     function loadService($rootScope, $document) {
         var service = {
@@ -39,17 +37,29 @@
                 section: '.section',
                 init: initFn,
                 destroy: destroyFn,
-                animationDuration: 1100
+                animationDuration: 900
             };
             // Element
             var el = document.getElementById(element);
             // Index
             var index = fullPagePlugin.index;
-            // Sections 
+            // Sections
             var sections = document.querySelectorAll(fullPagePlugin.section);
-            // Last Animation 
+            // Last Animation
             var lastAnimation = fullPagePlugin.lastAnimation;
             // CORE FUNCTIONS
+            $rootScope.$on("setAnchorIndex", function($event, index) {
+                getIndex(index);
+            });
+            $rootScope.$on("setHomeIndex", function($event, index) {
+                getIndex(index);
+            });
+
+            function getIndex(idx) {
+                index = idx;
+                return index;
+            }
+
             function moveUp() {
                 if (index > 0) {
                     index = index - 1;
@@ -76,7 +86,6 @@
                 jQuery(sections[index]).addClass('is-active');
                 jQuery(paginationLinks[index]).addClass('is-active');
                 jQuery(anchorLinks[index]).addClass('active');
-
             };
             var move = function(index) {
                 makeActive(index, sections);
@@ -86,8 +95,8 @@
                 $rootScope.$broadcast("scrollPage", sectiontoMove, index);
             };
 
-            function initFn() {
-                var index = this.index;
+            function initFn(index) {
+                index = index;
                 $document.addEventListener('keydown', keydown);
                 $document.addEventListener('mousewheel', mousewheel, false);
                 $document.addEventListener('DOMMouseScroll', mousewheel, false);
@@ -104,6 +113,9 @@
                 event.preventDefault();
                 var time = new Date().getTime();
                 var delta = 0;
+                if (time - Math.abs(lastAnimation) < fullPagePlugin.animationDuration) {
+                    return;
+                }
                 if (!event) event = window.event;
                 if (event.wheelDelta) {
                     delta = event.wheelDelta / 120;
@@ -113,10 +125,6 @@
                 }
                 if (delta)
                     handle(delta);
-                var index = fullPagePlugin.index;
-                if (time - Math.abs(lastAnimation) < fullPagePlugin.animationDuration) {
-                    return;
-                }
 
                 function handle(delta) {
                     if (delta < 0) {
@@ -125,7 +133,6 @@
                         moveUp();
                     }
                 }
-
                 lastAnimation = time;
             }
 
@@ -133,12 +140,11 @@
                 // body...
             }
 
-            function startFullPage() {
-                fullPagePlugin.init();
+            function startFullPage(index) {
+                fullPagePlugin.init(index);
             }
-            startFullPage();
+            startFullPage(index);
             return fullPagePlugin;
         }
-
     }
 })();

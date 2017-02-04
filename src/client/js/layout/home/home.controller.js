@@ -16,8 +16,10 @@
             loadService.fullPage('main-sections');
         };
 
-        vm.portfolioClick = function() {
+        vm.goPortfolioLogo = function() {
+            var index = 0;
             jQuery(".home-anchor").addClass('active');
+            $rootScope.$broadcast("setHomeIndex", index);
         };
         vm.getMore = function() {
             var target = jQuery('.nav li a')[1];
@@ -48,13 +50,17 @@
             anchorLinksTargetPagination.addClass('active');
             anchor.addClass('active');
             var someElement = angular.element(document.getElementById(element));
-            $document.scrollToElementAnimated(someElement, 33, 1100);
+            var isNotLogo = anchor[0].id !== 'logo';
+            $document.scrollToElementAnimated(someElement, 33, 900);
+            if (isNotLogo) {
+                $rootScope.$broadcast("setAnchorIndex", anchorIndex);
+            }
         };
 
         vm.scrollToElementFullpage = function(element, $event) {
             $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
-            $document.scrollToElementAnimated(someElement, 33, 1100);
+            $document.scrollToElementAnimated(someElement, 33, 900);
         };
 
         vm.isScrollorClick = function() {
@@ -91,10 +97,6 @@
             }
         };
 
-        vm.isActive = function(route) {
-            // return route === $location.url();
-        };
-
         vm.calculateAge = function(dateString) {
             // birthday is a date
             var today = new Date();
@@ -110,23 +112,5 @@
             vm.loadPlugins();
         }, 500);
 
-
-        $scope.$watch(function() {
-            return $location.url();
-        }, function() {
-            $timeout(function() {
-                changePaginationCircle();
-            }, 100);
-        });
-
-        function changePaginationCircle() {
-            var anchorLinksPagination = jQuery('.nav-pagination li a');
-            var hassWhiteColor = $location.url() === '/#work-education' || $location.url() === '/#contact';
-            if (hassWhiteColor) {
-                anchorLinksPagination.addClass('black-pagination-circle');
-            } else {
-                anchorLinksPagination.removeClass('black-pagination-circle');
-            }
-        }
     }
 })();
