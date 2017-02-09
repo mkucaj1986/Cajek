@@ -1,12 +1,14 @@
 // CONFIG
 var express = require('express');
 var app = express();
+const config = require('./config/config');
 
 var http = require('http');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
+const nodemailer = require('./email/emailTransporter');
 
 // view engine setup
 app.set('views', path.join(__dirname, '../client/views'));

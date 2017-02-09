@@ -86,18 +86,6 @@
         });
 
         vm.date = new Date();
-        // CONTACT FORM
-        vm.data = {};
-        vm.invalidClass = false;
-        vm.sendEmail = function(contactForm) {
-            vm.submitClicked = true;
-            if (contactForm.$valid) {
-                console.log('mailSent');
-                console.log(vm.data);
-            } else {
-                vm.invalidClass = true;
-            }
-        };
 
         vm.calculateAge = function(dateString) {
             // birthday is a date
