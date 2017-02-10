@@ -194,37 +194,37 @@
     </div>
 </section>
 <!--CONTACT-->
-<section id="contact" class="sections contact section">
+<section id="contact" class="sections contact section" data-ng-controller="contactCtrl as contact">
     <div class="container">
         <h1>Contact Form</h1>
         <div class="contact-box center-block">
             <form name="contactForm"> 
                 <div class="form-group">
                     <label for="">Name</label>
-                    <input data-ng-model="home.data.name" name="name" type="text" placeholder="name" required/>
+                    <input data-ng-model="contact.data.name" name="name" type="text" placeholder="name" required/>
                     <div class="clearfix"></div>
-                    <div class="validation-message-box" data-ng-show="home.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">
-                        <span class="validation-message-invalid" data-ng-show="home.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">Please provide your name</span>
+                    <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">
+                        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">Please provide your name</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="">Email:</label>
-                    <input data-ng-model="home.data.email" name="email" type="email" placeholder="email" required/>
+                    <input data-ng-model="contact.data.email" name="email" type="email" placeholder="email" required/>
                     <div class="clearfix"></div>
-                    <div class="validation-message-box" data-ng-show="home.submitClicked && contactForm.email.$error.required || contactForm.email.$error.email || contactForm.email.$error.$touched">
-                        <span class="validation-message-invalid" data-ng-show="home.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched">Please provide your email</span>
-                        <span class="validation-message-invalid" data-ng-show="home.submitClicked && contactForm.email.$error.email">Wrong email</span>
+                    <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.email || contactForm.email.$error.$touched">
+                        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched">Please provide your email</span>
+                        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.email">Wrong email</span>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="">Message:</label>
-                    <textarea data-ng-model="home.data.message" name="message" name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
+                    <textarea data-ng-model="contact.data.message" name="message" name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
                     <div class="clearfix"></div>
-                    <div class="validation-message-box" data-ng-show="home.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">
-                        <span class="validation-message-invalid" data-ng-show="home.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">Please provide your message</span>
+                    <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">
+                        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">Please provide your message</span>
                     </div>
                 </div>
-                <a href="" class="contact-send pull-right" data-ng-click="home.sendEmail(contactForm)">SEND</a>
+                <a href="" class="contact-send pull-right" data-ng-click="contact.sendEmail(contactForm)">SEND</a>
             </form>
         </div>
         <div class="contact-code-block"></div>
