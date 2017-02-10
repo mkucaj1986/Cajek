@@ -8,7 +8,7 @@
         var directive = {
             link: link,
             restrict: 'EAC',
-            scope: false
+            scope: {}
         };
         return directive;
 

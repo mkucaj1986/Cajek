@@ -22,9 +22,12 @@
         </div>
     </div>
 </section>
-<!--FIRST SECTION-->
+<!--WELCOME SECTION-->
 <section id="welcome" class="sections first-section section">
     <div class="container">
+    <div id="welcome-animation" data-ng-if="$root.welcomeDir">
+        <welcome-animation slideDirection="slideLeft"></welcome-animation>
+    </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
                 Hi! my name is Michael <br />
@@ -85,6 +88,9 @@
 <!--PROFILE-->
 <section id="profile" class="sections profile section">
     <div class="container">
+    <div id="profile-animation" data-ng-if="$root.profileDir">
+        <welcome-animation slideDirection="slideRight"></welcome-animation>
+    </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 

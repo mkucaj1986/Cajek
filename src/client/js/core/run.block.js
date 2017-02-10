@@ -14,7 +14,9 @@
         console.log('config');
     }
 
-    function runBlock($rootScope, $location, $timeout) {
+    function runBlock($rootScope, $location, $timeout, animationService) {
+        $rootScope.welcomeDir = false;
+        $rootScope.profileDir = false;
         var anchorSpy = {
             status: 'on',
             isScroll: ''
@@ -44,6 +46,7 @@
                 if (hash) {
                     history.replaceState(null, null, hash);
                     changePaginationColor(hash);
+                    imageAnimation(hash);
                 }
             }
             if (anchorSpy.status === 'off') {
@@ -59,6 +62,7 @@
             if (hash) {
                 history.replaceState(null, null, hash);
                 changePaginationColor(hash);
+                imageAnimation(hash);
             }
         });
 
@@ -69,6 +73,27 @@
                 anchorLinksPagination.addClass('black-pagination-circle');
             } else {
                 anchorLinksPagination.removeClass('black-pagination-circle');
+            }
+        }
+
+        function imageAnimation(hash) {
+            var welcome = hash === '#welcome';
+            var profile = hash === '#profile';
+            if (welcome) {
+                $timeout(function() {
+                    animationService.imgAnimation(hash);
+                }, 700);
+            } else {
+                $rootScope.welcomeDir = false;
+                $rootScope.$apply();
+            }
+            if (profile) {
+                $timeout(function() {
+                    animationService.imgAnimation(hash);
+                }, 700);
+            } else {
+                $rootScope.profileDir = false;
+                $rootScope.$apply();
             }
         }
     }
