@@ -26,7 +26,7 @@ var port = process.env.PORT || config.defaultPort;
 gulp.task('build', function(cb) {
     gulpSequence(['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
 });
-// BUILD
+// DEFAULT
 gulp.task('default', function(cb) {
     gulpSequence(['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
 });

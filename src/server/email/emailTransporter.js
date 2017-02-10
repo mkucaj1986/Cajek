@@ -1,19 +1,20 @@
 const nodemailer = require('nodemailer');
 const config = require('../config/config');
 
-function send(subject, body, from, callback) {
-  var smtpTransport = nodeMailer.createTransport(config.smtpConfig);
-  var mailOptions = { 
-      to: config.emailTo,
-      from: 'MK',
-      subject: 'MK',
-      html: 'TEST'
-  };
-  smtpTransport.sendMail(mailOptions, function(err, response) {
-      callback(err);
-  });
+let sendEmail = function(req, res, next) {
+    let transporter = nodemailer.createTransport(config.email.smtpConfig);
+    let mailOptions = {
+        to: config.email.emailTo,
+        from: req.body.email,
+        subject: req.body.email,
+        html: req.body.message
+    };
+    transporter.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            return console.log(error);
+        }
+        res.status(200).json({ success: (error == undefined) });
+    });
 }
 
-module.exports = { 
-  send: send
-}
+module.exports = sendEmail;
