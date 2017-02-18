@@ -11,7 +11,13 @@
         return service;
 
         function sendEmail(emailData) {
-            return $http.post('/contact', emailData);
+            return $http.post('/contactForm', emailData)
+                .success(function(data) {
+                    console.log(data);
+                })
+                .error(function(err) {
+                    console.log(err);
+                });
         }
     }
 })();
