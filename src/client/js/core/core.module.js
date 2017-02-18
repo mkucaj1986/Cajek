@@ -7,6 +7,7 @@
             'ngAnimate',
             'ngSanitize',
             'duScroll',
+            'angular-growl',
             'ui.router'
         ]);
     console.log('core');
