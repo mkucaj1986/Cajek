@@ -1,18 +1,28 @@
 // CONFIG
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
+const exphbs = require('express-handlebars');
+
 const config = require('./config/config');
 
-var http = require('http');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
-var routes = require('./routes/index');
+const http = require('http');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
+const routes = require('./routes/index');
 const nodemailer = require('./email/emailTransporter');
 
 // view engine setup
+const hbs = exphbs.create({
+    defaultLayout: 'layout',
+    extname: '.hbs',
+    partialsDir: [
+        '../client/views/'
+    ]
+});
 app.set('views', path.join(__dirname, '../client/views'));
-app.set('view engine', 'hbs');
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: false
@@ -22,8 +32,8 @@ app.use(express.static(path.join(__dirname, '../client/')));
 /**
  * Get port from environment and store in Express.
  */
-var port = normalizePort(process.env.PORT || '3000');
-var environment = process.env.NODE_ENV;
+const port = normalizePort(process.env.PORT || '3000');
+const environment = process.env.NODE_ENV;
 app.set('port', port);
 
 switch (environment) {
@@ -39,14 +49,14 @@ switch (environment) {
         app.use(express.static('./'));
         app.use(express.static('./.tmp'));
         // Any deep link calls should return index.html
-        app.use('/*', routes);
+        app.use('/', routes);
         break;
 }
 /**
  * Create HTTP server.
  */
 
-var server = http.createServer(app);
+const server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
@@ -61,7 +71,7 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-    var port = parseInt(val, 10);
+    const port = parseInt(val, 10);
 
     if (isNaN(port)) {
         // named pipe
@@ -85,7 +95,7 @@ function onError(error) {
         throw error;
     }
 
-    var bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
+    const bind = typeof port === 'string' ? 'Pipe ' + port : 'Port ' + port;
 
     // handle specific listen errors with friendly messages
     switch (error.code) {
@@ -107,14 +117,14 @@ function onError(error) {
  */
 
 function onListening() {
-    var addr = server.address();
-    var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+    const addr = server.address();
+    const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
     console.log('Listening on ' + bind);
 }
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
+    const err = new Error('Not Found');
     err.status = 404;
     next(err);
 });

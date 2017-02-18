@@ -1,20 +1,17 @@
-'use strict';
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const config = require('../config/config');
+const sendEmail = require('../email/emailTransporter');
+const nodemailer = require('nodemailer');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/*', function(req, res, next) {
     var vm = {
         title: 'Portfolio'
     };
-    res.render('index', vm);
+    res.render('index.hbs', vm);
 });
 /* GET Contact page. */
-router.get('/contactForm', function(req, res, next) {
-	var vm = {
-	    title: 'Contact Page'
-	};
-    res.render('contactForm', vm);
-});
+router.post('/contactForm', sendEmail);
 
 module.exports = router;
