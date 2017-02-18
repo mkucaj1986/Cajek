@@ -6,7 +6,8 @@
         .config(config)
         .run(runBlock);
 
-    function config($urlRouterProvider, $locationProvider, $anchorScrollProvider) {
+    function config($urlRouterProvider, $locationProvider, $anchorScrollProvider, growlProvider) {
+        growlProvider.globalTimeToLive(4000);
         // use the HTML5 History API
         $anchorScrollProvider.disableAutoScrolling();
         $locationProvider.html5Mode(true);
