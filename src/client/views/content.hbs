@@ -25,10 +25,10 @@
 <!--WELCOME SECTION-->
 <section id="welcome" class="sections first-section section">
     <div class="container">
-    <div id="welcome-animation" data-ng-if="$root.welcomeDir">
-        <welcome-animation slideDirection="slideLeft"></welcome-animation>
-    </div>
         <div class="row">
+        <div id="welcome-animation" data-ng-if="$root.welcomeDir">
+            <welcome-animation slideDirection="slideLeft"></welcome-animation>
+        </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
                 Hi! my name is Michael <br />
                 I'm a <span data-ng-bind="home.calculateAge('1986/10/29')"></span> year old <br />
@@ -88,9 +88,9 @@
 <!--PROFILE-->
 <section id="profile" class="sections profile section">
     <div class="container">
-    <div id="profile-animation" data-ng-if="$root.profileDir">
-        <welcome-animation slideDirection="slideRight"></welcome-animation>
-    </div>
+        <div id="profile-animation" data-ng-if="$root.profileDir">
+            <welcome-animation slideDirection="slideRight"></welcome-animation>
+        </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                 
@@ -121,6 +121,9 @@
 <section id="skills" class="sections skills section">
     <div class="container">
         <div class="row">
+        <div id="skills-animation" class="skills-aniamtion" data-ng-if="$root.skillsDir">
+            <welcome-animation slideDirection="circular"></welcome-animation>
+        </div> 
             <div class="skills-wrapp">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
                     <ul>
@@ -205,7 +208,7 @@
         <h1>Contact Form</h1>
         <div growl></div>
         <div class="contact-box center-block">
-            <form name="contactForm"> 
+            <form name="contactForm">
                 <div class="form-group">
                     <label for="">Name</label>
                     <input data-ng-model="contact.data.name" name="name" type="text" placeholder="name" required/>

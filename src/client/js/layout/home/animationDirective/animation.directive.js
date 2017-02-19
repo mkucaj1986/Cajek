@@ -29,6 +29,14 @@
                     $compile(template)(scope);
                 });
             }
+            if(attrs.slidedirection === 'circular'){
+                $templateRequest('src/client/js/layout/home/animationDirective/animationTplCircular.hbs').then(function(html) {
+                    var template = angular.element(html);
+                    element.append(template);
+                    // element.addClass('fade-in');
+                    $compile(template)(scope);
+                });
+            }
         }
     }
 })();

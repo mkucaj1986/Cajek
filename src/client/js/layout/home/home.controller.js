@@ -38,12 +38,12 @@
         };
 
         vm.scrollToElement = function(element, $event) {
+            $event.preventDefault();
             var listTarget = jQuery($event.target).parent().parent();
             jQuery('.main-nav-links li a').removeClass('active');
             var anchorLinks = jQuery(listTarget).find('li a');
             var mainNavLinks = jQuery('#navbar ul').find('li a');
             var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
-            $event.preventDefault();
             var anchor = jQuery($event.target);
             var anchorIndex = anchorLinks.index(anchor);
             var anchorIndexPagination = anchorLinksPagination.index(anchor);

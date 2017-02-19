@@ -17,6 +17,9 @@
             if (el === '#profile') {
                 $rootScope.profileDir = true;
             }
+            if (el === '#skills') {
+                $rootScope.skillsDir = true;
+            }
         }
     }
 })();

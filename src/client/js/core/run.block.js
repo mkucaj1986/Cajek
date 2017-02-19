@@ -80,6 +80,7 @@
         function imageAnimation(hash) {
             var welcome = hash === '#welcome';
             var profile = hash === '#profile';
+            var skills = hash === '#skills';
             if (welcome) {
                 $timeout(function() {
                     animationService.imgAnimation(hash);
@@ -94,6 +95,14 @@
                 }, 700);
             } else {
                 $rootScope.profileDir = false;
+                $rootScope.$apply();
+            }
+            if (skills) {
+                $timeout(function() {
+                    animationService.imgAnimation(hash);
+                }, 300);
+            } else {
+                $rootScope.skillsDir = false;
                 $rootScope.$apply();
             }
         }

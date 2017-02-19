@@ -15,6 +15,37 @@
         opacity: 1;
     }
 }
+.fade-in{
+    -webkit-animation: showElementOpacity 1s ease forwards;
+    -o-animation: showElementOpacity 1s ease forwards;
+    animation: showElementOpacity 1s ease forwards;
+}
+
+.fade-in-3{
+    -webkit-animation: showElementOpacity 3s ease forwards;
+    -o-animation: showElementOpacity 3s ease forwards;
+    animation: showElementOpacity 3s ease forwards;
+}
+.fade-in-4{
+    -webkit-animation: showElementOpacity 4s ease forwards;
+    -o-animation: showElementOpacity 4s ease forwards;
+    animation: showElementOpacity 4s ease forwards;
+}
+.fade-in-5{
+    -webkit-animation: showElementOpacity 5s ease forwards;
+    -o-animation: showElementOpacity 5s ease forwards;
+    animation: showElementOpacity 5s ease forwards;
+}
+.fade-in-6{
+    -webkit-animation: showElementOpacity 6s ease forwards;
+    -o-animation: showElementOpacity 6s ease forwards;
+    animation: showElementOpacity 6s ease forwards;
+}
+.fade-in-7{
+    -webkit-animation: showElementOpacity 7s ease forwards;
+    -o-animation: showElementOpacity 7s ease forwards;
+    animation: showElementOpacity 7s ease forwards;
+}
 // SLIDE LEFT
 @-webkit-keyframes slide-left {
     from {

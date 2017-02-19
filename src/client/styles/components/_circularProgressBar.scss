@@ -1,0 +1,88 @@
+/* Load animation */
+
+@-webkit-keyframes load {
+    0% {
+        stroke-dashoffset: 0
+    }
+}
+
+@-moz-keyframes load {
+    0% {
+        stroke-dashoffset: 0
+    }
+}
+
+@keyframes load {
+    0% {
+        stroke-dashoffset: 0
+    }
+}
+
+
+/* Container */
+
+.progress-cir {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+}
+
+
+/* Item */
+
+.progress-cir>li {
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    font-family: Lato;
+    font-size: 16px;
+    font-weight: 200;
+    margin: 2rem;
+}
+
+.progress-cir>li:before {
+    content: attr(data-name);
+    position: absolute;
+    width: 100%;
+    bottom: -2rem;
+    font-weight: 400;
+}
+
+.progress-cir>li:after {
+    content: attr(data-percent);
+    position: absolute;
+    width: 100%;
+    top: 3.7rem;
+    left: 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.progress-cir svg {
+    width: 10rem;
+    height: 10rem;
+}
+
+.progress-cir svg:nth-child(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+}
+
+.progress-cir svg:nth-child(2) path {
+    fill: none;
+    stroke-width: 12;
+    stroke-dasharray: 629;
+    stroke: #fff;
+    -webkit-animation: load 10s;
+    -moz-animation: load 10s;
+    -o-animation: load 10s;
+    animation: load 10s;
+}
