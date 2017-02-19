@@ -2,9 +2,9 @@
     'use strict';
     angular
         .module('app.layout')
-        .directive('welcomeAnimation', welcomeAnimation);
+        .directive('animationDirective', animationDirective);
     /* @ngInject */
-    function welcomeAnimation($window, $compile, $templateRequest) {
+    function animationDirective($window, $compile, $templateRequest) {
         var directive = {
             link: link,
             restrict: 'EAC',

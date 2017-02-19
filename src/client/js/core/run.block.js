@@ -16,6 +16,13 @@
     }
 
     function runBlock($rootScope, $location, $timeout, animationService) {
+        $rootScope.isNotMobile = (function() {
+            if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
+                return true;
+            } else {
+                return false;
+            }
+        })();
         $rootScope.iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
         var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
 
