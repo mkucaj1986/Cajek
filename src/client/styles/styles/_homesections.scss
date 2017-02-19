@@ -8,6 +8,7 @@
         padding: 70px 0;
         width: 100%;
         @media screen and (max-width: $mobile) {
+            padding: 55px 0;
             min-height: auto;
         }
     }
@@ -42,7 +43,7 @@
                     margin: 10px 0 5px 0;
                 }
                 p {
-                    font-size: 14px;
+                    font-size: 1.2rem;
                     margin: 0;
                 }
             }
@@ -193,6 +194,12 @@
     }
 }
 
+.go-up-arrow-iOS {
+    @media screen and (max-width: $mobile) {
+        bottom: 35px;
+    }
+}
+
 // FOOTER
 .footer {
     border: 1px solid #000;
@@ -247,7 +254,7 @@
     @media screen and (max-width: $mobile) {
         top: auto;
         bottom: 1%;
-        right: 10px;
+        right: 5px;
     }
     & > li {
         position: relative;
@@ -264,8 +271,8 @@
             z-index: 999999;
             transition: all 0.4s ease;
             @media screen and (max-width: $mobile) {
-                height: 16px;
-                width: 16px;
+                height: 18px;
+                width: 18px;
             }
             &.active {
                 background: #fff;

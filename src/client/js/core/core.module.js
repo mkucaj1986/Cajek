@@ -7,6 +7,7 @@
             'ngAnimate',
             'ngSanitize',
             'ngTouch',
+            'ng-fastclick',
             'duScroll',
             'angular-growl',
             'ui.router'

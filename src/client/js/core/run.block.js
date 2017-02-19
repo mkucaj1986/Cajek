@@ -16,6 +16,14 @@
     }
 
     function runBlock($rootScope, $location, $timeout, animationService) {
+        $rootScope.iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
+        var iOS = navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false;
+
+        if ('addEventListener' in document && iOS) {
+            document.addEventListener('DOMContentLoaded', function() {
+                FastClick.attach(document.body);
+            }, false);
+        }
         $rootScope.welcomeDir = false;
         $rootScope.profileDir = false;
         var anchorSpy = {
