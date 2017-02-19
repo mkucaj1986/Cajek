@@ -27,6 +27,9 @@
     flex-direction: column;
     padding: 0;
     text-align: center;
+    @media screen and (max-width: $mobile) {
+        flex-direction: row;
+    }
 }
 
 
@@ -41,6 +44,10 @@
     font-size: 16px;
     font-weight: 200;
     margin: 2rem;
+    @media screen and (max-width: $mobile) {
+        margin: 1% 3%;
+        font-size: 1.2rem;
+    }
 }
 
 .progress-cir>li:before {
@@ -59,11 +66,19 @@
     left: 0;
     font-size: 2rem;
     text-align: center;
+    @media screen and (max-width: $mobile) {
+        top: 1.4rem;
+        font-size: 1.5rem;
+    }
 }
 
 .progress-cir svg {
     width: 10rem;
     height: 10rem;
+    @media screen and (max-width: $mobile) {
+        width: 5rem;
+        height: 5rem;
+    }
 }
 
 .progress-cir svg:nth-child(2) {

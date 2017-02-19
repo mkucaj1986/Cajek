@@ -141,9 +141,15 @@
             margin: 20px 0 0 0;
         }
     }
-    .btn-bordered{
+    .btn-bordered {
         @media screen and (max-width: $mobile) {
-            font-size:  16px;
+            font-size: 16px;
         }
+    }
+}
+
+.main-list-box .main-list-header {
+    @media screen and (max-width: $mobile) {
+        text-align: center;
     }
 }

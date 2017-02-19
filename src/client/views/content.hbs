@@ -55,7 +55,7 @@
         </div>
         <div class="row welcome-row">
             <div id="animation-directive" data-ng-if="$root.welcomeDir">
-                <animation-directive slideDirection="slideLeft"></animation-directive>
+                <animation-directive slideDirection="slideLeft" data-ng-if="!$root.isNotMobile"></animation-directive>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
                 Hi! my name is Michael <br />
@@ -117,7 +117,7 @@
 <section id="profile" class="sections profile section">
     <div class="container">
         <div id="profile-animation" data-ng-if="$root.profileDir">
-            <animation-directive slideDirection="slideRight"></animation-directive>
+            <animation-directive slideDirection="slideRight" data-ng-if="!$root.isNotMobile"></animation-directive>
         </div>
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
@@ -153,7 +153,7 @@
                 <animation-directive slideDirection="circular"></animation-directive>
             </div>
             <div class="skills-wrapp">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
+                <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
                     <ul>
                         <li class="main-list-header">Personality</li>
                         <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>creativity</li>
@@ -166,7 +166,7 @@
                         <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>time management</li>
                     </ul>
                 </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
+                <div class="col-xs-7 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
                     <ul>
                         <li class="main-list-header">Technical</li>
                         <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>css3 & html5</li>
@@ -184,7 +184,7 @@
                 </div>
             </div>
             <div class="clearfix"></div>
-            <div class="skills-code-block center-block"></div>
+            <div class="skills-code-block center-block" data-ng-if="!$root.isNotMobile"></div>
         </div>
     </div>
 </section>
