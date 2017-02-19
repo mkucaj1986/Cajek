@@ -26,6 +26,9 @@
             a {
                 color: #fff;
                 font-size: 1.6em;
+                @media screen and (max-width: $mobile) {
+                    color: #f2dede;
+                }
                 &:hover {
                     background-color: transparent;
                     color: #222222;
@@ -33,12 +36,18 @@
                 &.active {
                     color: $gold-color;
                     border-bottom: 5px solid $gold-color;
+                    @media screen and (max-width: $mobile) {
+                        border-bottom: 0;
+                    }
                 }
             }
             .home-anchor {
                 &.active {
                     color: $white-color;
                     border-bottom: 5px solid $white-color;
+                    @media screen and (max-width: $mobile) {
+                        border-bottom: 0;
+                    }
                 }
             }
         }
@@ -55,10 +64,29 @@
     }
     .sticky-nav {
         background-color: $white-color;
+        @media screen and (max-width: $mobile) {
+            background-color: transparent;
+        }
         border-bottom: 3px solid $gold-color;
         -moz-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
         -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
         box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+        .navbar-header {
+            @media screen and (max-width: $mobile) {
+                background-color: #fff;
+            }
+            .navbar-toggle {
+                background-color: #ccc;
+                border-color: #000;
+                color: #000;
+                .icon-bar {
+                    background-color: #000;
+                }
+                &.collapsed {
+                    background-color: #fff;
+                }
+            }
+        }
         .navbar-brand {
             color: $black-color;
         }
@@ -81,5 +109,54 @@
                 }
             }
         }
+    }
+}
+
+// Mobile
+.navbar-default .navbar-toggle .icon-bar {
+    @media screen and (max-width: $mobile) {
+        background-color: #fff;
+    }
+}
+
+.navbar-default .navbar-toggle {
+    @media screen and (max-width: $mobile) {
+        border-color: #fff;
+        color: #fff;
+    }
+}
+
+.navbar-default {
+    .navbar-collapse {
+        @media screen and (max-width: $mobile) {
+            padding: 0;
+        }
+        .nav {
+            @media screen and (max-width: $mobile) {
+                background-color: rgba(0, 0, 0, 0.5);
+                margin: 0;
+                text-align: center;
+                width: 100%;
+            }
+            li {
+                a {
+                    @media screen and (max-width: $mobile) {
+                        color: #f2dede;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.navbar-default .navbar-toggle:hover {
+    @media screen and (max-width: $mobile) {
+        background-color: #fff;
+    }
+}
+
+.navbar-default .navbar-toggle:focus {
+    @media screen and (max-width: $mobile) {
+        background-color: transparent;
     }
 }

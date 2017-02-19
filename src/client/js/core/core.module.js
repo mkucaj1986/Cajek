@@ -6,6 +6,7 @@
             /* Angular modules */
             'ngAnimate',
             'ngSanitize',
+            'ngTouch',
             'duScroll',
             'angular-growl',
             'ui.router'

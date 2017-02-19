@@ -26,6 +26,10 @@
                     smoothscroll: true,
                     zindex: 99999999
                 });
+                // Hide bootstrap menu on click
+                $("#navbar").find("li a").on("click", function() {
+                    $('.navbar-collapse.in').collapse('hide');
+                });
             });
         }
 

@@ -1,5 +1,11 @@
 .social-box {
     padding: 0 0 25px 0;
+    @media screen and (max-width: $mobile) {
+        position: absolute;
+        right: 70px;
+        top: 0;
+        padding: 0;
+    }
     .screen-reader-only {
         border: 0;
         clip: rect(0, 0, 0, 0);
@@ -44,6 +50,10 @@
         position: relative;
         top: 10px;
         padding: 0 15px;
+        @media screen and (max-width: $mobile) {
+            top:0;
+            padding: 10px 0 0 0;
+        }
         li {
             margin: 0 3px;
         }

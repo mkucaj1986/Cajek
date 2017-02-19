@@ -7,7 +7,9 @@
         float: left;
         padding: 70px 0;
         width: 100%;
-        min-height: 960px;
+        @media screen and (max-width: $mobile) {
+            min-height: auto;
+        }
     }
     // FIRST SECTIOBN
     .first-section {
@@ -15,9 +17,44 @@
         color: #fff;
         font-size: 48px;
         text-align: center;
+        .welcome-row {
+            display: inline-block;
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
+        }
+        .welcome-row-mobile {
+            display: none;
+            @media screen and (max-width: $mobile) {
+                display: inline-block;
+            }
+            .welcome-row-mobile-txt {
+                background-color: #fff;
+                float: left;
+                color: #000;
+                display: inline-block;
+                margin: 10px 0 0 0;
+                width: 90%;
+                padding: 0 10px 10px 7px;
+                text-align: left;
+                h3 {
+                    font-size: 18px;
+                    margin: 10px 0 5px 0;
+                }
+                p {
+                    font-size: 14px;
+                    margin: 0;
+                }
+            }
+        }
         .welcome-box {
             background: transparent url('../src/client/assets/img/code/3.png') no-repeat center top;
             padding: 140px 0 60px;
+            @media screen and (max-width: $mobile) {
+                padding: 0;
+                font-size: 16px;
+                background: none;
+            }
         }
         .welcome-bottom {
             color: $black-color;
@@ -25,6 +62,10 @@
             font-family: 'latoblack';
             line-height: 1.3em;
             text-align: center;
+            @media screen and (max-width: $mobile) {
+                font-size: 16px;
+                padding: 10px 0 0 0;
+            }
         }
         .welcome-bottom-specialise {
             color: $white-color;
@@ -105,7 +146,7 @@
             display: block;
             height: 400px;
         }
-        .skills-aniamtion{
+        .skills-aniamtion {
             position: absolute;
         }
     }
@@ -144,6 +185,12 @@
     -o-animation: showElementOpacity 1s ease forwards;
     animation: showElementOpacity 1s ease forwards;
     z-index: 9999;
+    @media screen and (max-width: $mobile) {
+        background-size: contain;
+        height: 40px;
+        width: 40px;
+        right: 30px;
+    }
 }
 
 // FOOTER
@@ -196,10 +243,17 @@
     bottom: 0;
     right: 32px;
     text-align: center;
+    z-index: 99999;
+    @media screen and (max-width: $mobile) {
+        top: auto;
+        bottom: 1%;
+        right: 10px;
+    }
     & > li {
         position: relative;
         display: block;
         margin-bottom: 12px;
+        z-index: 99999;
         & > a {
             display: block;
             height: 13px;
@@ -207,8 +261,12 @@
             border: 3px solid #fff;
             border-radius: 50%;
             background: transparent;
-            z-index: 1;
+            z-index: 999999;
             transition: all 0.4s ease;
+            @media screen and (max-width: $mobile) {
+                height: 16px;
+                width: 16px;
+            }
             &.active {
                 background: #fff;
             }

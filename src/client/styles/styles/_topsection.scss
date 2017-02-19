@@ -18,11 +18,15 @@
         top: 3px;
         width: 230px;
         z-index: 999999;
+        @media screen and (max-width: $mobile) {
+            display: none;
+        }
     }
     h2 {
         margin: 0;
         @media screen and (max-width: $mobile) {
-            font-size: 26px;
+            font-size: 22px;
+            line-height: 1.2em;
         }
     }
     .scroller {
@@ -62,9 +66,10 @@
         background-color: rgba(0, 28, 76, 0.67);
         padding: 30px;
         border: 5px solid #fffcf4;
-        ;
         @media screen and (max-width: $mobile) {
-            top: 15%;
+            width: 95%;
+            top: 5%;
+            padding: 15px 10px 63px 10px;
             -webkit-transform: translateY(-15%);
             -moz-transform: translateY(-15%);
             -ms-transform: translateY(-15%);
@@ -96,7 +101,9 @@
     right: 0;
     height: 517px;
     @media screen and (max-width: $mobile) {
+        bottom: 50px;
         height: auto;
+        max-height: 30vh;
     }
     .top-bg-box {
         position: $posrel;
@@ -104,7 +111,7 @@
         height: 517px;
         width: 100%;
         @media screen and (max-width: $mobile) {
-            background-size: cover;
+            background-size: contain;
             height: 100%;
             min-height: 215px;
         }
@@ -129,4 +136,17 @@
 .btn-lg {
     font-size: 18px;
     line-height: 1.33;
+}
+
+.top-buttons-box {
+    .btn-primary {
+        @media screen and (max-width: $mobile) {
+            margin: 20px 0 0 0;
+        }
+    }
+    .btn-bordered{
+        @media screen and (max-width: $mobile) {
+            font-size:  16px;
+        }
+    }
 }

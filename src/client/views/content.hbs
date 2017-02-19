@@ -2,7 +2,7 @@
 <section id="home" class="sections top-section section">
     <div class="hello-world"></div>
     <div class="block-center">
-        <h2 class="main-title">Michal Kucaj <span class="text-primary">FRONT END</span> DEVELOPER</h2>
+        <h2 class="main-title">Michal Kucaj <br class="mobile-breakline"/><span class="text-primary">FRONT END</span> DEVELOPER</h2>
         <blockquote class="scroller">
             <p>Welcome in my <span class="text-primary">Portfolio</span> take a look <span class="text-primary">more</span> about Me and my services</p>
             <div class="top-buttons-box">
@@ -15,20 +15,48 @@
             </div>
         </blockquote>
     </div>
-    <div class="container">
-        <div class="top-bg">
-            <div class="top-bg-box">
-            </div>
+    
+    <div class="top-bg">
+        <div class="top-bg-box">
         </div>
     </div>
 </section>
 <!--WELCOME SECTION-->
 <section id="welcome" class="sections first-section section">
     <div class="container">
-        <div class="row">
-        <div id="welcome-animation" data-ng-if="$root.welcomeDir">
-            <welcome-animation slideDirection="slideLeft"></welcome-animation>
+        <div class="row welcome-row-mobile">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
+                Hi! my name is Michael <br />
+                I'm a <span data-ng-bind="home.calculateAge('1986/10/29')"></span> year old <br />
+                <span class="text-primary">FRONT END</span> DEVELOPER
+                nice to meet you!
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-21 col-lg-12 welcome-bottom">
+                WHAT CAN I DO?
+                <div class="clearfix"></div>
+                I SPECIALISE IN...
+            </div>
+            <div class="welcome-row-mobile-txt">
+                <h3 class="text-primary">HTML / CSS</h3>
+                <p>
+                    I have used HTML / CSS (sass) on a wide variety of projects, from Responsive Websites, dynamic websites to large scale web applications.
+                </p>
+                <h3 class="text-primary">JAVASCRIPT</h3>
+                <p>
+                    Working with Javascript the front end full stack (such as AngularJS, Node.js & Gulp) I am able to make, solid dynamic responsive single page apps.
+                </p>
+                <h3 class="text-primary">WEB DEVELOPMENT</h3>
+                <p>
+                    MEAN is an opinionated fullstack javascript framework -
+                    which simplifies and accelerates web application development
+                    Mongo Db ExpressJS AngularJS NodeJS
+                </p>
+            </div>
         </div>
+        <div class="row welcome-row">
+            <div id="welcome-animation" data-ng-if="$root.welcomeDir">
+                <welcome-animation slideDirection="slideLeft"></welcome-animation>
+            </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
                 Hi! my name is Michael <br />
                 I'm a <span data-ng-bind="home.calculateAge('1986/10/29')"></span> year old <br />
@@ -121,9 +149,9 @@
 <section id="skills" class="sections skills section">
     <div class="container">
         <div class="row">
-        <div id="skills-animation" class="skills-aniamtion" data-ng-if="$root.skillsDir">
-            <welcome-animation slideDirection="circular"></welcome-animation>
-        </div> 
+            <div id="skills-animation" class="skills-aniamtion" data-ng-if="$root.skillsDir">
+                <welcome-animation slideDirection="circular"></welcome-animation>
+            </div>
             <div class="skills-wrapp">
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
                     <ul>
