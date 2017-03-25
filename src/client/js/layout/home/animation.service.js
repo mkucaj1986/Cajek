@@ -20,6 +20,12 @@
             if (el === '#skills') {
                 $rootScope.skillsDir = true;
             }
+            if (el === '#contact') {
+                jQuery('.footer-main-wrapp').addClass('slide-up-fade-in');
+            }
+            if (el !== '#contact') {
+                jQuery('.footer-main-wrapp').removeClass('slide-up-fade-in');
+            }
         }
     }
 })();

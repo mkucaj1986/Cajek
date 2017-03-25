@@ -22,7 +22,7 @@
             $rootScope.$broadcast("setHomeIndex", index);
         };
         vm.getMore = function() {
-            var target = jQuery('.nav li a')[1];
+            var target = jQuery('.welcome-anchor');
             jQuery(target).addClass('active');
         };
         vm.toTheTop = function($event) {

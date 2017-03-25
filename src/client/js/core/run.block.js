@@ -96,6 +96,7 @@
             var welcome = hash === '#welcome';
             var profile = hash === '#profile';
             var skills = hash === '#skills';
+            var contact = hash === '#contact';
             if (welcome) {
                 $timeout(function() {
                     animationService.imgAnimation(hash);
@@ -119,6 +120,16 @@
             } else {
                 $rootScope.skillsDir = false;
                 $rootScope.$apply();
+            }
+            if (contact) {
+                $timeout(function() {
+                    animationService.imgAnimation(hash);
+                }, 300);
+            }
+            if (!contact) {
+                $timeout(function() {
+                    animationService.imgAnimation(hash);
+                }, 300);
             }
         }
     }
