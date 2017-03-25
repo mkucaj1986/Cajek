@@ -146,6 +146,9 @@
             background: transparent url('../src/client/assets/img/code/4.png') no-repeat center top;
             display: block;
             height: 400px;
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
         }
         .skills-aniamtion {
             position: absolute;
@@ -188,6 +191,7 @@
     z-index: 9999;
     @media screen and (max-width: $mobile) {
         background-size: contain;
+        bottom: 1px;
         height: 40px;
         width: 40px;
         right: 30px;
@@ -284,5 +288,50 @@
         &.active {
             background: #000;
         }
+    }
+}
+
+.work-education-container {
+    display: inline-block;
+    @media screen and (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.accordion-block-w-e {
+    display: none;
+    padding: 0 15px 0 0;
+    h2 {
+        color: $gold-color;
+        font-size: 24px;
+        text-align: center;
+    }
+    h3 {
+        font-size: 18px;
+        padding: 0 0 0 35px;
+    }
+    .htk-left-panel-box {
+        padding: 0 15px;
+        .block-container {
+            background-color: #eeeeee;
+        }
+        .work-box {
+            width: 100%;
+            margin: 0 auto;
+            padding: 10px 0;
+            li {
+                a {
+                    font-size: 1.15em;
+                }
+            }
+        }
+        .main-list-header {
+            padding: 0;
+            margin-left: 0;
+            text-align: left;
+        }
+    }
+    @media screen and (max-width: $mobile) {
+        display: block;
     }
 }

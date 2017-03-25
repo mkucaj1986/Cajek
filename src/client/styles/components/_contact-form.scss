@@ -5,38 +5,56 @@
         color: #484848;
         padding: 15px 0 0 0;
         text-align: center;
+        @media screen and (max-width: $mobile) {
+            font-size: 26px;
+            padding: 5px 0 0 0;
+        }
     }
-    .contact-box {        
+    .contact-box {
         max-width: 500px;
         width: 100%;
         padding: 30px 0 0 0;
-        input{
-            border:1px solid  #ccc;
+        @media screen and (max-width: $mobile) {
+            padding: 5px 15px 0 0;
+        }
+        .form-group {
+            @media screen and (max-width: $mobile) {
+                margin-bottom: 3px;
+            }
+        }
+        input {
+            border: 1px solid #ccc;
             border-radius: 4px;
-            color:#484848;
+            color: #484848;
             font-size: 16px;
-            width:100%;
+            width: 100%;
             margin: 4px 0;
-            padding:10px 7px;
+            padding: 5px;
             -webkit-transition: all 0.3s ease-in-out;
             -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
         }
-        textarea{
+        textarea {
             @extend input;
             min-width: 100%;
             max-width: 100%;
             max-height: 500px;
+            @media screen and (max-width: $mobile) {
+                max-height: 110px;
+            }
         }
-        label{
-            color:#000;
+        label {
+            color: #000;
             font-size: 18px;
             text-align: left;
-            width:100%;
+            width: 100%;
+            @media screen and (max-width: $mobile) {
+                font-size: 14px;
+            }
         }
         .contact-send {
             background-color: #484848;
-            border:2px solid transparent;
+            border: 2px solid transparent;
             color: #ccc;
             text-align: center;
             padding: 7px 30px;
@@ -44,15 +62,18 @@
             -webkit-transition: all 0.3s ease-in-out;
             -o-transition: all 0.3s ease-in-out;
             transition: all 0.3s ease-in-out;
-            &:hover{
+            @media screen and (max-width: $mobile) {
+                padding: 4px 20px;
+            }
+            &:hover {
                 background-color: #000;
-                border:2px solid #777777;
-                color:#fff;
+                border: 2px solid #777777;
+                color: #fff;
                 text-decoration: none;
             }
         }
     }
-    .contact-code-block{
+    .contact-code-block {
         background: transparent url('../src/client/assets/img/code/6.png') no-repeat center top;
         display: block;
         height: 298px;
@@ -60,14 +81,18 @@
         right: 15%;
         top: 75px;
         width: 353px;
+        @media screen and (max-width: $mobile) {
+            display: none;
+        }
     }
 }
+
 // VALIDATION
-.validation-message-box{
+.validation-message-box {
     width: 100%;
     padding: 0 0 5px 0;
     text-align: left;
-    .validation-message-invalid{
+    .validation-message-invalid {
         color: #c10000;
         font-size: 12px;
         font-weight: 700;
