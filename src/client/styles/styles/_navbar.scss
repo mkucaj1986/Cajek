@@ -12,6 +12,9 @@
         }
     }
     .navbar-nav {
+        @media screen and (max-width: $tabletH) {
+            padding-right: 145px;
+        }
         .active {
             a {
                 background-color: transparent;
@@ -26,6 +29,9 @@
             a {
                 color: #fff;
                 font-size: 1.6em;
+                @media screen and (min-width: $mobileStart) and (max-width: $tabletV) {
+                    padding: 15px 9px 0px;
+                }
                 @media screen and (max-width: $mobile) {
                     color: #f2dede;
                 }
@@ -158,5 +164,11 @@
 .navbar-default .navbar-toggle:focus {
     @media screen and (max-width: $mobile) {
         background-color: transparent;
+    }
+}
+
+.navbar-brand {
+    @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
+        padding: 15px 0 15px 5px;
     }
 }

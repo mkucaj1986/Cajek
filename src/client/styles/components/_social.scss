@@ -1,10 +1,26 @@
+.footer {
+    .social-box {
+        @media screen and (max-width: $mobile) {
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            padding: 10px 0 0 0;
+        }
+    }
+}
+
 .social-box {
     padding: 0 0 25px 0;
     @media screen and (max-width: $mobile) {
         position: absolute;
         right: 70px;
+        left: auto;
         top: 0;
-        padding: 0;
+    }
+    @media screen and (min-width:$mobileStart) and (max-width: $tabletH) {
+        position: fixed;
+        right: 0;
     }
     .screen-reader-only {
         border: 0;
@@ -35,6 +51,11 @@
         border-radius: 100%;
         font-size: 22px;
         text-align: center;
+        @media screen and (max-width: $mobile) {
+            width: 30px;
+            height: 30px;
+            font-size: 14px;
+        }
         -webkit-transition: all 0.15s ease-in-out;
         -o-transition: all 0.15s ease-in-out;
         transition: all 0.15s ease-in-out;
@@ -44,6 +65,9 @@
         &:before {
             position: relative;
             top: 12px;
+            @media screen and (max-width: $mobile) {
+                top: 6px;
+            }
         }
     }
     .social-box-header {
@@ -51,7 +75,7 @@
         top: 10px;
         padding: 0 15px;
         @media screen and (max-width: $mobile) {
-            top:0;
+            top: 0;
             padding: 10px 0 0 0;
         }
         li {

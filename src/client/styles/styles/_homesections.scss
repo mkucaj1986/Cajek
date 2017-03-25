@@ -39,7 +39,7 @@
                 padding: 0 10px 10px 7px;
                 text-align: left;
                 h3 {
-                    font-size: 18px;
+                    font-size: 16px;
                     margin: 10px 0 5px 0;
                 }
                 p {
@@ -56,6 +56,10 @@
                 font-size: 16px;
                 background: none;
             }
+            @media screen and (min-width:$mobileStart) and (max-width: $tabletH) {
+                padding: 135px 0 5px;
+                font-size: 24px;
+            }
         }
         .welcome-bottom {
             color: $black-color;
@@ -65,7 +69,7 @@
             text-align: center;
             @media screen and (max-width: $mobile) {
                 font-size: 16px;
-                padding: 10px 0 0 0;
+                padding: 4px 0 0 0;
             }
         }
         .welcome-bottom-specialise {
@@ -96,6 +100,10 @@
                 width: 250px;
                 margin: 0 auto;
                 position: relative;
+                @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
+                    height: 285px;
+                    width: 200px;
+                }
                 .special-box-inside {
                     color: #1f1f1f;
                     font-size: 14px;
@@ -146,6 +154,9 @@
             background: transparent url('../src/client/assets/img/code/4.png') no-repeat center top;
             display: block;
             height: 400px;
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
         }
         .skills-aniamtion {
             position: absolute;
@@ -164,6 +175,9 @@
             position: absolute;
             right: 5%;
             top: 10%;
+            @media screen and (max-width: $tabletH) {
+                display: none;
+            }
         }
     }
     .work-box {
@@ -188,15 +202,16 @@
     z-index: 9999;
     @media screen and (max-width: $mobile) {
         background-size: contain;
+        bottom: 1px;
         height: 40px;
         width: 40px;
-        right: 30px;
+        left: 5px;
     }
 }
 
 .go-up-arrow-iOS {
     @media screen and (max-width: $mobile) {
-        bottom: 35px;
+        bottom: 15px;
     }
 }
 
@@ -206,19 +221,33 @@
     background: #fffcf4;
     padding: 20px 0 0 0;
     color: #666666;
+    position: relative;
+    @media screen and (max-width: $mobile) {
+        height: 80px;
+    }
     .footer-nav {
         width: 100%;
         text-align: center;
         padding: 10px 0 20px;
+        @media screen and (max-width: $mobile) {
+            display: none;
+        }
         li {
             display: inline-block;
             float: none !important;
             margin: 0 10px;
             width: auto;
+            @media screen and (max-width: $mobile) {
+                float: left !important;
+                margin: 3 7px;
+            }
             a {
                 color: #666666;
                 font-size: 16px;
                 padding: 5px 7px;
+                @media screen and (max-width: $mobile) {
+                    font-size: 13px;
+                }
                 &:hover {
                     color: #000;
                 }
@@ -231,6 +260,12 @@
         color: #fff;
         font-size: 1.5em;
         width: 100%;
+        @media screen and (max-width: $mobile) {
+            bottom: 0;
+            padding: 5px 0;
+            position: absolute;
+            text-align: center;
+        }
     }
     .icon {
         font-style: normal;
@@ -251,6 +286,9 @@
     right: 32px;
     text-align: center;
     z-index: 99999;
+    @media screen and (max-width: $tabletH) {
+        right: 10px;
+    }
     @media screen and (max-width: $mobile) {
         top: auto;
         bottom: 1%;
@@ -284,5 +322,50 @@
         &.active {
             background: #000;
         }
+    }
+}
+
+.work-education-container {
+    display: inline-block;
+    @media screen and (max-width: $tabletH) {
+        display: none;
+    }
+}
+
+.accordion-block-w-e {
+    display: none;
+    padding: 0 15px 0 0;
+    h2 {
+        color: $gold-color;
+        font-size: 24px;
+        text-align: center;
+    }
+    h3 {
+        font-size: 18px;
+        padding: 0 0 0 35px;
+    }
+    .htk-left-panel-box {
+        padding: 0 15px;
+        .block-container {
+            background-color: #eeeeee;
+        }
+        .work-box {
+            width: 100%;
+            margin: 0 auto;
+            padding: 10px 0;
+            li {
+                a {
+                    font-size: 1.15em;
+                }
+            }
+        }
+        .main-list-header {
+            padding: 0;
+            margin-left: 0;
+            text-align: left;
+        }
+    }
+    @media screen and (max-width: $tabletH) {
+        display: block;
     }
 }

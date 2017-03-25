@@ -1,0 +1,71 @@
+.title-toggle-block {
+    width: 100%;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.title-toggle-block + .block-container {
+    height: auto;
+    overflow: hidden;
+    max-height: 50em;
+    transition: max-height 0.7s ease-in-out;
+}
+
+.title-toggle-block:not(.open) + .block-container {
+    max-height: 0;
+    height: 0;
+    animation: hide-animation 0.45s alternate ease-in-out both 1;
+    padding: 0 !important;
+    width: 0 !important;
+}
+
+.title-toggle-block.open + .block-container {
+    animation: show-animation 0.45s normal ease-in-out both 1;
+}
+
+.title-toggle-block:after {
+    left: 4px;
+    top: 6px;
+    position: absolute;
+    display: block;
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 7px 0 7px;
+    border-color: #0d0d0d transparent transparent transparent;
+}
+
+.title-toggle-block.open:after {
+    border-width: 0 7px 8px 7px;
+    border-color: transparent transparent #0d0d0d transparent;
+}
+
+@keyframes hide-animation {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.9) rotateX(-60deg);
+    }
+}
+
+@keyframes show-animation {
+    0% {
+        opacity: 0;
+        transform: scale(0.9) rotateX(-60deg);
+        transform-origin: 50% 0;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.htk-left-panel-box:focus,
+.htk-left-panel-box h3:focus {
+    outline: 0 none;
+}
