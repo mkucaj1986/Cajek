@@ -38,6 +38,7 @@
     "gulp-load-plugins": "latest",
     "gulp-mocha": "latest",
     "gulp-nodemon": "latest",
+    "gulp-order": "^1.1.1",
     "gulp-rev": "^7.0.0",
     "gulp-sass": "^2.2.0",
     "gulp-sequence": "^0.4.5",
