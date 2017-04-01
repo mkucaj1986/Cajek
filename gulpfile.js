@@ -32,7 +32,9 @@ gulp.task('default', function(cb) {
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
+    process.env.NODE_ENV = 'production';
     gulpSequence(['minify-css'], 'minify-js')(cb);
+	serve(false /*isDev*/ );
 });
 
 // CLEAN

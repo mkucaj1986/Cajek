@@ -205,7 +205,11 @@
         bottom: 1px;
         height: 40px;
         width: 40px;
-        left: 5px;
+        left: 0;
+    }
+    @media screen and (max-width: $tabletH) {
+        bottom: 0;
+        right: 0;
     }
 }
 
@@ -218,14 +222,17 @@
 // FOOTER
 .footer {
     border: 1px solid #000;
-    bottom:0;
+    bottom: 0;
     background: #fffcf4;
     padding: 20px 0 0 0;
     color: #666666;
     position: fixed;
-    width:100%;
+    width: 100%;
     @media screen and (max-width: $mobile) {
         height: 80px;
+    }
+    @media screen and (max-width: $tabletH) {
+        padding: 10px 0 0 0;
     }
     .footer-nav {
         width: 100%;
@@ -371,6 +378,7 @@
         display: block;
     }
 }
-.footer-main-wrapp{
-    display:none;
+
+.footer-main-wrapp {
+    display: none;
 }

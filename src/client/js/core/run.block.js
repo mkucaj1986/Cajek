@@ -124,12 +124,12 @@
             if (contact) {
                 $timeout(function() {
                     animationService.imgAnimation(hash);
-                }, 300);
+                }, 200);
             }
             if (!contact) {
                 $timeout(function() {
                     animationService.imgAnimation(hash);
-                }, 300);
+                }, 200);
             }
         }
     }
