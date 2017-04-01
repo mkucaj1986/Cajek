@@ -36,6 +36,7 @@
     "gulp-less": "latest",
     "gulp-livereload": "latest",
     "gulp-load-plugins": "latest",
+    "gulp-main-bower-files": "^1.6.2",
     "gulp-mocha": "latest",
     "gulp-nodemon": "latest",
     "gulp-order": "^1.1.1",

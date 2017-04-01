@@ -3,6 +3,7 @@ var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
 var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
+var mainBowerFiles = require('gulp-main-bower-files');
 var del = require('del');
 var glob = require('glob');
 var gulp = require('gulp');
@@ -12,6 +13,7 @@ var inject = require('gulp-inject');
 var rev = require('gulp-rev');
 var sass = require('gulp-sass');
 var uglify = require('gulp-uglify');
+var order = require("gulp-order");
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var wiredep = require('wiredep').stream;
@@ -33,8 +35,7 @@ gulp.task('default', function(cb) {
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
     process.env.NODE_ENV = 'production';
-    gulpSequence(['minify-css'], 'minify-js')(cb);
-	serve(false /*isDev*/ );
+    gulpSequence(['minify-css'], 'minifiyBower', 'minify-js')(cb);
 });
 
 // CLEAN
@@ -79,6 +80,16 @@ gulp.task('scripts', function(done) {
 });
 gulp.task('minify-js', function(done) {
     return gulp.src(config.minjs)
+        .pipe(order([
+            "src/client/js/app.module.js",
+            // "src/client/js/core/core.module.js",
+            // "src/client/js/core/run.block.js",
+            // "src/client/js/layout/layout.module.js",
+            // "src/client/js/vendor/jquery.nicescroll.min.js",
+            // ".src/client/js/layout/home/*.js",
+            // ".src/client/js/layout/contact/*.js",
+            // ".src/client/js/layout/header/*.js"
+        ]))
         .pipe(sourcemaps.init())
         .pipe(rename({
             suffix: '.min'
@@ -142,6 +153,18 @@ gulp.task('minify-css', function() {
             suffix: '.min'
         }))
         .pipe(rev())
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.build));
+});
+// minifiyBower
+gulp.task('minifiyBower', function() {
+    return gulp.src('./bower.json')
+        .pipe(mainBowerFiles())
+        .pipe(concat('bower.js'))
+        .pipe(sourcemaps.init())
+        .pipe(rename({
+            suffix: '.min'
+        }))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.build));
 });
