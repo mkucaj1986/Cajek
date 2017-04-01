@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
         <meta name="description" content="" />
         <!-- inject:css -->
+        <link rel="stylesheet" href="/.tmp/main.css">
         <!-- endinject -->
     </head>
     <body data-ng-controller="homeCtrl as home">
@@ -14,8 +15,38 @@
         {{{body}}}
         <!-- END page-specific content -->
     <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/lodash/lodash.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-growl/build/angular-growl.js"></script>
+    <script src="bower_components/ng-fastclick/dist/index.min.js"></script>
     <!-- endbower -->
     <!-- inject:js -->
+    <script src="src/client/js/app.module.js"></script>
+    <script src="src/client/js/core/core.module.js"></script>
+    <script src="src/client/js/core/run.block.js"></script>
+    <script src="src/client/js/layout/layout.module.js"></script>
+    <script src="src/client/js/vendor/jquery.nicescroll.min.js"></script>
+    <script src="src/client/js/layout/contact/contact.controller.js"></script>
+    <script src="src/client/js/layout/contact/email.service.js"></script>
+    <script src="src/client/js/layout/header/header.directive.js"></script>
+    <script src="src/client/js/layout/home/animation.service.js"></script>
+    <script src="src/client/js/layout/home/contact.controller.js"></script>
+    <script src="src/client/js/layout/home/emailService.js"></script>
+    <script src="src/client/js/layout/home/gotop.directive.js"></script>
+    <script src="src/client/js/layout/home/home.controller.js"></script>
+    <script src="src/client/js/layout/home/laod.service.js"></script>
+    <script src="src/client/js/layout/home/accordion/toggleAccordion.directive.js"></script>
+    <script src="src/client/js/layout/home/animationDirective/animation.directive.js"></script>
+    <script src="src/client/js/layout/home/paginationClick/paginationClick.directive.js"></script>
     <!-- endinject -->
 </body>
 </html>
