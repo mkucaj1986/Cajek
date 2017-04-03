@@ -11,7 +11,7 @@ router.get('/*', function(req, res, next) {
     };
     res.render('index.hbs', vm);
 });
-/* GET Contact page. */
+/* SEND EMAIL . */
 router.post('/contactForm', sendEmail);
 
 module.exports = router;
