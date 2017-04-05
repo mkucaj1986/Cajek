@@ -18,7 +18,7 @@ module.exports = function() {
             './*.js'
         ],
         build: './build/',
-        buildJs: './build/*.js',
+        buildJs: './build/application.min.js',
         buildSrc: './temp/src/',
         client: client,
         clientLayout: client + 'views/',
@@ -43,6 +43,7 @@ module.exports = function() {
         source: 'src/',
         sourceCopy: 'src/**',
         temp: temp,
+        tempJs: './.tmp/*.js',
         /**
          * browser sync
          */
