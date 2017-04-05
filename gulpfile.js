@@ -114,7 +114,7 @@ gulp.task('minify-js', function(done) {
             "src/client/js/layout/home/*.js",
             "src/client/js/layout/contact/*.js",
             "src/client/js/layout/header/*.js"
-        ]))
+        ], { base: './' }))
         .pipe(concat('app.js'))
         .pipe(sourcemaps.init())
         .pipe(rename({
@@ -127,14 +127,15 @@ gulp.task('minify-js', function(done) {
 gulp.task('minify-all-js', function(done) {
     return gulp.src(config.tempJs)
         .pipe(order([
-            "tmp/bower.min.js",
-            "tmp/app.min.js",
-        ]))
+            ".tmp/bower.min.js",
+            ".tmp/app.min.js"
+        ], { base: './' }))
         .pipe(concat('application.js'))
         .pipe(sourcemaps.init())
         .pipe(rename({
             suffix: '.min'
         }))
+        .pipe(rev())
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.build));
 });
