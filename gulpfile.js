@@ -35,7 +35,7 @@ gulp.task('default', function(cb) {
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
-    gulpSequence('clean', 'sass', ['minify-css', 'minifiyBower', 'minify-js'], 'buildIndex', 'injectBuild')(cb);
+    gulpSequence('clean', 'sass', ['minify-css', 'minifiyBower', 'minify-js'], 'minify-all-js', 'buildIndex', 'injectBuild')(cb);
 });
 
 // CLEAN
@@ -61,14 +61,6 @@ gulp.task('buildIndex', function() {
     });
     return target.pipe(inject(sources))
         .pipe(gulp.dest(config.clientLayout));
-});
-gulp.task('copyCss', function() {
-    var target = gulp.src(config.css);
-    var sources = gulp.src(config.css, {
-        read: false
-    });
-    return target.pipe(inject(sources))
-        .pipe(gulp.dest(config.build));
 });
 // INJECT JS
 gulp.task('javascript', function() {
@@ -124,6 +116,21 @@ gulp.task('minify-js', function(done) {
             "src/client/js/layout/header/*.js"
         ]))
         .pipe(concat('app.js'))
+        .pipe(sourcemaps.init())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.temp));
+});
+
+gulp.task('minify-all-js', function(done) {
+    return gulp.src(config.tempJs)
+        .pipe(order([
+            "tmp/bower.min.js",
+            "tmp/app.min.js",
+        ]))
+        .pipe(concat('application.js'))
         .pipe(sourcemaps.init())
         .pipe(rename({
             suffix: '.min'
@@ -200,7 +207,7 @@ gulp.task('minifiyBower', function() {
             suffix: '.min'
         }))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest(config.build));
+        .pipe(gulp.dest(config.temp));
 });
 // inject bower components
 gulp.task('wiredep', function() {
