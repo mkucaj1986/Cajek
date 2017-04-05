@@ -35,7 +35,7 @@ gulp.task('default', function(cb) {
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
-    gulpSequence('clean', ['minify-css'], 'minifiyBower', 'minify-js')(cb);
+    gulpSequence('clean', 'sass', ['minify-css', 'minifiyBower', 'minify-js'], 'buildIndex', 'injectBuild')(cb);
 });
 
 // CLEAN
@@ -53,9 +53,43 @@ gulp.task('index', function() {
     return target.pipe(inject(sources))
         .pipe(gulp.dest(config.clientLayout));
 });
+gulp.task('buildIndex', function() {
+    var target = gulp.src(config.layout);
+    // It's not necessary to read the files (will speed up things), we're only after their paths:
+    var sources = gulp.src(config.cssBuild, {
+        read: false
+    });
+    return target.pipe(inject(sources))
+        .pipe(gulp.dest(config.clientLayout));
+});
+gulp.task('copyCss', function() {
+    var target = gulp.src(config.css);
+    var sources = gulp.src(config.css, {
+        read: false
+    });
+    return target.pipe(inject(sources))
+        .pipe(gulp.dest(config.build));
+});
 // INJECT JS
 gulp.task('javascript', function() {
     var target = gulp.src(config.js);
+
+    function transformFilepath(filepath) {
+        return '<script src="' + filepath + '"' + '></script>';
+    }
+
+    var javascriptOptions = {
+        transform: transformFilepath,
+        addRootSlash: false
+    };
+
+    return gulp.src(config.layout)
+        .pipe(inject(target, javascriptOptions))
+        .pipe(gulp.dest(config.clientLayout));
+});
+// INJECT JS
+gulp.task('injectBuild', function() {
+    var target = gulp.src(config.buildJs);
 
     function transformFilepath(filepath) {
         return '<script src="' + filepath + '"' + '></script>';
