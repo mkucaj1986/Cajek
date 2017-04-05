@@ -133,12 +133,11 @@ gulp.task('minify-all-js', function(done) {
             ".tmp/app.min.js"
         ], { base: './' }))
         .pipe(concat('application.js'))
-        .pipe(sourcemaps.init())
+        .pipe(uglify())
         .pipe(rename({
             suffix: '.min'
         }))
         .pipe(rev())
-        .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.build));
 });
 // STYLES
