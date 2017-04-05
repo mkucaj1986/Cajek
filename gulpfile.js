@@ -18,6 +18,7 @@ var order = require("gulp-order");
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 var wiredep = require('wiredep').stream;
+var ngAnnotate = require('gulp-ng-annotate');
 var _ = require('lodash');
 var $ = require('gulp-load-plugins')({
     lazy: true
@@ -111,11 +112,12 @@ gulp.task('minify-js', function(done) {
             "src/client/js/core/run.block.js",
             "src/client/js/layout/layout.module.js",
             "src/client/js/vendor/jquery.nicescroll.min.js",
-            "src/client/js/layout/home/*.js",
             "src/client/js/layout/contact/*.js",
-            "src/client/js/layout/header/*.js"
+            "src/client/js/layout/header/*.js",
+            "src/client/js/layout/home/*.js"
         ], { base: './' }))
         .pipe(concat('app.js'))
+        .pipe(ngAnnotate())
         .pipe(sourcemaps.init())
         .pipe(rename({
             suffix: '.min'
