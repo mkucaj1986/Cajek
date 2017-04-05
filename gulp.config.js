@@ -18,7 +18,7 @@ module.exports = function() {
             './*.js'
         ],
         build: './build/',
-        buildJs: './build/application.min.js',
+        buildJs: './build/*.js',
         buildSrc: './temp/src/',
         client: client,
         clientLayout: client + 'views/',
