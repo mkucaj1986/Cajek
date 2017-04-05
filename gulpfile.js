@@ -2,6 +2,7 @@ var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
 var concat = require('gulp-concat');
+var clean = require('gulp-clean');
 var cleanCSS = require('gulp-clean-css');
 var mainBowerFiles = require('gulp-main-bower-files');
 var del = require('del');
@@ -34,15 +35,13 @@ gulp.task('default', function(cb) {
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
-    process.env.NODE_ENV = 'production';
-    gulpSequence(['minify-css'], 'minifiyBower', 'minify-js')(cb);
+    gulpSequence('clean', ['minify-css'], 'minifiyBower', 'minify-js')(cb);
 });
 
 // CLEAN
 gulp.task('clean', function(done) {
     var delconfig = [].concat(config.build, config.temp);
-    log('Cleaning: ' + $.util.colors.blue(delconfig));
-    del(delconfig, done);
+    return gulp.src(delconfig).pipe(clean());
 });
 // INJECT Styles
 gulp.task('index', function() {

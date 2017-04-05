@@ -27,6 +27,7 @@
     "del": "latest",
     "expect.js": "latest",
     "gulp": "latest",
+    "gulp-clean": "^0.3.2",
     "gulp-clean-css": "^2.0.4",
     "gulp-coffee": "latest",
     "gulp-concat": "^2.6.0",
