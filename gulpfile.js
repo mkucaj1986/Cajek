@@ -78,17 +78,18 @@ gulp.task('scripts', function(done) {
         .pipe(gulp.dest(config.temp), done);
 });
 gulp.task('minify-js', function(done) {
-    return gulp.src(config.minjs)
+    return gulp.src(config.js)
         .pipe(order([
             "src/client/js/app.module.js",
-            // "src/client/js/core/core.module.js",
-            // "src/client/js/core/run.block.js",
-            // "src/client/js/layout/layout.module.js",
-            // "src/client/js/vendor/jquery.nicescroll.min.js",
-            // ".src/client/js/layout/home/*.js",
-            // ".src/client/js/layout/contact/*.js",
-            // ".src/client/js/layout/header/*.js"
+            "src/client/js/core/core.module.js",
+            "src/client/js/core/run.block.js",
+            "src/client/js/layout/layout.module.js",
+            "src/client/js/vendor/jquery.nicescroll.min.js",
+            "src/client/js/layout/home/*.js",
+            "src/client/js/layout/contact/*.js",
+            "src/client/js/layout/header/*.js"
         ]))
+        .pipe(concat('app.js'))
         .pipe(sourcemaps.init())
         .pipe(rename({
             suffix: '.min'
