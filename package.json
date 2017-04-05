@@ -39,6 +39,7 @@
     "gulp-load-plugins": "latest",
     "gulp-main-bower-files": "^1.6.2",
     "gulp-mocha": "latest",
+    "gulp-ng-annotate": "^2.0.0",
     "gulp-nodemon": "latest",
     "gulp-order": "^1.1.1",
     "gulp-rev": "^7.0.0",
