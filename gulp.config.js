@@ -18,10 +18,12 @@ module.exports = function() {
             './*.js'
         ],
         build: './build/',
+        buildJs: './build/*.js',
         buildSrc: './temp/src/',
         client: client,
         clientLayout: client + 'views/',
         css: temp + 'main.css',
+        cssBuild: './build/*.css',
         minjs: temp + 'application.js',
         fonts: bower.directory + 'font-awesome/fonts/**/*.*',
         hbs: client + '**/*.hbs',
