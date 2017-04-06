@@ -5,7 +5,7 @@ const sendEmail = require('../email/emailTransporter');
 const nodemailer = require('nodemailer');
 /* Set HEaders. */
 router.use('/*',function (req, res, next) {
-  res.setHeader('Cache-Control', 'public, max-age=86400');
+  res.setHeader('Cache-Control', 'public, max-age=864000');
   res.setHeader("Content-Type", "text/html");
   next()
 })

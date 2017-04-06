@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
-
+const compression = require('compression')
 const config = require('./src/server/config/config');
 
 const http = require('http');
@@ -23,35 +23,19 @@ const hbs = exphbs.create({
 app.set('views', path.join(__dirname, './src/client/views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({
-//     extended: false
-// }));
-// app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, './src/client/')));
+
 /**
  * Get port from environment and store in Express.
  */
 const port = normalizePort(process.env.PORT || '3000');
 const environment = process.env.NODE_ENV;
+app.use(compression());
 app.set('port', port);
+app.use(express.static('./',{
+  maxage: '1y'
+}));
+app.use('/', routes);
 
-switch (environment) {
-    case 'build':
-        console.log('** BUILD **');
-        app.use(express.static('./build/'));
-        // Any deep link calls should return index.html
-        app.use('/*', express.static('./build/index.hbs'));
-        break;
-    default:
-        console.log('** DEV **');
-        app.use(express.static('./src/client/'));
-        app.use(express.static('./'));
-        app.use(express.static('./.tmp'));
-        // Any deep link calls should return index.html
-        app.use('/', routes);
-        break;
-}
 /**
  * Create HTTP server.
  */
@@ -119,6 +103,7 @@ function onError(error) {
 function onListening() {
     const addr = server.address();
     const bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
+    console.log('Cajek App Ready');
     console.log('Listening on ' + bind);
 }
 
