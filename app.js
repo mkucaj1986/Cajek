@@ -23,12 +23,12 @@ const hbs = exphbs.create({
 app.set('views', path.join(__dirname, './src/client/views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, './src/client/')));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({
+//     extended: false
+// }));
+// app.use(cookieParser());
+// app.use(express.static(path.join(__dirname, './src/client/')));
 /**
  * Get port from environment and store in Express.
  */
