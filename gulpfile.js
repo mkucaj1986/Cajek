@@ -36,7 +36,7 @@ gulp.task('default', function(cb) {
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
-    gulpSequence('clean', 'sass', ['minify-css', 'minifiyBower', 'minify-js'], 'minify-all-js', 'buildIndex', 'injectBuild')(cb);
+    gulpSequence('clean', 'sass', ['minify-css', 'vendor-scripts', 'minifiyBower', 'minify-js'], 'minify-all-js', 'buildIndex', 'injectBuild')(cb);
 });
 
 // CLEAN
@@ -130,6 +130,7 @@ gulp.task('minify-all-js', function(done) {
     return gulp.src(config.tempJs)
         .pipe(order([
             ".tmp/bower.min.js",
+            ".tmp/vendor.min.js",
             ".tmp/app.min.js"
         ], { base: './' }))
         .pipe(concat('application.js'))
@@ -199,6 +200,18 @@ gulp.task('minify-css', function() {
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest(config.build));
 });
+
+gulp.task('vendor-scripts', function() {
+    return gulp.src(['./bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.min.js'])
+        .pipe(concat('vendor.js'))
+        .pipe(sourcemaps.init())
+        .pipe(rename({
+            suffix: '.min'
+        }))
+        .pipe(sourcemaps.write('./maps'))
+        .pipe(gulp.dest(config.temp));
+});
+
 // minifiyBower
 gulp.task('minifiyBower', function() {
     return gulp.src('./bower.json')
