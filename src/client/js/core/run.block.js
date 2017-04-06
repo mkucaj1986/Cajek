@@ -6,7 +6,8 @@
         .config(config)
         .run(runBlock);
 
-    function config($urlRouterProvider, $locationProvider, $anchorScrollProvider, growlProvider) {
+    function config($qProvider, $urlRouterProvider, $locationProvider, $anchorScrollProvider, growlProvider) {
+        $qProvider.errorOnUnhandledRejections(false);
         growlProvider.globalTimeToLive(4000);
         // use the HTML5 History API
         $anchorScrollProvider.disableAutoScrolling();
