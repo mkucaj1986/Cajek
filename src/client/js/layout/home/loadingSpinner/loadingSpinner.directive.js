@@ -4,33 +4,33 @@
         .module('app.layout')
         .directive('loadingSpinner', loadingSpinner);
     /* @ngInject */
-    function loadingSpinner($window, $compile, $templateRequest) {
+    function loadingSpinner($rootScope, $window, $compile, $templateRequest, $timeout) {
         var directive = {
             link: link,
             restrict: 'EAC',
-            scope:false
+            scope: false
         };
         return directive;
 
         function link(scope, element, attrs, vm) {
+
             $templateRequest('src/client/js/layout/home/loadingSpinner/loadingSpinner.hbs').then(function(html) {
                 var template = angular.element(html);
                 element.append(template);
                 $compile(template)(scope);
             });
-            scope.$on('$stateChangeStart', showSpinner);
-            scope.$on('$stateNotFound', hideSpinner);
-            scope.$on('$stateChangeError', hideSpinner);
-            scope.$on('$viewContentLoaded', hideSpinner);
-
-            function showSpinner() {
-                console.log('start spinner');
-                element.removeClass('ng-hide');
-            }
+            angular.element(document).ready(function() {
+                console.log('angular ready');
+                angular.element('body').css('overflow', 'hidden');
+                $timeout(function() {
+                    hideSpinner();
+                }, 500);
+            });
 
             function hideSpinner() {
                 console.log('stop spinner');
                 element.addClass('ng-hide');
+                angular.element('body').css('overflow', 'auto');
             }
         }
     }

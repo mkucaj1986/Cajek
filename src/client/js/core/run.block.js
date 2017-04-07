@@ -17,6 +17,7 @@
     }
 
     function runBlock($rootScope, $location, $timeout, animationService) {
+        showSpinner();
         $rootScope.isNotMobile = (function() {
             if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
                 return true;
@@ -132,6 +133,9 @@
                     animationService.imgAnimation(hash);
                 }, 300);
             }
+        }
+        function showSpinner() {
+            console.log('start spinner');
         }
     }
     //Automaticly update location

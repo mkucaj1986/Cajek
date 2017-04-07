@@ -15,11 +15,11 @@
             console.log('factory');
             $(document).ready(function() {
                 var nice = $('html').niceScroll({
-                    cursorcolor: "#337ab7",
+                    cursorcolor: "#E2C41E",
                     cursoropacitymin: 0.5,
                     cursoropacitymax: 1,
                     cursorwidth: "10px",
-                    cursorborder: "1px solid #337ab7",
+                    cursorborder: "1px solid #E2C41E",
                     cursorborderradius: "3px",
                     scrollspeed: 70,
                     mousescrollstep: 50,
