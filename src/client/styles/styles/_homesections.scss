@@ -149,6 +149,9 @@
             display: block;
             width: 100%;
             max-width: 486px;
+            @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
+                max-width: 767px;
+            }
             margin: 0 auto;
         }
         .skills-code-block {
