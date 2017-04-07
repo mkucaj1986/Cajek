@@ -24,6 +24,7 @@
     "require-dir": "latest"
   },
   "devDependencies": {
+    "compression": "^1.6.2",
     "del": "latest",
     "expect.js": "latest",
     "gulp": "latest",

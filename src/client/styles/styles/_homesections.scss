@@ -6,6 +6,7 @@
         display: inline-block;
         float: left;
         padding: 70px 0;
+        height: 100vh;
         min-height: 100vh;
         width: 100%;
         @media screen and (max-width: $mobile) {
@@ -102,7 +103,7 @@
                 position: relative;
                 @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
                     height: 285px;
-                    width: 200px;
+                    width: 205px;
                 }
                 .special-box-inside {
                     color: #1f1f1f;
@@ -199,7 +200,7 @@
     -webkit-animation: showElementOpacity 1s ease forwards;
     -o-animation: showElementOpacity 1s ease forwards;
     animation: showElementOpacity 1s ease forwards;
-    z-index: 9999;
+    z-index: 999999;
     @media screen and (max-width: $mobile) {
         background-size: contain;
         bottom: 1px;
@@ -221,12 +222,11 @@
 
 // FOOTER
 .footer {
-    border: 1px solid #000;
-    bottom: 0;
+    border-top: 1px solid #000;
     background: #fffcf4;
     padding: 20px 0 0 0;
     color: #666666;
-    position: fixed;
+    position: relative;
     width: 100%;
     @media screen and (max-width: $mobile) {
         height: 80px;
@@ -264,10 +264,11 @@
         }
     }
     .copy {
-        padding: 20px 0;
         background-color: #222222;
         color: #fff;
         font-size: 1.5em;
+        padding: 20px 0;
+        text-align: center;
         width: 100%;
         @media screen and (max-width: $mobile) {
             bottom: 0;
@@ -286,6 +287,9 @@
 #main-sections {
     width: 100%;
     height: 100%;
+    @media screen and (max-width: $tabletH) {
+        height: 100vh;
+    }
 }
 
 .slide-navigation {
@@ -300,7 +304,7 @@
     }
     @media screen and (max-width: $mobile) {
         top: auto;
-        bottom: 1%;
+        bottom: 4%;
         right: 5px;
     }
     & > li {
@@ -310,8 +314,8 @@
         z-index: 99999;
         & > a {
             display: block;
-            height: 13px;
-            width: 13px;
+            height: 18px;
+            width: 18px;
             border: 3px solid #fff;
             border-radius: 50%;
             background: transparent;
@@ -380,5 +384,7 @@
 }
 
 .footer-main-wrapp {
+    bottom: 0;
     display: none;
+    position: fixed;
 }

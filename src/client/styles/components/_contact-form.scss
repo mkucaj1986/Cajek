@@ -42,7 +42,7 @@
             @media screen and (max-width: $mobile) {
                 max-height: 100px;
             }
-            @media screen and (min-width:$mobileStart) and  (max-width: $tabletH) {
+            @media screen and (min-width:$mobileStart) and (max-width: $tabletH) {
                 max-height: 250px;
             }
         }
@@ -104,3 +104,4 @@
         font-weight: 700;
     }
 }
+
