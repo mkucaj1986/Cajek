@@ -28,11 +28,11 @@ var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
 // BUILD
 gulp.task('build', function(cb) {
-    gulpSequence(['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
+    gulpSequence('clean', ['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
 });
 // DEFAULT
 gulp.task('default', function(cb) {
-    gulpSequence(['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
+    gulpSequence('clean', ['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
 });
 // GO PRODUCTION
 gulp.task('prod', function(cb) {
