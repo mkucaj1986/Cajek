@@ -2,7 +2,7 @@
 const express = require('express');
 const app = express();
 const exphbs = require('express-handlebars');
-const compression = require('compression')
+const compression = require('compression');
 const config = require('./src/server/config/config');
 
 const http = require('http');
@@ -35,7 +35,7 @@ app.use(express.static('./',{
   maxage: '1y'
 }));
 app.use('/', routes);
-
+app.use('/portfolio', routes);
 /**
  * Create HTTP server.
  */

@@ -10,16 +10,19 @@
         <link rel="stylesheet" href="/.tmp/main.css">
         <!-- endinject -->
     </head>
-    <body data-ng-controller="homeCtrl as home">
-        <!-- BEGIN page-specific content -->
-        {{{body}}}
-        <!-- END page-specific content -->
+    <body>
+        <div id="main-app-wrapper" class="main-app-wrapper">
+            <!-- BEGIN page-specific content -->
+                {{{body}}}
+            <!-- END page-specific content -->
+        </div>
+        <loading-spinner></loading-spinner>
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/json3/lib/json3.js"></script>
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/lodash/lodash.js"></script>
@@ -39,13 +42,12 @@
     <script src="src/client/js/layout/contact/email.service.js"></script>
     <script src="src/client/js/layout/header/header.directive.js"></script>
     <script src="src/client/js/layout/home/animation.service.js"></script>
-    <script src="src/client/js/layout/home/contact.controller.js"></script>
-    <script src="src/client/js/layout/home/emailService.js"></script>
     <script src="src/client/js/layout/home/gotop.directive.js"></script>
     <script src="src/client/js/layout/home/home.controller.js"></script>
     <script src="src/client/js/layout/home/laod.service.js"></script>
     <script src="src/client/js/layout/home/accordion/toggleAccordion.directive.js"></script>
     <script src="src/client/js/layout/home/animationDirective/animation.directive.js"></script>
+    <script src="src/client/js/layout/home/loadingSpinner/loadingSpinner.directive.js"></script>
     <script src="src/client/js/layout/home/paginationClick/paginationClick.directive.js"></script>
     <!-- endinject -->
 </body>

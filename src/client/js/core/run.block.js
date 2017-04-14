@@ -17,6 +17,7 @@
     }
 
     function runBlock($rootScope, $location, $timeout, animationService) {
+        checkPath();
         showSpinner();
         $rootScope.isNotMobile = (function() {
             if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
@@ -39,7 +40,6 @@
             status: 'on',
             isScroll: ''
         };
-        history.replaceState(null, null, '#home');
         if (!window.history || !history.replaceState) {
             return;
         }
@@ -83,6 +83,14 @@
                 imageAnimation(hash);
             }
         });
+
+        function checkPath() {
+            const portfolioPage = $location.$$path === "/portfolio";
+            if (portfolioPage) {
+                return false;
+            }
+            history.replaceState(null, null, '#home');
+        }
 
         function changePaginationColor(hash) {
             var hassWhiteColor = hash === '#work-education' || hash === '#contact';
@@ -134,11 +142,11 @@
                 }, 300);
             }
         }
+
         function showSpinner() {
             console.log('start spinner');
         }
     }
-    //Automaticly update location
 
     console.log('run');
 
