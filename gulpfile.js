@@ -144,7 +144,7 @@ gulp.task('minify-all-js', function(done) {
 // STYLES
 gulp.task('sass', function(done) {
 
-    var injectAppFiles = gulp.src('./src/client/styles/styles/**/*.scss', {
+    var injectAppFiles = gulp.src('./src/client/styles/pages/**/*.scss', {
         read: false
     });
     var injectGlobalFiles = gulp.src('./src/client/styles/global/**/*.scss', {
