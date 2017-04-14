@@ -1,0 +1,95 @@
+.grid {
+    color: #000;
+    display: block;
+    margin: 50px auto 0;
+    padding: 0;
+    width: 768px;
+    @media screen and (max-width: $mobile) {
+        width: 320px;
+    }
+}
+
+.grid li {
+    border:0;
+    -webkit-box-shadow: inset 0px 0px 0px 1px rgba(109, 109, 109, 0.7);
+    -moz-box-shadow: inset 0px 0px 0px 1px rgba(109, 109, 109, 0.7);
+    box-shadow: inset 0px 0px 0px 1px rgba(109, 109, 109, 0.7);
+    display: inline-block;
+    background: #fff;
+    width: 172px;
+    height: 172px;
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    @media screen and (max-width: $mobile) {
+        width: 150px;
+        height: 150px;
+        margin: 5px;
+    }
+    span{
+        font-size: 18px;
+    }
+}
+
+.masonry-controls-filter {
+    margin: 0 auto;
+    display: block;
+    width: 441px;
+    padding: 20px 0;
+    input {
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        color: #000;
+        padding: 10px 15px;
+        width: 100%;
+    }
+}
+
+.masonry-controls {
+    margin: 0 auto;
+    display: block;
+    width: 441px;
+    padding: 20px 0;
+    a {
+        border: 1px solid #000;
+        border-radius: 3px;
+        margin: 0 5px;
+        color: #000;
+        padding: 5px 15px;
+        font-size: 18px;
+    }
+}
+
+
+/**** Transitions ****/
+
+.masonry,
+.masonry li {
+    /* apply before masonry add class */
+    position: absolute;
+    /* important to add it before enter animation start */
+    -webkit-transition-duration: .7s;
+    transition-duration: .7s;
+    -webkit-transition-property: all;
+    transition-property: all;
+}
+
+.masonry .masonry-enter {
+    /* limit animated properties for entering elements */
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.masonry-enter,
+.masonry-leave.masonry-leave-active {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+}
+
+.masonry-leave,
+.masonry-enter.masonry-enter-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
