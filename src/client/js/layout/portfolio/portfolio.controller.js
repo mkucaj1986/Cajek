@@ -6,60 +6,25 @@
         .controller('portfolioCtrl', portfolioCtrl);
 
     /* @ngInject */
-    function portfolioCtrl($window, $rootScope, $scope) {
+    function portfolioCtrl($window, $rootScope, $timeout, $scope, portfolioData, growl) {
         var vm = this;
         console.log('portfolioCtrl');
 
-        $scope.items = [{
-            "id": 0,
-            "picture": "http://placehold.it/32x32",
-            "age": 31,
-            "name": "Mathews Goff"
-        }, {
-            "id": 1,
-            "picture": "http://placehold.it/32x32",
-            "age": 36,
-            "name": "Collins Alston"
-        }, {
-            "id": 2,
-            "picture": "http://placehold.it/32x32",
-            "age": 27,
-            "name": "Jasmine Rollins"
-        }, {
-            "id": 3,
-            "picture": "http://placehold.it/32x32",
-            "age": 32,
-            "name": "Julie Jefferson"
-        }, {
-            "id": 4,
-            "picture": "http://placehold.it/32x32",
-            "age": 23,
-            "name": "Wilder King"
-        }, {
-            "id": 5,
-            "picture": "http://placehold.it/32x32",
-            "age": 23,
-            "name": "Stanley Moore"
-        }, {
-            "id": 6,
-            "picture": "http://placehold.it/32x32",
-            "age": 36,
-            "name": "Reynolds Bishop"
-        }, {
-            "id": 7,
-            "picture": "http://placehold.it/32x32",
-            "age": 26,
-            "name": "Bryant Flowers"
-        }, {
-            "id": 8,
-            "picture": "http://placehold.it/32x32",
-            "age": 38,
-            "name": "Jenifer Martinez"
-        }, {
-            "id": 9,
-            "picture": "http://placehold.it/32x32",
-            "age": 40,
-            "name": "Mcguire Pittman"
-        }];
+        angular.element(document).ready(function() {
+            getData();
+        });
+
+        function getData() {
+            portfolioData.getData().then(function(response) {
+                    growl.addSuccessMessage("Websites Loaded");
+                    console.log(response);
+                    $scope.items = response.data.websites;
+                })
+                .catch(function(err) {
+                    growl.addErrorMessage("error in get Data");
+                    console.log(err);
+                });
+        }
+
     }
 })();

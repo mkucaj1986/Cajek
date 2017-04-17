@@ -1,0 +1,36 @@
+{
+    "websites": [{
+        "id": 0,
+        "className": "website01",
+        "href": "http://www.brendantiles.co.uk",
+        "picture": "../src/client/assets/img/websites/portfolio-02.jpg",
+        "year": 2012,
+        "yearsAgo": 5,
+        "name": "Brendan Raleigh - Tiles & Marbles"
+
+    }, {
+        "id": 1,
+        "className": "website02",
+        "href": "http://www.tatooStudio.pl",
+        "picture": "../src/client/assets/img/websites/portfolio-04.jpg",
+        "year": 2013,
+        "yearsAgo": 4,
+        "name": "XBEst Tattoo Studio"
+    }, {
+        "id": 2,
+        "className": "website03",
+        "href": "http://www.JanKowalskiMeble.pl",
+        "picture": "../src/client/assets/img/websites/portfolio-01.jpg",
+        "year": 2014,
+        "yearsAgo": 3,
+        "name": "Jan Kowalski - Meble Pl"
+    }, {
+        "id": 3,
+        "className": "website04",
+        "href": "http://www.ppachorek.pl",
+        "picture": "../src/client/assets/img/websites/portfolio-03.jpg",
+        "year": 2015,
+        "yearsAgo": 2,
+        "name": "PPachorek Graphic Designer"
+    }]
+}
