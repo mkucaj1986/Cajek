@@ -85,6 +85,7 @@ input {
 }
 .main-app-wrapper{
     display: flex;
+    overflow-y: hidden;
     position: relative;
     width: 100%;
 }

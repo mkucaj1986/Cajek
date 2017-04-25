@@ -150,7 +150,7 @@
             width: 100%;
             max-width: 486px;
             @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
-                max-width: 767px;
+                max-width: 590px;
             }
             margin: 0 auto;
         }
@@ -290,9 +290,6 @@
 #main-sections {
     width: 100%;
     height: 100%;
-    @media screen and (max-width: $tabletH) {
-        height: 100vh;
-    }
 }
 
 .slide-navigation {
