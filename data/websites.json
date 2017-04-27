@@ -2,24 +2,23 @@
     "websites": [{
         "id": 0,
         "className": "website01",
-        "href": "http://www.brendantiles.co.uk",
+        "href": "http://www.brendantest.pl",
         "picture": "../src/client/assets/img/websites/portfolio-02.jpg",
         "year": 2012,
         "yearsAgo": 5,
         "name": "Brendan Raleigh - Tiles & Marbles"
-
     }, {
         "id": 1,
         "className": "website02",
-        "href": "http://www.tatooStudio.pl",
+        "href": "http://www.extremetattoos.eu",
         "picture": "../src/client/assets/img/websites/portfolio-04.jpg",
         "year": 2013,
         "yearsAgo": 4,
-        "name": "XBEst Tattoo Studio"
+        "name": "eXtreme Tattos"
     }, {
         "id": 2,
         "className": "website03",
-        "href": "http://www.JanKowalskiMeble.pl",
+        "href": "http://www.meble-jan.pl",
         "picture": "../src/client/assets/img/websites/portfolio-01.jpg",
         "year": 2014,
         "yearsAgo": 3,

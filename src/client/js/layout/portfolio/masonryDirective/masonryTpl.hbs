@@ -9,7 +9,7 @@
 <ul class="grid" masonry="true">
 	<li ng-repeat="item in items | filter: { name: nameFilter } | orderBy: order" >
 	<div class="website-name">{{item.name}}</div>
-		<a href="{{item.href}}" data-ng-class="item.className">
+		<a href="{{item.href}}" target="_blank" data-ng-class="item.className">
 			<img class="img-responsive" src="{{item.picture}}" alt="" />
 			<span class="portfolio-href">{{item.href}}</span>
 		</a>
