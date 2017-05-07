@@ -7,5 +7,4 @@
         'app.core',
         'app.layout'
     ]);
-    console.log('module');
 })();

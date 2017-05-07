@@ -4,7 +4,7 @@
         .module('app.layout')
         .factory('loadService', loadService);
     /* @ngInject */
-    function loadService($rootScope, $document) {
+    function loadService($rootScope) {
         var service = {
             niceScroll: niceScroll,
             fullPage: fullPage
@@ -12,7 +12,6 @@
         return service;
 
         function niceScroll() {
-            console.log('factory');
             $(document).ready(function() {
                 var nice = $('html').niceScroll({
                     cursorcolor: "#E2C41E",
@@ -34,7 +33,6 @@
         }
 
         function fullPage(element) {
-            $document = $document[0];
             var fullPagePlugin = {
                 index: 0,
                 lastAnimation: 0,
@@ -101,16 +99,16 @@
 
             function initFn(index) {
                 index = index;
-                $document.addEventListener('keydown', keydown);
-                $document.addEventListener('mousewheel', mousewheel, false);
-                $document.addEventListener('DOMMouseScroll', mousewheel, false);
+                // document.addEventListener('keydown', keydown);
+                document.addEventListener('mousewheel', mousewheel, false);
+                document.addEventListener('DOMMouseScroll', mousewheel, false);
                 makeActive(index, sections);
             }
 
             function destroyFn() {
-                $document.removeEventListener('keydown', keydown);
-                $document.removeEventListener('mousewheel', mousewheel);
-                $document.removeEventListener('DOMMouseScroll', mousewheel);
+                // document.removeEventListener('keydown', keydown);
+                document.removeEventListener('mousewheel', mousewheel);
+                document.removeEventListener('DOMMouseScroll', mousewheel);
             }
 
             function mousewheel(event) {
@@ -140,9 +138,9 @@
                 lastAnimation = time;
             }
 
-            function keydown() {
-                // body...
-            }
+            // function keydown() {
+            //     // body...
+            // }
 
             function startFullPage(index) {
                 fullPagePlugin.init(index);

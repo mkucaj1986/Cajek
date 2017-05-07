@@ -13,7 +13,6 @@
         $anchorScrollProvider.disableAutoScrolling();
         $locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
-        console.log('config');
     }
 
     function runBlock($rootScope, $location, $timeout, animationService) {
@@ -142,7 +141,5 @@
             }
         }
     }
-
-    console.log('run');
 
 })();

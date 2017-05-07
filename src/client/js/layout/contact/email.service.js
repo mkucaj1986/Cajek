@@ -12,11 +12,10 @@
 
         function sendEmail(emailData) {
             return $http.post('/contactForm', emailData)
-                .success(function(data) {
+                .then(function(data) {
                     growl.addSuccessMessage("Your Email was sent");
-                    console.log(data);
                 })
-                .error(function(err) {
+                .catch(function(err) {
                     growl.addErrorMessage("Message not sent");
                     console.log(err);
                 });

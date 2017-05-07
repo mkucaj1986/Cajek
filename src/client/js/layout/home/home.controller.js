@@ -8,7 +8,6 @@
     /* @ngInject */
     function homeCtrl($window, $rootScope, $scope, $document, $timeout, $location, $anchorScroll, loadService) {
         var vm = this;
-        console.log('home ctrl');
 
         vm.startingLocation = 'home';
         vm.loadPlugins = function() {

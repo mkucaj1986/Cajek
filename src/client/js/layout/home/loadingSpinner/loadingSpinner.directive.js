@@ -20,7 +20,6 @@
                 $compile(template)(scope);
             });
             angular.element(document).ready(function() {
-                console.log('angular ready');
                 angular.element('body').css('overflow', 'hidden');
                 $timeout(function() {
                     hideSpinner();
@@ -28,7 +27,6 @@
             });
 
             function hideSpinner() {
-                console.log('stop spinner');
                 element.addClass('ng-hide');
                 angular.element('body').css('overflow', 'auto');
             }

@@ -12,6 +12,5 @@
             'angular-growl',
             'ui.router'
         ]);
-    console.log('core');
 
 })();
