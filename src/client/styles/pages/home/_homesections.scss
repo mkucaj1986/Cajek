@@ -20,6 +20,20 @@
         color: #fff;
         font-size: 48px;
         text-align: center;
+        .socials-code-sites {
+            position: absolute;
+            right: 20px;
+            top: 60px;
+            width: 205px;
+            background-color: #ccc;
+            h3 {
+                color: #000;
+                font-family: 'latoblack';
+                font-size: 16px;
+                margin: 3px 0 0 0;
+                padding: 0 0 0 10px;
+            }
+        }
         .welcome-row {
             display: inline-block;
             @media screen and (max-width: $mobile) {
@@ -145,6 +159,20 @@
                 background-size: 60%;
             }
         }
+        .socials-code-sites {
+            position: absolute;
+            left: 20px;
+            top: 290px;
+            width: 205px;
+            background-color: #ccc;
+            h3 {
+                color: #000;
+                font-family: 'latoblack';
+                font-size: 16px;
+                margin: 3px 0 0 0;
+                padding: 0 0 0 10px;
+            }
+        }
     }
     // SKILLS
     .skills {
@@ -157,6 +185,11 @@
                 max-width: 590px;
             }
             margin: 0 auto;
+            .skills-wrapp-list {
+                @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+                    padding: 0 0 0 35px;
+                }
+            }
         }
         .skills-code-block {
             background: transparent url(../src/client/assets/img/code/4.png) no-repeat right top;
@@ -172,6 +205,20 @@
         }
         .skills-aniamtion {
             position: absolute;
+        }
+        .socials-code-sites {
+            position: absolute;
+            right: 20px;
+            top: 0;
+            width: 205px;
+            background-color: #ccc;
+            h3 {
+                color: #000;
+                font-family: 'latoblack';
+                font-size: 16px;
+                margin: 3px 0 0 0;
+                padding: 0 0 0 10px;
+            }
         }
     }
     // WORK && EDUCATION
@@ -193,11 +240,28 @@
         }
     }
     .work-box {
-        width: 500px;
+        width: 100%;
         margin: 0 auto;
-        padding: 30px 0 0 100px;
+        padding: 30px 0 0 30px;
+        @media screen and (min-width: $mobileStart) {
+            width: 767px;
+        }
         @media screen and (min-width: $tabletH) and (max-width: $laptop) {
-            padding: 15px 0 0 100px;
+            padding: 15px 0 0 30px;
+        }
+    }
+    .socials-code-sites {
+        position: absolute;
+        right: 20px;
+        top: 190px;
+        width: 205px;
+        background-color: #ccc;
+        h3 {
+            color: #000;
+            font-family: 'latoblack';
+            font-size: 16px;
+            margin: 3px 0 0 0;
+            padding: 0 0 0 10px;
         }
     }
 }
@@ -350,7 +414,6 @@
 }
 
 .work-education-container {
-    display: inline-block;
     @media screen and (max-width: $tabletH) {
         display: none;
     }
@@ -407,5 +470,32 @@
 
 .profile-anim {
     position: absolute;
-    left: 10%;
+    left: 0;
+}
+
+.photo-avatar {
+    display: block;
+    float: right;
+    width: 160px;
+    @media screen and (max-width: $mobile) {
+        float: left;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        width: 95px;
+    }
+}
+
+.ninja-dev {
+    display: block;
+    background: transparent url('../src/client/assets/img/animation/ninja-dev.gif') no-repeat center top;
+    width: 375px;
+    height: 275px;
+}
+
+.socials-code-sites {
+    display: none;
+    @media screen and (min-width: $mobileStart) {
+        display: block;
+    }
 }

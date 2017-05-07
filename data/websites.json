@@ -3,15 +3,15 @@
         "id": 0,
         "className": "website01",
         "href": "http://www.brendantest.pl",
-        "picture": "../src/client/assets/img/websites/portfolio-02.jpg",
-        "year": 2012,
-        "yearsAgo": 5,
+        "picture": "./src/client/assets/img/websites/portfolio-02.jpg",
+        "year": 2017,
+        "yearsAgo": 0,
         "name": "Brendan Raleigh - Tiles & Marbles"
     }, {
         "id": 1,
         "className": "website02",
         "href": "http://www.extremetattoos.eu",
-        "picture": "../src/client/assets/img/websites/portfolio-04.jpg",
+        "picture": "./src/client/assets/img/websites/portfolio-04.jpg",
         "year": 2013,
         "yearsAgo": 4,
         "name": "eXtreme Tattos"
@@ -19,7 +19,7 @@
         "id": 2,
         "className": "website03",
         "href": "http://www.meble-jan.pl",
-        "picture": "../src/client/assets/img/websites/portfolio-01.jpg",
+        "picture": "./src/client/assets/img/websites/portfolio-01.jpg",
         "year": 2014,
         "yearsAgo": 3,
         "name": "Jan Kowalski - Meble Pl"
@@ -27,7 +27,7 @@
         "id": 3,
         "className": "website04",
         "href": "http://www.ppachorek.pl",
-        "picture": "../src/client/assets/img/websites/portfolio-03.jpg",
+        "picture": "./src/client/assets/img/websites/portfolio-03.jpg",
         "year": 2015,
         "yearsAgo": 2,
         "name": "PPachorek Graphic Designer"

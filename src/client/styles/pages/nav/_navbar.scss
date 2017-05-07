@@ -29,6 +29,7 @@
             a {
                 color: #fff;
                 font-size: 1.6em;
+                border-bottom: 5px solid transparent;
                 @media screen and (min-width: $mobileStart) and (max-width: $tabletV) {
                     padding: 15px 9px 10px;
                     font-size: 1.3em;
