@@ -14,7 +14,7 @@
 
         function link(scope, element, attrs, vm) {
             if(attrs.slidedirection === 'slideLeft'){
-                $templateRequest('src/client/js/layout/home/animationDirective/animationTplLeft.hbs').then(function(html) {
+                $templateRequest('./src/client/views/home/animationTplLeft.hbs').then(function(html) {
                     var template = angular.element(html);
                     element.append(template);
                     element.addClass('slide-left');
@@ -22,7 +22,7 @@
                 });
             }
             if(attrs.slidedirection === 'slideRight'){
-                $templateRequest('src/client/js/layout/home/animationDirective/animationTplRight.hbs').then(function(html) {
+                $templateRequest('src/client/views/home/animationTplRight.hbs').then(function(html) {
                     var template = angular.element(html);
                     element.append(template);
                     element.addClass('slide-right');
@@ -30,10 +30,9 @@
                 });
             }
             if(attrs.slidedirection === 'circular'){
-                $templateRequest('src/client/js/layout/home/animationDirective/animationTplCircular.hbs').then(function(html) {
+                $templateRequest('src/client/views/home/animationTplCircular.hbs').then(function(html) {
                     var template = angular.element(html);
                     element.append(template);
-                    // element.addClass('fade-in');
                     $compile(template)(scope);
                 });
             }

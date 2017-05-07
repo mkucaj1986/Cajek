@@ -9,6 +9,7 @@
         height: 100vh;
         min-height: 100vh;
         width: 100%;
+        overflow: hidden;
         @media screen and (max-width: $mobile) {
             padding: 55px 0;
         }
@@ -57,7 +58,7 @@
                 font-size: 16px;
                 background: none;
             }
-            @media screen and (min-width:$mobileStart) and (max-width: $tabletH) {
+            @media screen and (min-width:$mobileStart) and (max-width: $laptop) {
                 padding: 135px 0 5px;
                 font-size: 24px;
             }
@@ -140,6 +141,9 @@
             display: block;
             width: 350px;
             height: 350px;
+            @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+                background-size: 60%;
+            }
         }
     }
     // SKILLS
@@ -149,15 +153,19 @@
             display: block;
             width: 100%;
             max-width: 565px;
-            @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
+            @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
                 max-width: 590px;
             }
             margin: 0 auto;
         }
         .skills-code-block {
-            background: transparent url('../src/client/assets/img/code/4.png') no-repeat center top;
+            background: transparent url(../src/client/assets/img/code/4.png) no-repeat right top;
             display: block;
-            height: 400px;
+            height: 600px;
+            position: absolute;
+            right: 0;
+            width: 100%;
+            bottom: 0;
             @media screen and (max-width: $mobile) {
                 display: none;
             }
@@ -188,6 +196,9 @@
         width: 500px;
         margin: 0 auto;
         padding: 30px 0 0 100px;
+        @media screen and (min-width: $tabletH) and (max-width: $laptop) {
+            padding: 15px 0 0 100px;
+        }
     }
 }
 
@@ -227,7 +238,7 @@
 .footer {
     border-top: 1px solid #000;
     background: #fffcf4;
-    padding: 20px 0 0 0;
+    padding: 0;
     color: #666666;
     position: relative;
     width: 100%;
@@ -270,7 +281,7 @@
         background-color: #222222;
         color: #fff;
         font-size: 1.5em;
-        padding: 20px 0;
+        padding: 7px 0;
         text-align: center;
         width: 100%;
         @media screen and (max-width: $mobile) {
@@ -387,4 +398,14 @@
     bottom: 0;
     display: none;
     position: fixed;
+}
+
+.welcome-anim {
+    position: absolute;
+    right: 10%;
+}
+
+.profile-anim {
+    position: absolute;
+    left: 10%;
 }

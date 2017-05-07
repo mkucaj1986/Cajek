@@ -5,9 +5,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $white-color;
-    // -webkit-animation: showElementOpacity 1s ease forwards;
-    // -o-animation: showElementOpacity 1s ease forwards;
-    // animation: showElementOpacity 1s ease forwards;
     @media screen and (max-width: $tabletV) {
         font-size: 95%;
     }
@@ -83,9 +80,15 @@ input {
         display: inline-block;
     }
 }
-.main-app-wrapper{
+
+.main-app-wrapper {
     display: flex;
     overflow-y: hidden;
     position: relative;
     width: 100%;
+}
+
+.relative-container {
+    position: relative;
+    height: 100vh;
 }

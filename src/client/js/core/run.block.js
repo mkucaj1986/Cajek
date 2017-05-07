@@ -18,7 +18,6 @@
 
     function runBlock($rootScope, $location, $timeout, animationService) {
         checkPath();
-        showSpinner();
         $rootScope.isNotMobile = (function() {
             if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
                 return true;
@@ -134,17 +133,13 @@
             if (contact) {
                 $timeout(function() {
                     animationService.imgAnimation(hash);
-                }, 300);
+                }, 500);
             }
             if (!contact) {
                 $timeout(function() {
                     animationService.imgAnimation(hash);
-                }, 300);
+                }, 250);
             }
-        }
-
-        function showSpinner() {
-            console.log('start spinner');
         }
     }
 

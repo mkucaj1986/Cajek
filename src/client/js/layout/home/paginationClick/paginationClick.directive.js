@@ -13,7 +13,7 @@
         return directive;
 
         function link(scope, element, attrs, vm) {
-            $templateRequest('src/client/js/layout/home/paginationClick/paginationClick.hbs').then(function(html) {
+            $templateRequest('src/client/views/home/paginationClick.hbs').then(function(html) {
                 var template = angular.element(html);
                 element.append(template);
                 $compile(template)(scope);

@@ -23,7 +23,7 @@
 </section>
 <!--WELCOME SECTION-->
 <section id="welcome" class="sections first-section section">
-    <div class="container">
+    <div class="container relative-container">
         <div class="row welcome-row-mobile">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
                 Hi! my name is Michael <br />
@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="row welcome-row">
-            <div id="animation-directive" data-ng-if="$root.welcomeDir">
+            <div id="animation-directive" class="welcome-anim" data-ng-if="$root.welcomeDir">
                 <animation-directive slideDirection="slideLeft" data-ng-if="!$root.isNotMobile"></animation-directive>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
@@ -115,8 +115,8 @@
 </section>
 <!--PROFILE-->
 <section id="profile" class="sections profile section">
-    <div class="container">
-        <div id="profile-animation" data-ng-if="$root.profileDir">
+    <div class="container relative-container">
+        <div id="profile-animation" class="profile-anim" data-ng-if="$root.profileDir">
             <animation-directive slideDirection="slideRight" data-ng-if="!$root.isNotMobile"></animation-directive>
         </div>
         <div class="row">
@@ -147,13 +147,13 @@
 </section>
 <!--SKILLS-->
 <section id="skills" class="sections skills section">
-    <div class="container">
+    <div class="container relative-container">
         <div class="row">
             <div id="skills-animation" class="skills-aniamtion" data-ng-if="$root.skillsDir">
                 <animation-directive slideDirection="circular"></animation-directive>
             </div>
             <div class="skills-wrapp">
-                <div class="col-xs-5 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 main-list-box skills-list">
                     <ul>
                         <li class="main-list-header">Personality</li>
                         <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>creativity</li>
@@ -166,7 +166,7 @@
                         <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>time management</li>
                     </ul>
                 </div>
-                <div class="col-xs-7 col-sm-6 col-md-6 col-lg-6 main-list-box skills-list">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 main-list-box skills-list">
                     <ul>
                         <li class="main-list-header">Technical</li>
                         <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>css3 & html5</li>
@@ -200,17 +200,17 @@
                     <li class="main-list-header text-primary">2013 - Present</li>
                     <li class="font-big font-black">FRONT END DEVELOPER</li>
                     <li class="font-m-size font-medium">PGS SOFTWARE - <a href="https://www.pgs-soft.com/">www.pgs-soft.com/</a></li>
-                    <li>. HTML & CSS</li>
-                    <li>. Responsive design and development</li>
+                    <li>. HTML & CSS & Javascript</li>
+                    <li>. OutScourcing Company</li>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
                 <ul class="work-box">
                     <li class="main-list-header text-primary">2010 - Present</li>
-                    <li class="font-big font-black">FRONT END DEVELOPER</li>
-                    <li class="font-m-size font-medium">Self Employed - <a du-smooth-scroll du-scrollspy data-ng-click="home.toTheTop($event)">www.michalkucaj.pl</a></li>
-                    <li>. HTML & CSS</li>
-                    <li>. Responsive design and development</li>
+                    <li class="font-big font-black">SOFTWARE FULL STACK JS DEVELOPER</li>
+                    <li class="font-m-size font-medium">Self Employed - <a href="http://www.michalkucaj.pl" du-smooth-scroll du-scrollspy data-ng-click="home.toTheTop($event)">www.michalkucaj.pl</a></li>
+                    <li>. Software Developer</li>
+                    <li>. RWD JavaScript Application</li>
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">

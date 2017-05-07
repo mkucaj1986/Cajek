@@ -3,15 +3,26 @@
     width: 100%;
     height: 100vh;
     padding: 30px 0 0 0;
+    @media screen and (max-width: $mobile) {
+        padding: 15px 0 0 0
+    }
     .portfolio-header {
         display: block;
         position: relative;
         margin: 0 auto;
         width: 1024px;
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+        }
     }
     h1 {
         color: #000;
         text-align: center;
+        @media screen and (max-width: $mobile) {
+            font-size: 28px;
+            text-align: right;
+            padding: 6px 7px 0 0;
+        }
     }
     .go-backhome {
         background: transparent url('../src/client/assets/img/icons/back-arrow.jpg') no-repeat 0 0;
@@ -29,6 +40,25 @@
             width: 147px;
             top: 4px;
             line-height: 1.1em;
+            &:hover {
+                color: #777;
+            }
         }
+    }
+}
+
+.masonry-grid {
+    position: relative;
+    width: 100%;
+    display: none;
+    @media screen and (min-width: $mobileStart) {
+        display: inline-block;
+    }
+}
+
+.portfolio-mobile {
+    display: block;
+    @media screen and (min-width: $mobileStart) {
+        display: none;
     }
 }

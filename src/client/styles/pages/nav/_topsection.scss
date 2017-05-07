@@ -18,7 +18,7 @@
         top: 3px;
         width: 230px;
         z-index: 999999;
-        @media screen and (max-width: $mobile) {
+        @media screen and (max-width: $laptop) {
             display: none;
         }
     }
@@ -105,7 +105,7 @@
     left: 0;
     right: 0;
     height: 517px;
-    @media screen and (max-width: $tabletH) {
+    @media screen and (max-width: $laptop) {
         height: 400px;
     }
     @media screen and (max-width: $mobile) {
@@ -124,7 +124,7 @@
             height: 100%;
             min-height: 160px;
         }
-        @media screen and (max-width: $tabletH) {
+        @media screen and (max-width: $laptop) {
             background-size: contain;
             max-height: 400px;
         }

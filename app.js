@@ -31,7 +31,7 @@ const port = normalizePort(process.env.PORT || '3000');
 const environment = process.env.NODE_ENV;
 app.use(compression());
 app.set('port', port);
-app.use(express.static('./',{
+app.use(express.static(__dirname, './src/client/views',{
   maxage: '1y'
 }));
 app.use('/', routes);
