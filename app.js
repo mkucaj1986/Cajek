@@ -8,7 +8,6 @@ const config = require('./src/server/config/config');
 const http = require('http');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const routes = require('./src/server/routes/index');
 const nodemailer = require('./src/server/email/emailTransporter');
 
