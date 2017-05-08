@@ -4,23 +4,20 @@ const app = express();
 const exphbs = require('express-handlebars');
 const compression = require('compression');
 const config = require('./src/server/config/config');
-
 const http = require('http');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const routes = require('./src/server/routes/index');
-const nodemailer = require('./src/server/email/emailTransporter');
+const routes = require('/src/server/routes/index');
 
 // view engine setup
 const hbs = exphbs.create({
     defaultLayout: 'layout',
     extname: '.hbs',
     partialsDir: [
-        './src/client/views/'
+        '/src/client/views/'
     ]
 });
-app.set('views', path.join(__dirname, './src/client/views'));
+app.set('views', path.join(__dirname, '/src/client/views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 

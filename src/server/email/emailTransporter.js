@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 const config = require('../config/config');
-
 let sendEmail = function(req, res, next) {
+    if (!req.body) return res.sendStatus(400);
     let transporter = nodemailer.createTransport(config.email.smtpConfig);
     let mailOptions = {
         to: config.email.emailTo,
@@ -11,10 +11,9 @@ let sendEmail = function(req, res, next) {
     };
     transporter.sendMail(mailOptions, function(error, info) {
         if (error) {
-            return console.log(error);
+            res.status(401).json({ err: info });
         }
-        res.status(200).json({ success: (error == undefined) });
+        res.status(200).json({ success: true });
     });
-}
-
+};
 module.exports = sendEmail;
