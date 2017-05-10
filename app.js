@@ -1,16 +1,20 @@
 // CONFIG
 const express = require('express');
 const app = express();
+const http = require('http');
+const path = require('path');
+const cors = require('cors');
 const exphbs = require('express-handlebars');
 const compression = require('compression');
 const config = require('./src/server/config/config');
-
-const http = require('http');
-const path = require('path');
 const cookieParser = require('cookie-parser');
 const routes = require('./src/server/routes/index');
 const nodemailer = require('./src/server/email/emailTransporter');
-
+/**
+ * Get port from environment and store in Express.
+ */
+const port = normalizePort(process.env.PORT || '3000');
+const environment = process.env.NODE_ENV;
 // view engine setup
 const hbs = exphbs.create({
     defaultLayout: 'layout',
@@ -22,12 +26,7 @@ const hbs = exphbs.create({
 app.set('views', path.join(__dirname, './src/client/views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-
-/**
- * Get port from environment and store in Express.
- */
-const port = normalizePort(process.env.PORT || '3000');
-const environment = process.env.NODE_ENV;
+app.use(cors());
 app.use(compression());
 app.set('port', port);
 app.use('/', express.static(__dirname, './src/client/views', {

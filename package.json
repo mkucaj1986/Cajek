@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "compression": "^1.6.2",
+    "cors": "^2.8.3",
     "del": "latest",
     "expect.js": "latest",
     "gulp": "latest",
