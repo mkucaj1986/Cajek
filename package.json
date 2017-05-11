@@ -54,6 +54,7 @@
     "jshint": "^2.9.1",
     "jshint-stylish": "latest",
     "main-bower-files": "^2.11.1",
+    "nodemailer-sendinblue-transport": "^1.2.3",
     "require-dir": "latest",
     "requirejs": "latest",
     "supertest": "latest",
