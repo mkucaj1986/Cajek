@@ -1,3 +1,4 @@
+/*jshint esversion: 6 */
 // CONFIG
 const express = require('express');
 const app = express();
