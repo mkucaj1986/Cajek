@@ -26,6 +26,7 @@ var $ = require('gulp-load-plugins')({
 var colors = $.util.colors;
 var envenv = $.util.env;
 var port = process.env.PORT || config.defaultPort;
+
 // BUILD
 gulp.task('build', function(cb) {
     gulpSequence('clean', ['sass'], 'index', 'scripts', 'javascript', 'wiredep', 'fonts')(cb);
@@ -251,16 +252,9 @@ gulp.task('dev', ['build'], function() {
 });
 // ALL GULP FUNCTIONS
 function serve(isDev) {
-    var debug = args.debug || args.debugBrk;
-    var debugMode = args.debug ? '--debug' : args.debugBrk ? '--debug-brk' : '';
     var nodeOptions = getNodeOptions(isDev);
-    if (debug) {
-        runNodeInspector();
-        nodeOptions.nodeArgs = [debugMode + '=5858'];
-    }
-    if (args.verbose) {
-        console.log(nodeOptions);
-    }
+
+    runNodeInspector();
     return $.nodemon(nodeOptions)
         .on('restart', ['vet'], function(ev) {
             log('*** nodemon restarted');
@@ -353,9 +347,9 @@ function getNodeOptions(isDev) {
 
 function runNodeInspector() {
     log('Running node-inspector.');
-    log('Browse to http://localhost:8080/debug?port=5858');
+    log('Browse to http://127.0.0.1:8080/?port=5858');
     var exec = require('child_process').exec;
-    exec('node-inspector');
+    exec('node-debug app.js');
 }
 /**
  * Log a message or series of messages using chalk's blue color.

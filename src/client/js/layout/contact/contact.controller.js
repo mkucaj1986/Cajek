@@ -21,18 +21,24 @@
                 jQuery('.header').css('display', 'block');
                 jQuery('.footer').css('display', 'block');
             }
-        }
+        };
         vm.sendEmail = function(contactForm) {
             vm.submitClicked = true;
             if (contactForm.$valid) {
                 emailService.sendEmail(vm.data);
-                clearForm(vm.data);
                 vm.submitClicked = false;
             } else {
                 vm.invalidClass = true;
             }
             $rootScope.$evalAsync();
         };
+
+        $rootScope.$on("sendingMessage", function($event, sendingMessage) {
+            if (!sendingMessage) {
+                clearForm(vm.data);
+            }
+            $rootScope.$evalAsync();
+        });
 
         function clearForm(data) {
             data.name = '';

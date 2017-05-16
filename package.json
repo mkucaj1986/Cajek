@@ -21,10 +21,12 @@
     "nodemailer-express-handlebars": "^2.0.0",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
-    "require-dir": "latest"
+    "require-dir": "latest",
+    "xoauth2": "^1.2.0"
   },
   "devDependencies": {
     "compression": "^1.6.2",
+    "cors": "^2.8.3",
     "del": "latest",
     "expect.js": "latest",
     "gulp": "latest",
@@ -52,10 +54,12 @@
     "jshint": "^2.9.1",
     "jshint-stylish": "latest",
     "main-bower-files": "^2.11.1",
+    "nodemailer-sendinblue-transport": "^1.2.3",
     "require-dir": "latest",
     "requirejs": "latest",
     "supertest": "latest",
     "through": "latest",
-    "wiredep": "^4.0.0"
+    "wiredep": "^4.0.0",
+    "xoauth2": "^1.2.0"
   }
 }
