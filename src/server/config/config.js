@@ -3,7 +3,7 @@ let config = {
     email: {
         emailTo: 'mkucaj86@gmail.com',
         smtpConfig: {
-            service: 'gmail',
+            service: 'Gmail',
             host: 'smtp.gmail.com',
             port: 465,
             secure: true, // use SSL

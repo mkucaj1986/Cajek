@@ -14,6 +14,7 @@ let sendEmail = function(req, res, next) {
             res.status(401).json({ err: info });
         }
         res.status(200).json({ success: true });
+        transporter.close();
     });
 };
 module.exports = sendEmail;

@@ -7,7 +7,7 @@ const config = require('./src/server/config/config');
 const http = require('http');
 const path = require('path');
 const cookieParser = require('cookie-parser');
-const routes = require('/src/server/routes/index');
+const routes = require('./src/server/routes/index');
 
 // view engine setup
 const hbs = exphbs.create({
