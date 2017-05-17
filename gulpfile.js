@@ -248,13 +248,17 @@ gulp.task('fonts', function() {
 
 // START SERVER
 gulp.task('dev', ['build'], function() {
-    serve(true /*isDev*/ );
+    serve(true, false /*isDev*/ );
+});
+gulp.task('dev-debug', ['build'], function() {
+    serve(true, true /*isDev*/ );
 });
 // ALL GULP FUNCTIONS
-function serve(isDev) {
+function serve(isDev, debug) {
     var nodeOptions = getNodeOptions(isDev);
-
-    runNodeInspector();
+    if (debug) {
+        runNodeInspector();
+    }
     return $.nodemon(nodeOptions)
         .on('restart', ['vet'], function(ev) {
             log('*** nodemon restarted');
