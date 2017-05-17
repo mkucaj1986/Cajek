@@ -65,10 +65,59 @@
 #logo {
     color: $white-color;
 }
+.logo{
+    display: block;
+    height: 50px;
+    padding: 0 !important;
+    position: relative;
+    top: -10px;
+    width: 263px;
+    @media screen and (max-width: $tabletH) {
+        background: transparent url(../src/client/assets/img/logo-mobile-w.png) no-repeat center 0;
+        width: 90px;
+        height: 50px;
+        left: -3px;
+        background-size: cover;
+        top: -2px;
+    }
+    
+    @media screen and (max-width: $tabletV) {
+        width: 70px;
+    }
+    
+    @media screen and (max-width: $mobile) {
+        top: -3px;
+        left: 5px;
+    }
 
+}
+.logo-img{
+    display:block;
+    @media screen and (max-width: $tabletH) {
+        display:none;
+    }
+}
+.logo-img-black{
+    display:none;
+}
 .sticky-header {
+    .logo{
+        @media screen and (max-width: $tabletH) {
+            background-size: cover !important;
+            background: transparent url(../src/client/assets/img/logo-mobile-b.png) no-repeat center 0;
+        }
+    }
     #logo {
         color: #000;
+    }
+    .logo-img{
+        display:none;
+    }
+    .logo-img-black{
+        display:block;
+        @media screen and (max-width: $tabletH) {
+            display:none;
+        }
     }
     .sticky-nav {
         background-color: $white-color;
