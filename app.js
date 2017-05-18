@@ -4,7 +4,6 @@ const express = require('express');
 const app = express();
 const http = require('http');
 const path = require('path');
-const cors = require('cors');
 const exphbs = require('express-handlebars');
 const compression = require('compression');
 const config = require('./src/server/config/config');
@@ -27,8 +26,7 @@ const hbs = exphbs.create({
 app.set('views', path.join(__dirname, './src/client/views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(cors());
-app.use(compression());
+app.use(compression({ threshold: 6 }));
 app.set('port', port);
 app.use('/', express.static(__dirname, './src/client/views', {
     maxage: '1y'
