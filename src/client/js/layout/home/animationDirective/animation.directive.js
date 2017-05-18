@@ -36,6 +36,13 @@
                     $compile(template)(scope);
                 });
             }
+            if(attrs.slidedirection === 'post'){
+                $templateRequest('src/client/views/home/postAnimation.hbs').then(function(html) {
+                    var template = angular.element(html);
+                    element.append(template);
+                    $compile(template)(scope);
+                });
+            }
         }
     }
 })();

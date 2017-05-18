@@ -21,7 +21,7 @@
         .socials-code-sites {
             position: absolute;
             right: 20px;
-            top: 60px;
+            top: 30px;
             width: 205px;
             background-color: #ccc;
             h3 {
@@ -63,7 +63,7 @@
             }
         }
         .welcome-box {
-            background: transparent url('../src/client/assets/img/code/3.png') no-repeat center top;
+            background: transparent url('../src/client/assets/img/code/3.png') no-repeat center -5px;
             padding: 140px 0 60px;
             @media screen and (max-width: $mobile) {
                 padding: 0;
@@ -71,15 +71,15 @@
                 background: none;
             }
             @media screen and (min-width:$mobileStart) and (max-width: $laptop) {
-                padding: 135px 0 5px;
-                font-size: 24px;
+                padding: 125px 0 5px;
+                font-size: 22px;
             }
         }
         .welcome-bottom {
             color: $black-color;
             font-size: 28px;
             font-family: 'latoblack';
-            line-height: 1.3em;
+            line-height: 1.15em;
             text-align: center;
             @media screen and (max-width: $mobile) {
                 font-size: 16px;
@@ -89,7 +89,7 @@
         .welcome-bottom-specialise {
             color: $white-color;
             font-size: 24px;
-            padding: 20px 0 0 0;
+            padding: 10px 0 0 0;
             .special-box-txt {
                 margin: 0 0 20px 0;
             }
@@ -115,7 +115,7 @@
                 margin: 0 auto;
                 position: relative;
                 @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
-                    height: 285px;
+                    height: 240px;
                     width: 205px;
                 }
                 .special-box-inside {
@@ -124,6 +124,9 @@
                     text-align: center;
                     padding: 88px 0 0 0;
                     display: block;
+                }
+                .special-box-inside-last {
+                    padding: 65px 0 0 0;
                 }
                 &:before {
                     content: '';
@@ -148,6 +151,59 @@
     .profile {
         background-color: #331F1C;
         color: #fff;
+        .dev-lvl-post {
+            position: absolute;
+            right: 0;
+            top: 350px;
+            width: 300px;
+            @media screen and (max-width: $mobile) {
+                position: absolute;
+                right: 0;
+                top: 180px;
+                width: 145px;
+            }
+            @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 235px;
+            }
+            .dev-lvl-post-levels {
+                position: relative;
+                display: block;
+                float: left;
+                width: 75%;
+                height: 250px;
+                padding: 0 0 0 10px;
+                .dev-levels {
+                    font-size: 16px;
+                    font-family: 'latoblack';
+                    @media screen and (max-width: $laptop) {
+                        font-size: 13px;
+                    }
+                }
+                .ninja-lvl {
+                    position: absolute;
+                    top: -10px;
+                }
+                .architect-lvl {
+                    position: absolute;
+                    top: 15%;
+                }
+                .senior-lvl {
+                    position: absolute;
+                    top: 35%;
+                }
+                .middle-lvl {
+                    position: absolute;
+                    top: 65%;
+                }
+                .junior-lvl {
+                    position: absolute;
+                    bottom: -10px;
+                }
+            }
+        }
         .code-2 {
             background: transparent url('../src/client/assets/img/code/2.png') no-repeat center top;
             display: block;
@@ -347,6 +403,7 @@
         text-align: center;
         width: 100%;
         @media screen and (max-width: $mobile) {
+            font-size: 1.3em;
             bottom: 0;
             padding: 5px 0;
             position: absolute;

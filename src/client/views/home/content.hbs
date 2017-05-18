@@ -110,7 +110,7 @@
                     <span>web development </span>
                 </div>
                 <div class="special-box step3">
-                    <div class="special-box-inside">
+                    <div class="special-box-inside special-box-inside-last">
                         <p>
                             MEAN is an opinionated fullstack javascript framework -
                             which simplifies and accelerates web application development
@@ -127,8 +127,8 @@
 <section id="profile" class="sections profile section" data-ng-style="style()">
 <div class="container relative-container">
     <div id="profile-animation" class="profile-anim" data-ng-if="$root.profileDir">
-    <animation-directive slideDirection="slideRight" data-ng-if="!$root.isNotMobile"></animation-directive>
-</div>
+        <animation-directive slideDirection="slideRight" data-ng-if="!$root.isNotMobile"></animation-directive>
+    </div>
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="photo-avatar">
@@ -143,6 +143,9 @@
             <a href="http://stackoverflow.com/users/3774234/supercomupter"> 
                <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
             </a>
+        </div>
+        <div id="profile-post-animation" class="dev-lvl-post" data-ng-if="$root.profileDir">
+            <animation-directive slideDirection="post"></animation-directive>
         </div>
     </div>
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box">
