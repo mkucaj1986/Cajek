@@ -31,5 +31,13 @@
         "year": 2015,
         "yearsAgo": 2,
         "name": "PPachorek Graphic Designer"
+    }, {
+        "id": 3,
+        "className": "website05",
+        "href": "http://www.mebleartex.pl",
+        "picture": "./src/client/assets/img/websites/portfolio-05.jpg",
+        "year": 2015,
+        "yearsAgo": 2,
+        "name": "Artex Hurtownia Mebli"
     }]
 }
