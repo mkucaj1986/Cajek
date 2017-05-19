@@ -13,14 +13,14 @@
 }
 
 .grid li {
-    border: 0;
+    border: 1px solid #ccc;
     display: inline-block;
     background: #fff;
     margin: 10px;
     padding: 5px;
     text-align: center;
     width: 236px;
-    height: 236px;
+    height: 190px;
     @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
         width: 172px;
         height: 172px;
