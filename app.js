@@ -23,12 +23,12 @@ const hbs = exphbs.create({
         './src/client/views/'
     ]
 });
-app.set('views', path.join(__dirname, './src/client/views'));
+app.set('views', path.join(__dirname, '/src/client/views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(compression({ threshold: 6 }));
 app.set('port', port);
-app.use('/', express.static(__dirname, './src/client/views', {
+app.use('/', express.static(__dirname, '/src/client/views', {
     maxage: '1y'
 }));
 app.use('/', routes);
