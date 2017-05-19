@@ -1,20 +1,16 @@
 (function() {
     'use strict';
-
     angular
         .module('app.layout')
         .controller('homeCtrl', homeCtrl);
-
     /* @ngInject */
     function homeCtrl($window, $rootScope, $scope, $document, $timeout, $location, $anchorScroll, loadService) {
         var vm = this;
-
         vm.startingLocation = 'home';
         vm.loadPlugins = function() {
             loadService.niceScroll();
             loadService.fullPage('main-sections');
         };
-
         vm.goPortfolioLogo = function() {
             var index = 0;
             jQuery(".home-anchor").addClass('active');
@@ -35,7 +31,6 @@
             var target = jQuery('.nav-pagination li a')[0];
             jQuery(target).addClass('active');
         };
-
         vm.scrollToElement = function(element, $event) {
             $event.preventDefault();
             var listTarget = jQuery($event.target).parent().parent();
@@ -57,13 +52,11 @@
                 $rootScope.$broadcast("setAnchorIndex", anchorIndex);
             }
         };
-
         vm.scrollToElementFullpage = function(element, $event) {
             $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
             $document.scrollToElementAnimated(someElement, 33, 900);
         };
-
         vm.isScrollorClick = function() {
             $rootScope.$broadcast("isNotScroll");
         };
@@ -83,9 +76,7 @@
             }
             return vm.el;
         });
-
         vm.date = new Date();
-
         vm.calculateAge = function(dateString) {
             // birthday is a date
             var today = new Date();
@@ -100,6 +91,17 @@
         $timeout(function() {
             vm.loadPlugins();
         }, 500);
+
+        function jumpToHash() {
+            var hash = $location.$$hash;
+            var someElement = angular.element(document.getElementById(hash));
+            $document.scrollToElementAnimated(someElement, 33, 1);
+        }
+        angular.element(function() {
+            $timeout(function() {
+                jumpToHash();
+            }, 90);
+        });
 
     }
 })();

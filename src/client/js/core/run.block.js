@@ -84,10 +84,16 @@
 
         function checkPath() {
             var portfolioPage = $location.$$path === "/portfolio";
+            var hash = '#' + $location.$$hash;
+            if (hash === '#') {
+                hash = '#home';
+            }
             if (portfolioPage) {
                 return false;
             }
-            history.replaceState(null, null, '#home');
+            history.replaceState(null, null, hash);
+            changePaginationColor(hash);
+            imageAnimation(hash);
         }
 
         function changePaginationColor(hash) {
