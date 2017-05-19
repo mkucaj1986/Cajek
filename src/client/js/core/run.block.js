@@ -83,7 +83,7 @@
         });
 
         function checkPath() {
-            const portfolioPage = $location.$$path === "/portfolio";
+            var portfolioPage = $location.$$path === "/portfolio";
             if (portfolioPage) {
                 return false;
             }
