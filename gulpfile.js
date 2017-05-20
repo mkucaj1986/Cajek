@@ -250,7 +250,7 @@ gulp.task('fonts', function() {
 gulp.task('dev', ['build'], function() {
     serve(true, false /*isDev*/ );
 });
-gulp.task('dev-debug', ['build'], function() {
+gulp.task('debug', ['build'], function() {
     serve(true, true /*isDev*/ );
 });
 // ALL GULP FUNCTIONS

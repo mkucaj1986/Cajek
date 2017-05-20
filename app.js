@@ -19,16 +19,15 @@ const environment = process.env.NODE_ENV;
 const hbs = exphbs.create({
     defaultLayout: 'layout',
     extname: '.hbs',
-    partialsDir: [
-        './src/client/views/'
-    ]
+    layoutsDir:'./src/client/views',
+    partialsDir: './src/client/views'
 });
 app.set('views', path.join(__dirname, '/src/client/views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(compression({ threshold: 6 }));
 app.set('port', port);
-app.use('/', express.static(__dirname, '/src/client/views', {
+app.use('/', express.static(__dirname, '/src/client/', {
     maxage: '1y'
 }));
 app.use('/', routes);
