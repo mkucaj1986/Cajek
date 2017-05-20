@@ -28,10 +28,17 @@
         background: transparent url('../src/client/assets/img/icons/back-arrow.jpg') no-repeat 0 0;
         background-size: contain;
         display: block;
-        width: 45px;
         height: 45px;
+        left: 7px;
         position: absolute;
+        width: 45px;
+        &:hover {
+            &:after {
+                color: #9d9d9d;
+            }
+        }
         &:after {
+            @include button-transition();
             content: 'Back to Home';
             color: #000;
             position: absolute;
@@ -40,9 +47,6 @@
             width: 147px;
             top: 4px;
             line-height: 1.1em;
-            &:hover {
-                color: #777;
-            }
         }
     }
 }
@@ -63,7 +67,7 @@
     width: 100%;
     h3 {
         color: #000;
-        margin:10px 0;
+        margin: 10px 0;
     }
     a {
         text-align: center;

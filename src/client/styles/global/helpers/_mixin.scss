@@ -14,6 +14,24 @@
     transition: all 0.3s ease-in-out;
 }
 
+@mixin button-bg-transition {
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 0.2s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-property: background-color;
+    -moz-transition-duration: 0.2s;
+    -moz-transition-timing-function: linear;
+    -ms-transition-property: background-color;
+    -ms-transition-duration: 0.2s;
+    -ms-transition-timing-function: linear;
+    -o-transition-property: background-color;
+    -o-transition-duration: 0.2s;
+    -o-transition-timing-function: linear;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: linear;
+}
+
 @mixin navbarSticky-transition ($transition, $secondTransition) {
     -webkit-transition: $transition, $secondTransition;
     -moz-transition: $transition, $secondTransition;

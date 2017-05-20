@@ -32,12 +32,18 @@
     }
     span {
         font-size: 18px;
+        @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+            font-size: 14px;
+        }
     }
     a {
         width: 100%;
         display: block;
         height: 115px;
         position: relative;
+        @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+            height: 83px;
+        }
         &:after {
             color: #fff;
             position: absolute;
@@ -82,8 +88,11 @@
     }
     .website-name {
         font-size: 14px;
-        padding: 0 5px 10px;
+        padding: 0 0 10px;
         text-align: center;
+        @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+            min-height: 48px;
+        }
     }
     .website-year {
         color: red;
@@ -120,12 +129,46 @@
     width: 441px;
     padding: 20px 0;
     a {
-        border: 1px solid #000;
-        border-radius: 3px;
         margin: 0 5px;
-        color: #000;
-        padding: 5px 15px;
+        display: block;
+        text-align: center;
+        cursor: pointer;
+        float: left;
+        border: none;
+        height: 40px;
+        padding: 0 14px;
+        border-radius: 5px;
+        -webkit-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
+        box-shadow: inset 0 -3px 0 0 rgba(0, 0, 0, 0.15);
         font-size: 18px;
+        line-height: 37px;
+        -webkit-transition-property: background-color;
+        -webkit-transition-duration: 0.2s;
+        -webkit-transition-timing-function: linear;
+        -moz-transition-property: background-color;
+        -moz-transition-duration: 0.2s;
+        -moz-transition-timing-function: linear;
+        -ms-transition-property: background-color;
+        -ms-transition-duration: 0.2s;
+        -ms-transition-timing-function: linear;
+        -o-transition-property: background-color;
+        -o-transition-duration: 0.2s;
+        -o-transition-timing-function: linear;
+        transition-property: background-color;
+        transition-duration: 0.2s;
+        transition-timing-function: linear;
+        background: #fafafa;
+        color: #222222;
+        &:hover{
+            background: #e6e6e6;
+            color: #777;
+        }
+        &:active{
+           -webkit-box-shadow: none !important;
+           -moz-box-shadow: none !important;
+           box-shadow: none !important;
+        }
     }
 }
 
