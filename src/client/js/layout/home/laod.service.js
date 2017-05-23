@@ -88,6 +88,7 @@
                 jQuery(sections[index]).addClass('is-active');
                 jQuery(paginationLinks[index]).addClass('is-active');
                 jQuery(anchorLinks[index]).addClass('active');
+                $rootScope.$broadcast("makeActiveMenu", 'checkPath');
             };
             var move = function(index) {
                 makeActive(index, sections);

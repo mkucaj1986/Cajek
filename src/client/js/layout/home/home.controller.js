@@ -95,13 +95,20 @@
         function jumpToHash() {
             var hash = $location.$$hash;
             var someElement = angular.element(document.getElementById(hash));
+
+            var anchorLinks = jQuery('.navbar-nav li a').removeClass('active');
+            var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
+            for (var i = 0; i < anchorLinks.length; i++) {
+                if (anchorLinks[i].hash === '#' + hash) {
+                    jQuery(anchorLinks[i]).addClass('active');
+                    jQuery(anchorLinksPagination[i]).addClass('active');
+                }
+            }
             $document.scrollToElementAnimated(someElement, 33, 1);
         }
-        angular.element(function() {
-            $timeout(function() {
-                jumpToHash();
-            }, 90);
+        $rootScope.$on("makeActiveMenu", function($event, eventName) {
+            console.log(eventName);
+            jumpToHash();
         });
-
     }
 })();

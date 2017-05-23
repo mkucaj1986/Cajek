@@ -16,7 +16,9 @@
     }
 
     function runBlock($rootScope, $location, $timeout, animationService) {
-        checkPath();
+        angular.element(function() {
+            checkPath();
+        });
         $rootScope.isNotMobile = (function() {
             if (navigator.userAgent.match(/Android/i) || navigator.userAgent.match(/webOS/i) || navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i) || navigator.userAgent.match(/iPod/i) || navigator.userAgent.match(/BlackBerry/i) || navigator.userAgent.match(/Windows Phone/i)) {
                 return true;
@@ -94,6 +96,7 @@
             history.replaceState(null, null, hash);
             changePaginationColor(hash);
             imageAnimation(hash);
+            console.log('check PAth');
         }
 
         function changePaginationColor(hash) {
