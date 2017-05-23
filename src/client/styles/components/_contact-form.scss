@@ -78,13 +78,22 @@
         }
     }
     .contact-code-block {
-        background: transparent url('../src/client/assets/img/code/6.png') no-repeat center top;
+        color:#000;
+        font-family: 'latoblack';
+        font-size: 18px;
+        line-height: 1.4em;
         display: block;
         height: 298px;
         position: absolute;
         right: 15%;
         top: 75px;
         width: 353px;
+        span{
+            padding: 0 0 0 15px;
+        }
+        .code-switch{
+            padding: 0 0 0 30px;
+        }
         @media screen and (max-width: $laptop) {
             display: none;
         }
@@ -102,11 +111,13 @@
         font-weight: 700;
     }
 }
-.sending-message{
-    display:none;
+
+.sending-message {
+    display: none;
 }
-.message-sent{
-    display:none;
+
+.message-sent {
+    display: none;
 }
 
 .validation-main-error {

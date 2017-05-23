@@ -1,6 +1,10 @@
 <!--HOME-->
 <section data-ng-style="style()" id="home" class="sections top-section section">
-    <div class="hello-world" data-ng-if="!$root.isNotMobile"></div>
+    <div class="hello-world" data-ng-if="!$root.isNotMobile">
+        function welcomeWorld(){ <br />
+          <span>  $scope.greetWorld = "Hello World"; <br /></span>
+        }
+    </div>
     <div class="block-center">
         <h2 class="main-title">Michal Kucaj <br class="mobile-breakline"/><span class="text-primary">FRONT END</span> DEVELOPER</h2>
         <blockquote class="scroller">
@@ -72,6 +76,14 @@
             <animation-directive slideDirection="slideLeft" data-ng-if="!$root.isNotMobile"></animation-directive>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
+        <div class="code-first">
+            while ( alive ) <br />
+            {<br />
+            <span>eat( something )</span> <br />
+            <span>sleep( short )</span> <br />
+            <span class="gold-code-color">code( pro )</span> <br />
+            }
+        </div>
             Hi! my name is Michael <br />
             I'm a <span data-ng-bind="home.calculateAge('1986/10/29')"></span> year old <br />
             <span class="text-primary">FRONT END</span> DEVELOPER
@@ -169,7 +181,13 @@
         <li>Sport, guitar playing, music</li>
     </ul>
 </div>
-<div data-ng-if="!$root.isNotMobile" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right code-2">
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right code-2">
+    Algorithm of Success <br /><br />
+    if( noSuccess() ){
+    <span>tryAgain()</span> <br />
+    <span>if( dead )</span> <br />
+        <span class="gold-code-color">break;<br /></span>
+    }
 </div>
 </div>
 </div>
@@ -226,7 +244,23 @@
 </div>
 </div>
 <div class="clearfix"></div>
-<div class="skills-code-block center-block" data-ng-if="!$root.isNotMobile"></div>
+<div class="skills-code-block center-block" data-ng-if="!$root.isNotMobile">
+    .javaScriptNinja { <br />
+    <span>color: black;</span> <br />
+    <span>visibility: hidden;</span> <br />
+    <span> -webkit-animation-duration: 0.0000000001s; </span> <br />
+    <span> animation-duration: 0.0000000001s; </span> <br />
+    }
+    <br /><br />
+    .ghost { <br />
+    <span>color: white;</span> <br />
+    <span>opacity: 0.1;</span> <br />
+    }
+    <br /><br />
+    #eminem { <br />
+    <span>word-spacing: 0;</span> <br />
+    }
+</div>
 </div>
 </div>
 </section>
@@ -269,7 +303,15 @@
 </ul>
 </div>
 </div>
-<div class="we-code-block pull-right"></div>
+<div class="we-code-block pull-right">
+    System.out.println( "Black magic! Only Saruman knows how this works... ")<br />
+    // If this comment is removed the program will blow up !!! <br />
+<br />
+    .smile{
+        <span>display: inline-block;</span> <br />
+        <span>transform: translateX</span> <br />
+    }
+</div>
 <div class="socials-code-sites">
 <h3>I'am on Github <br /> please take a look:</h3>
 <a href="https://github.com/mkucaj1986">
@@ -375,7 +417,17 @@
 <a href="" class="contact-send pull-right" data-ng-click="contact.sendEmail(contactForm)">SEND</a>
 </form>
 </div>
-<div class="contact-code-block"></div>
+<div class="contact-code-block">
+    switch ( contact ) <br />
+    <span>case email:</span> <br />
+    <span class="code-switch">fillThisForm( 'contactDetails');</span> <br />
+    <span class="code-switch">break;</span> <br />
+    <span>case skype:</span> <br />
+    <span class="code-switch">callSkype( 'skype: mkucaj1986');</span> <br />
+    <span class="code-switch">break;</span> <br />
+    <span>default:</span> <br />
+    <span class="code-switch">phone( '00 48 570-581-394');</span> <br />
+</div>
 <sending-email class="sending-message"></sending-email>
 </div>
 </section>

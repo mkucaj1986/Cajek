@@ -33,17 +33,19 @@ a {
         text-decoration: none;
     }
 }
-.circle{
+
+.circle {
     color: #fff;
     background-color: #333;
     border-color: #fff;
     border-width: 3px;
-    &:hover{
+    &:hover {
         color: #ccc;
         background-color: #000;
         border-color: #ccc;
     }
 }
+
 ul {
     list-style-type: none;
     padding: 0;
@@ -105,4 +107,8 @@ input {
 .relative-container {
     position: relative;
     height: 100vh;
+}
+
+.gold-code-color {
+    color: $gold-color;
 }

@@ -9,14 +9,20 @@
         padding: 0 15px;
     }
     .hello-world {
-        background: transparent url('../src/client/assets/img/code/1.png') no-repeat center 0;
+        color:#000;
         display: block;
+        font-family: 'latoblack';
+        font-size: 14px;
         height: 45px;
-        position: fixed;
+        line-height: 1.2em;
         left: 5px;
+        position: fixed;
         top: 3px;
-        width: 230px;
+        width: 255px;
         z-index: 999999;
+        span{
+            padding: 0 0 0 26px;
+        }
         @media screen and (max-width: $laptop) {
             display: none;
         }
