@@ -15,7 +15,6 @@
             </div>
         </blockquote>
     </div>
-    
     <div class="top-bg">
         <div class="top-bg-box">
         </div>
@@ -24,16 +23,21 @@
 <!--WELCOME SECTION-->
 <section id="welcome" class="sections first-section section" data-ng-style="style()">
     <div class="container relative-container">
-    <div class="socials-code-sites">
-        <h3>I'am on Github <br /> please take a look:</h3>
-        <a href="https://github.com/mkucaj1986">  
-         <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
-         </a>
-        <h3>I'am on Stack Overflow please take a look:</h3>
-        <a href="http://stackoverflow.com/users/3774234/supercomupter"> 
-           <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
+        <a target="_blank" href="https://developers.google.com/speed/pagespeed/insights/?hl=pl&url=michalkucaj.pl">
+            <div class="page-speed-box">
+                <span>My Portfolio get 100 performance score </span>
+            </div>
         </a>
-    </div>
+        <div class="socials-code-sites">
+            <h3>I'am on Github <br /> please take a look:</h3>
+            <a href="https://github.com/mkucaj1986">
+                <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
+            </a>
+            <h3>I'am on Stack Overflow please take a look:</h3>
+            <a href="http://stackoverflow.com/users/3774234/supercomupter">
+                <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
+            </a>
+        </div>
         <div class="row welcome-row-mobile">
             <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 welcome-box">
                 Hi! my name is Michael <br />
@@ -127,8 +131,8 @@
 <section id="profile" class="sections profile section" data-ng-style="style()">
 <div class="container relative-container">
     <div id="profile-animation" class="profile-anim" data-ng-if="$root.profileDir">
-        <animation-directive slideDirection="slideRight" ></animation-directive>
-    </div>
+    <animation-directive slideDirection="slideRight" ></animation-directive>
+</div>
 <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="photo-avatar">
@@ -136,37 +140,37 @@
         </div>
         <div class="socials-code-sites">
             <h3>I'am on Github <br /> please take a look:</h3>
-            <a href="https://github.com/mkucaj1986">  
-             <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
-             </a>
+            <a href="https://github.com/mkucaj1986">
+                <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
+            </a>
             <h3>I'am on Stack Overflow please take a look:</h3>
-            <a href="http://stackoverflow.com/users/3774234/supercomupter"> 
-               <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
+            <a href="http://stackoverflow.com/users/3774234/supercomupter">
+                <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
             </a>
         </div>
         <div id="profile-post-animation" class="dev-lvl-post" data-ng-if="$root.profileDir">
-            <animation-directive slideDirection="post"></animation-directive>
-        </div>
+        <animation-directive slideDirection="post"></animation-directive>
     </div>
-    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box">
-        <ul>
-            <li class="main-list-header">Profile</li>
-            <li class="text-primary">fullname:</li>
-            <li>Michal Kucaj</li>
-            <li class="text-primary">technology:</li>
-            <li>Full Stack Developer Javascript</li>
-            <li class="text-primary">age</li>
-            <li data-ng-bind="home.calculateAge('1986/10/29')"></li>
-            <li class="text-primary">date of birth:</li>
-            <li>29 October 1986</li>
-            <li class="text-primary">nationality:</li>
-            <li>Polish</li>
-            <li class="text-primary">interest:</li>
-            <li>Sport, guitar playing, music</li>
-        </ul>
-    </div>
-    <div data-ng-if="!$root.isNotMobile" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right code-2">
-    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box">
+    <ul>
+        <li class="main-list-header">Profile</li>
+        <li class="text-primary">fullname:</li>
+        <li>Michal Kucaj</li>
+        <li class="text-primary">technology:</li>
+        <li>Full Stack Developer Javascript</li>
+        <li class="text-primary">age</li>
+        <li data-ng-bind="home.calculateAge('1986/10/29')"></li>
+        <li class="text-primary">date of birth:</li>
+        <li>29 October 1986</li>
+        <li class="text-primary">nationality:</li>
+        <li>Polish</li>
+        <li class="text-primary">interest:</li>
+        <li>Sport, guitar playing, music</li>
+    </ul>
+</div>
+<div data-ng-if="!$root.isNotMobile" class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right code-2">
+</div>
 </div>
 </div>
 </section>
@@ -174,52 +178,52 @@
 <section id="skills" class="sections skills section" data-ng-style="style()">
 <div class="container relative-container">
 <div class="row">
-    <div id="skills-animation" class="skills-aniamtion" data-ng-if="$root.skillsDir">
-    <animation-directive slideDirection="circular"></animation-directive>
+<div id="skills-animation" class="skills-aniamtion" data-ng-if="$root.skillsDir">
+<animation-directive slideDirection="circular"></animation-directive>
 </div>
 <div class="skills-wrapp">
-    <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 main-list-box skills-list">
-        <ul class="skills-wrapp-list">
-            <li class="main-list-header">Personality</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>creativity</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>problem solving</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>teamWork</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>quick learning</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>determination</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>patience</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>responsibility</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>time management</li>
-        </ul>
-    </div>
-    <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 main-list-box skills-list">
-        <ul>
-            <li class="main-list-header">Technical</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>css3 & html5</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>oo javascript</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>jquery</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>angularjs</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>vue js</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>react js</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>node.js</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>WebPack</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>Grunt, Gulp, Bower, NPM</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>responsive design</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>Version Control (Git, SVN)</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>programming</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>CMS</li>
-            <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>graphics</li>
-        </ul>
-    </div>
-    <div class="socials-code-sites">
-        <h3>I'am on Github <br /> please take a look:</h3>
-        <a href="https://github.com/mkucaj1986">  
-         <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
-         </a>
-        <h3>I'am on Stack Overflow please take a look:</h3>
-        <a href="http://stackoverflow.com/users/3774234/supercomupter"> 
-           <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
-        </a>
-    </div>
+<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 main-list-box skills-list">
+    <ul class="skills-wrapp-list">
+        <li class="main-list-header">Personality</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>creativity</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>problem solving</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>teamWork</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>quick learning</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>determination</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>patience</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>responsibility</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>time management</li>
+    </ul>
+</div>
+<div class="col-xs-7 col-sm-7 col-md-7 col-lg-7 main-list-box skills-list">
+    <ul>
+        <li class="main-list-header">Technical</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>css3 & html5</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>oo javascript</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>jquery</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>angularjs</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>vue js</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>react js</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>node.js</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>WebPack</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>Grunt, Gulp, Bower, NPM</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>responsive design</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>Version Control (Git, SVN)</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>programming</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>CMS</li>
+        <li><i class="fa fa-thumbs-o-up fa-1" aria-hidden="true"></i>graphics</li>
+    </ul>
+</div>
+<div class="socials-code-sites">
+    <h3>I'am on Github <br /> please take a look:</h3>
+    <a href="https://github.com/mkucaj1986">
+        <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
+    </a>
+    <h3>I'am on Stack Overflow please take a look:</h3>
+    <a href="http://stackoverflow.com/users/3774234/supercomupter">
+        <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
+    </a>
+</div>
 </div>
 <div class="clearfix"></div>
 <div class="skills-code-block center-block" data-ng-if="!$root.isNotMobile"></div>
@@ -231,23 +235,86 @@
 <div class="container relative-container work-education-container">
 <div class="row">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
+<ul class="work-box">
+    <li class="main-list-header text-primary">2013 - Present</li>
+    <li class="font-big font-black">FRONT END DEVELOPER</li>
+    <li class="font-m-size font-medium">PGS SOFTWARE - <a href="https://www.pgs-soft.com/">www.pgs-soft.com/</a></li>
+    <li>. HTML & CSS & Javascript</li>
+    <li>. Outsourcing Company</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
+<ul class="work-box">
+    <li class="main-list-header text-primary">2010 - Present</li>
+    <li class="font-big font-black">SOFTWARE FULL STACK JS DEVELOPER</li>
+    <li class="font-m-size font-medium">Self Employed - <a href="http://www.michalkucaj.pl" du-smooth-scroll du-scrollspy data-ng-click="home.toTheTop($event)">www.michalkucaj.pl</a></li>
+    <li>. Software Developer</li>
+    <li>. RWD JavaScript Application</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
+<ul class="work-box">
+    <li class="main-list-header text-primary">2010</li>
+    <li class="font-big font-black">FRONT END DEVELOPER - internship</li>
+    <li class="font-m-size font-medium">IDEO - <a href="http://www.ideo.pl/">www.ideo.pl/</a></li>
+    <li>. HTML & CSS</li>
+    <li>. Responsive design and development</li>
+</ul>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
+<ul class="work-box">
+    <li class="main-list-header text-primary">2005 - 2010</li>
+    <li class="font-big font-black">University of Information Technology and Management</li>
+    <li class="font-m-size font-medium">Rzeszow  - <a href="https://www.wsiz.rzeszow.pl/">www.wsiz.rzeszow.pl/</a></li>
+</ul>
+</div>
+</div>
+<div class="we-code-block pull-right"></div>
+<div class="socials-code-sites">
+<h3>I'am on Github <br /> please take a look:</h3>
+<a href="https://github.com/mkucaj1986">
+<img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
+</a>
+<h3>I'am on Stack Overflow please take a look:</h3>
+<a href="http://stackoverflow.com/users/3774234/supercomupter">
+<img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
+</a>
+</div>
+</div>
+<!--WORK & EDUCATION === MOBILE VIEW-->
+<section id="accordion-block-w-e" class="accordion-block-w-e accordion-block" toggle-accordion>
+<h2>WORK & EDUCATION</h2>
+<div class="htk-left-panel-box">
+<h3 class="custom-block-title title-toggle-block open">PGS SOFTWARE - (2013 - Present)</h3>
+<div class="block-container">
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
     <ul class="work-box">
         <li class="main-list-header text-primary">2013 - Present</li>
         <li class="font-big font-black">FRONT END DEVELOPER</li>
         <li class="font-m-size font-medium">PGS SOFTWARE - <a href="https://www.pgs-soft.com/">www.pgs-soft.com/</a></li>
-        <li>. HTML & CSS & Javascript</li>
-        <li>. Outsourcing Company</li>
+        <li>. HTML & CSS</li>
+        <li>. Responsive design and development</li>
     </ul>
 </div>
+</div>
+</div>
+<div class="htk-left-panel-box">
+<h3 class="custom-block-title title-toggle-block">Self Employed - (2010 - Present)</h3>
+<div class="block-container">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
     <ul class="work-box">
         <li class="main-list-header text-primary">2010 - Present</li>
-        <li class="font-big font-black">SOFTWARE FULL STACK JS DEVELOPER</li>
-        <li class="font-m-size font-medium">Self Employed - <a href="http://www.michalkucaj.pl" du-smooth-scroll du-scrollspy data-ng-click="home.toTheTop($event)">www.michalkucaj.pl</a></li>
-        <li>. Software Developer</li>
-        <li>. RWD JavaScript Application</li>
+        <li class="font-big font-black">FRONT END DEVELOPER</li>
+        <li class="font-m-size font-medium">Self Employed - <a du-smooth-scroll du-scrollspy data-ng-click="home.toTheTop($event)">www.michalkucaj.pl</a></li>
+        <li>. HTML & CSS</li>
+        <li>. Responsive design and development</li>
     </ul>
 </div>
+</div>
+</div>
+<div class="htk-left-panel-box">
+<h3 class="custom-block-title title-toggle-block">IDEO - (2010 - internship)</h3>
+<div class="block-container">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
     <ul class="work-box">
         <li class="main-list-header text-primary">2010</li>
@@ -257,6 +324,11 @@
         <li>. Responsive design and development</li>
     </ul>
 </div>
+</div>
+</div>
+<div class="htk-left-panel-box">
+<h3 class="custom-block-title title-toggle-block" data-ng-click="imagePanelModel.togglePanelOpen()">University of Information Technology and Management</h3>
+<div class="block-container img-upload-container">
 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
     <ul class="work-box">
         <li class="main-list-header text-primary">2005 - 2010</li>
@@ -264,74 +336,6 @@
         <li class="font-m-size font-medium">Rzeszow  - <a href="https://www.wsiz.rzeszow.pl/">www.wsiz.rzeszow.pl/</a></li>
     </ul>
 </div>
-</div>
-<div class="we-code-block pull-right"></div>
-<div class="socials-code-sites">
-    <h3>I'am on Github <br /> please take a look:</h3>
-    <a href="https://github.com/mkucaj1986">  
-     <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
-     </a>
-    <h3>I'am on Stack Overflow please take a look:</h3>
-    <a href="http://stackoverflow.com/users/3774234/supercomupter"> 
-       <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
-    </a>
-</div>
-</div>
-<!--WORK & EDUCATION === MOBILE VIEW-->
-<section id="accordion-block-w-e" class="accordion-block-w-e accordion-block" toggle-accordion>
-<h2>WORK & EDUCATION</h2>
-<div class="htk-left-panel-box">
-<h3 class="custom-block-title title-toggle-block open">PGS SOFTWARE - (2013 - Present)</h3>
-<div class="block-container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
-        <ul class="work-box">
-            <li class="main-list-header text-primary">2013 - Present</li>
-            <li class="font-big font-black">FRONT END DEVELOPER</li>
-            <li class="font-m-size font-medium">PGS SOFTWARE - <a href="https://www.pgs-soft.com/">www.pgs-soft.com/</a></li>
-            <li>. HTML & CSS</li>
-            <li>. Responsive design and development</li>
-        </ul>
-    </div>
-</div>
-</div>
-<div class="htk-left-panel-box">
-<h3 class="custom-block-title title-toggle-block">Self Employed - (2010 - Present)</h3>
-<div class="block-container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
-        <ul class="work-box">
-            <li class="main-list-header text-primary">2010 - Present</li>
-            <li class="font-big font-black">FRONT END DEVELOPER</li>
-            <li class="font-m-size font-medium">Self Employed - <a du-smooth-scroll du-scrollspy data-ng-click="home.toTheTop($event)">www.michalkucaj.pl</a></li>
-            <li>. HTML & CSS</li>
-            <li>. Responsive design and development</li>
-        </ul>
-    </div>
-</div>
-</div>
-<div class="htk-left-panel-box">
-<h3 class="custom-block-title title-toggle-block">IDEO - (2010 - internship)</h3>
-<div class="block-container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
-        <ul class="work-box">
-            <li class="main-list-header text-primary">2010</li>
-            <li class="font-big font-black">FRONT END DEVELOPER - internship</li>
-            <li class="font-m-size font-medium">IDEO - <a href="http://www.ideo.pl/">www.ideo.pl/</a></li>
-            <li>. HTML & CSS</li>
-            <li>. Responsive design and development</li>
-        </ul>
-    </div>
-</div>
-</div>
-<div class="htk-left-panel-box">
-<h3 class="custom-block-title title-toggle-block" data-ng-click="imagePanelModel.togglePanelOpen()">University of Information Technology and Management</h3>
-<div class="block-container img-upload-container">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 main-list-box">
-        <ul class="work-box">
-            <li class="main-list-header text-primary">2005 - 2010</li>
-            <li class="font-big font-black">University of Information Technology and Management</li>
-            <li class="font-m-size font-medium">Rzeszow  - <a href="https://www.wsiz.rzeszow.pl/">www.wsiz.rzeszow.pl/</a></li>
-        </ul>
-    </div>
 </div>
 </div>
 </section>
@@ -343,32 +347,32 @@
 <div growl></div>
 <div class="contact-box center-block">
 <form name="contactForm">
-    <div class="form-group">
-        <label for="">Name</label>
-        <input ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.name" name="name" type="text" placeholder="name" required/>
-        <div class="clearfix"></div>
-        <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">
-            <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">Please provide your name</span>
-        </div>
+<div class="form-group">
+    <label for="">Name</label>
+    <input ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.name" name="name" type="text" placeholder="name" required/>
+    <div class="clearfix"></div>
+    <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">
+        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">Please provide your name</span>
     </div>
-    <div class="form-group">
-        <label for="">Email:</label>
-        <input ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.email" name="email" type="email" placeholder="email" required/>
-        <div class="clearfix"></div>
-        <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.email || contactForm.email.$error.$touched">
-            <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched">Please provide your email</span>
-            <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.email">Wrong email</span>
-        </div>
+</div>
+<div class="form-group">
+    <label for="">Email:</label>
+    <input ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.email" name="email" type="email" placeholder="email" required/>
+    <div class="clearfix"></div>
+    <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.email || contactForm.email.$error.$touched">
+        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched">Please provide your email</span>
+        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.email">Wrong email</span>
     </div>
-    <div class="form-group">
-        <label for="">Message:</label>
-        <textarea ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.message" name="message" name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
-        <div class="clearfix"></div>
-        <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">
-            <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">Please provide your message</span>
-        </div>
+</div>
+<div class="form-group">
+    <label for="">Message:</label>
+    <textarea ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.message" name="message" name="" id="" cols="30" rows="10" placeholder="message" required></textarea>
+    <div class="clearfix"></div>
+    <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">
+        <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">Please provide your message</span>
     </div>
-    <a href="" class="contact-send pull-right" data-ng-click="contact.sendEmail(contactForm)">SEND</a>
+</div>
+<a href="" class="contact-send pull-right" data-ng-click="contact.sendEmail(contactForm)">SEND</a>
 </form>
 </div>
 <div class="contact-code-block"></div>

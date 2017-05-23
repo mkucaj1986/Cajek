@@ -18,6 +18,48 @@
         color: #fff;
         font-size: 48px;
         text-align: center;
+        .page-speed-box {
+            background: #fff url(../src/client/assets/img/home/page-speed.png) no-repeat center 10px;
+            position: absolute;
+            right: 240px;
+            top: 46px;
+            width: 270px;
+            height: 140px;
+            display: block;
+            background-size: contain;
+            padding: 75px 10px 0;
+            @media screen and (max-width: $mobile) {
+                background-size: contain !important;
+                background: #fff url(../src/client/assets/img/home/page-speed.png) no-repeat center 5px;
+                left: 45px;
+                right: auto;
+                bottom: 98px;
+                top: auto;
+                width: 139px;
+                height: 62px;
+                float: none;
+                display: block;
+                margin: 0 auto;
+                padding: 0 10px;
+            }
+            @media screen and (min-width: $mobileStart) and (max-width: $tabletV) {
+                left: 0;
+                right: auto;
+                bottom: 239px;
+                top: auto;
+            }
+            span {
+                font-size: 14px;
+                color: #000;
+                text-decoration: underline;
+                @media screen and (max-width: $mobile) {
+                    display: none;
+                }
+                &:hover {
+                    color: #777;
+                }
+            }
+        }
         .socials-code-sites {
             position: absolute;
             right: 20px;
@@ -73,7 +115,8 @@
             }
             @media screen and (min-width:$mobileStart) and (max-width: $laptop) {
                 padding: 125px 0 5px;
-                font-size: 22px;
+                font-size: 19px;
+                text-align: left;
             }
         }
         .welcome-bottom {
@@ -82,6 +125,9 @@
             font-family: 'latoblack';
             line-height: 1.15em;
             text-align: center;
+            @media screen and (min-width:$mobileStart) and (max-width: $laptop) {
+                font-size: 22px;
+            }
             @media screen and (max-width: $mobile) {
                 font-size: 16px;
                 padding: 4px 0 0 0;
