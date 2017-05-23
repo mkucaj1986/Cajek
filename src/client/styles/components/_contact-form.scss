@@ -108,3 +108,27 @@
 .message-sent{
     display:none;
 }
+
+.validation-main-error {
+    color: #c10000 !important;
+}
+
+.validation-main-error-input {
+    color: #c10000;
+    border: 1px solid #c10000 !important;
+}
+
+.validation-main-error-input::-webkit-input-placeholder {
+    /* WebKit browsers */
+    color: #c10000;
+}
+
+.validation-main-error-input::-moz-placeholder {
+    /* WebKit browsers */
+    color: #c10000;
+}
+
+.validation-main-error-input::-ms-input-placeholder {
+    /* WebKit browsers */
+    color: #c10000;
+}
