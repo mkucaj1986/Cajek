@@ -11,6 +11,9 @@
         @media screen and (max-width: $mobile) {
             padding: 55px 0;
         }
+        @media screen and (min-width: $mobileStart) and (max-width: $tabletV) {
+            padding: 57px 0;
+        }
     }
     // FIRST SECTIOBN
     .first-section {
@@ -45,7 +48,7 @@
             @media screen and (min-width: $mobileStart) and (max-width: $tabletV) {
                 left: 0;
                 right: auto;
-                bottom: 239px;
+                bottom: 230px;
                 top: auto;
             }
             span {
@@ -127,7 +130,6 @@
                 background: none;
             }
             @media screen and (min-width:$mobileStart) and (max-width: $laptop) {
-                padding: 125px 0 5px;
                 font-size: 19px;
                 text-align: left;
             }
@@ -225,7 +227,7 @@
             @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
                 position: absolute;
                 left: 0;
-                top: 0;
+                top: 12px;
                 width: 235px;
             }
             .dev-lvl-post-levels {
