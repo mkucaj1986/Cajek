@@ -31,7 +31,7 @@ let sendEmail = function(req, res, next) {
         } else {
             next();
         }
-        res.send(info);
+        console.log(info);
         transporter.close();
     });
 };
