@@ -88,9 +88,7 @@
             }
             return age;
         };
-        $timeout(function() {
-            vm.loadPlugins();
-        }, 500);
+            
 
         function jumpToHash() {
             var hash = $location.$$hash;
@@ -106,9 +104,15 @@
             }
             $document.scrollToElementAnimated(someElement, 33, 1);
         }
-        $rootScope.$on("makeActiveMenu", function($event, eventName) {
-            console.log(eventName);
+
+        var documentReady = setInterval( function () {
+            if ( document.readyState !== 'complete' ) return;
+            clearInterval( documentReady );       
+            // do your work
+            $rootScope.$broadcast('pageReady', 'pageReady');
+            vm.loadPlugins();
             jumpToHash();
-        });
+        }, 100 );
+
     }
 })();

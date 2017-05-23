@@ -12,23 +12,21 @@
         return service;
 
         function niceScroll() {
-            $(document).ready(function() {
-                var nice = $('html').niceScroll({
-                    cursorcolor: "#E2C41E",
-                    cursoropacitymin: 0.5,
-                    cursoropacitymax: 1,
-                    cursorwidth: "10px",
-                    cursorborder: "1px solid #E2C41E",
-                    cursorborderradius: "3px",
-                    scrollspeed: 70,
-                    mousescrollstep: 50,
-                    smoothscroll: true,
-                    zindex: 99999999
-                });
-                // Hide bootstrap menu on click
-                $("#navbar").find("li a").on("click", function() {
-                    $('.navbar-collapse.in').collapse('hide');
-                });
+            var nice = $('html').niceScroll({
+                cursorcolor: "#E2C41E",
+                cursoropacitymin: 0.5,
+                cursoropacitymax: 1,
+                cursorwidth: "10px",
+                cursorborder: "1px solid #E2C41E",
+                cursorborderradius: "3px",
+                scrollspeed: 70,
+                mousescrollstep: 50,
+                smoothscroll: true,
+                zindex: 99999999
+            });
+            // Hide bootstrap menu on click
+            $("#navbar").find("li a").on("click", function() {
+                $('.navbar-collapse.in').collapse('hide');
             });
         }
 
@@ -88,7 +86,6 @@
                 jQuery(sections[index]).addClass('is-active');
                 jQuery(paginationLinks[index]).addClass('is-active');
                 jQuery(anchorLinks[index]).addClass('active');
-                $rootScope.$broadcast("makeActiveMenu", 'checkPath');
             };
             var move = function(index) {
                 makeActive(index, sections);
