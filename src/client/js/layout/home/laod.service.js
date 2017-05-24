@@ -97,14 +97,14 @@
 
             function initFn(index) {
                 index = index;
-                // document.addEventListener('keydown', keydown);
+                document.addEventListener('keydown', keydown);
                 document.addEventListener('mousewheel', mousewheel, false);
                 document.addEventListener('DOMMouseScroll', mousewheel, false);
                 makeActive(index, sections);
             }
 
             function destroyFn() {
-                // document.removeEventListener('keydown', keydown);
+                document.removeEventListener('keydown', keydown);
                 document.removeEventListener('mousewheel', mousewheel);
                 document.removeEventListener('DOMMouseScroll', mousewheel);
             }
@@ -136,9 +136,17 @@
                 lastAnimation = time;
             }
 
-            // function keydown() {
-            //     // body...
-            // }
+            function keydown(e) {
+                var keyCode = e.keyCode;
+                var downKey = keyCode === 40;
+                var upKey = keyCode === 38;
+                if (downKey) {
+                    moveDown();
+                }
+                if (upKey) {
+                    moveUp();
+                }
+            }
 
             function startFullPage(index) {
                 fullPagePlugin.init(index);
