@@ -23,7 +23,7 @@
     height: 190px;
     @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
         width: 172px;
-        height: 172px;
+        height: 200px;
     }
     @media screen and (max-width: $mobile) {
         width: 150px;
@@ -47,7 +47,7 @@
             margin: 0 auto;
         }
         @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
-            height: 83px;
+            height: 110px;
         }
         &:after {
             color: #fff;
@@ -102,7 +102,10 @@
     .website-year {
         color: red;
         font-size: 13px;
-        padding: 5px 15px;
+        padding: 5px 0;
+        height: 30px;
+        width: 100%;
+        float: left;
         text-align: center;
         span {
             color: #31708f;
