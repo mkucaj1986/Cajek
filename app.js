@@ -18,9 +18,7 @@ const environment = process.env.NODE_ENV;
 // view engine setup
 const hbs = exphbs.create({
     defaultLayout: 'layout',
-    extname: '.hbs',
-    layoutsDir:'views',
-    partialsDir: 'views'
+    extname: '.hbs'
 });
 app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', hbs.engine);
