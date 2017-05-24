@@ -26,7 +26,7 @@
 
                 scope.style = function() {
                     return {
-                        'height': newValue.h + 'px',
+                        // 'height': newValue.h + 'px',
                         // 'width': newValue.w + 'px'
                     };
                 };

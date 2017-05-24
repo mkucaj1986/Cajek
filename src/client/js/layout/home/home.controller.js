@@ -44,10 +44,13 @@
             var anchorIndexPagination = anchorLinksPagination.index(anchor);
             var anchorLinksTarget = jQuery(mainNavLinks[anchorIndex]);
             var anchorLinksTargetPagination = jQuery(anchorLinksPagination[anchorIndex]);
+            var sections = document.querySelectorAll('.section');
             anchorLinksTarget.addClass('active');
             anchorLinksTargetPagination.addClass('active');
             var someElement = angular.element(document.getElementById(element));
             var isNotLogo = anchor[0].id !== 'logo';
+            jQuery(sections).removeClass('section-is-active');
+            jQuery(someElement).addClass('section-is-active');
             $document.scrollToElementAnimated(someElement, 0, 900);
             if (isNotLogo) {
                 $rootScope.$broadcast("setAnchorIndex", anchorIndex);
@@ -56,6 +59,9 @@
         vm.scrollToElementFullpage = function(element, $event) {
             $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
+            var sections = document.querySelectorAll('.section');
+            jQuery(sections).removeClass('section-is-active');
+            jQuery(someElement).addClass('section-is-active');
             $document.scrollToElementAnimated(someElement, 0, 900);
         };
         vm.isScrollorClick = function() {
@@ -94,6 +100,7 @@
         function jumpToHash() {
             var hash = $location.$$hash;
             var someElement = angular.element(document.getElementById(hash));
+            jQuery(someElement).addClass('section-is-active');
             var anchorLinks = jQuery('.navbar-nav li a').removeClass('active');
             var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
             for (var i = 0; i < anchorLinks.length; i++) {
@@ -103,12 +110,13 @@
                 }
             }
             if (someElement.length > 0) {
-                $document.scrollToElementAnimated(someElement, 33, 1);
+                $document.scrollToElementAnimated(someElement, 0, 1);
             }
         }
 
         var documentReady = setInterval(function() {
-            if (document.readyState === 'complete') {
+            var sections = document.querySelectorAll('.section');
+            if (document.readyState === 'complete' && sections.length > 0) {
                 clearInterval(documentReady);
                 $rootScope.$broadcast('pageReady', 'pageReady');
                 vm.loadPlugins();
