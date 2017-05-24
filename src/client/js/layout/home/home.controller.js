@@ -19,6 +19,7 @@
         vm.getMore = function() {
             var target = jQuery('.welcome-anchor');
             jQuery(target).addClass('active');
+            $rootScope.$broadcast("setAnchorIndex", 1);
         };
         vm.toTheTop = function($event) {
             $event.preventDefault();
