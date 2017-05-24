@@ -283,14 +283,7 @@
                 font-size: 34px;
             }
             @media screen and (max-width: $mobile) {
-                font-size: 34px;
-                display: block;
-                width: 163px;
-                height: 187px;
-                font-size: 14px;
-                position: absolute;
-                left: 0;
-                bottom: 0;
+                display: none;
             }
         }
         .socials-code-sites {
@@ -435,12 +428,12 @@
     z-index: 999999;
     @media screen and (max-width: $mobile) {
         background-size: contain;
-        bottom: 1px;
+        bottom: 25px;
         height: 40px;
         width: 40px;
         left: 0;
     }
-    @media screen and (max-width: $tabletH) {
+    @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
         bottom: 0;
         right: 0;
     }

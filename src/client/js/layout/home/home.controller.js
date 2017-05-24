@@ -32,15 +32,15 @@
             var target = jQuery('.nav-pagination li a')[0];
             jQuery(target).addClass('active');
         };
-        vm.scrollToElement = function(element, $event) {
+        vm.scrollToElement = function(element, $event, index) {
             $event.preventDefault();
-            var listTarget = jQuery($event.target).parent().parent();
             jQuery('.main-nav-links li a').removeClass('active');
+            var listTarget = jQuery($event.target).parent().parent();
             var anchorLinks = jQuery(listTarget).find('li a');
             var mainNavLinks = jQuery('#navbar ul').find('li a');
             var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
+            var anchorIndex = index;
             var anchor = jQuery($event.target);
-            var anchorIndex = anchorLinks.index(anchor);
             var anchorIndexPagination = anchorLinksPagination.index(anchor);
             var anchorLinksTarget = jQuery(mainNavLinks[anchorIndex]);
             var anchorLinksTargetPagination = jQuery(anchorLinksPagination[anchorIndex]);
