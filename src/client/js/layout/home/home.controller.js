@@ -107,12 +107,12 @@
         }
 
         var documentReady = setInterval(function() {
-            if (document.readyState !== 'complete') return;
-            clearInterval(documentReady);
-            // do your work
-            $rootScope.$broadcast('pageReady', 'pageReady');
-            vm.loadPlugins();
-            jumpToHash();
+            if (document.readyState === 'complete') {
+                clearInterval(documentReady);
+                $rootScope.$broadcast('pageReady', 'pageReady');
+                vm.loadPlugins();
+                jumpToHash();
+            }
         }, 100);
 
     }
