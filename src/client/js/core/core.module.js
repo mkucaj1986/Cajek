@@ -6,10 +6,10 @@
             /* Angular modules */
             'ngAnimate',
             'ngSanitize',
-            'ngTouch',
             'ng-fastclick',
             'duScroll',
             'angular-growl',
+            'ngMaterial',
             'ui.router'
         ]);
 

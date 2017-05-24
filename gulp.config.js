@@ -21,7 +21,7 @@ module.exports = function() {
         buildJs: './build/*.js',
         buildSrc: './temp/src/',
         client: client,
-        clientLayout: client + 'views/',
+        clientLayout: './views/',
         css: temp + 'main.css',
         cssBuild: './build/*.css',
         minjs: temp + 'application.js',
@@ -29,8 +29,8 @@ module.exports = function() {
         hbs: client + '**/*.hbs',
         hbstemplates: clientApp + '**/*.hbs',
         images: client + 'images/**/*.*',
-        index: client + 'index.hbs',
-        layout: client + 'views/layout.hbs',
+        index: './views/index.hbs',
+        layout: './views/layout.hbs',
         // app js, with no specs
         js: [
             client + '**/*.js'

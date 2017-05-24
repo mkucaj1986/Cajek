@@ -1,31 +1,31 @@
 {
-  "name": "portfolio",
-  "version": "0.0.0",
-  "dependencies": {
-    "jquery": "~3.2.1",
-    "angular": "~1.6.4",
-    "angular-sanitize": "~1.6.4",
-    "angular-animate": "~1.6.4",
-    "json3": "~3.3.2",
-    "bootstrap-sass-official": "latest",
-    "angular-touch": "~1.6.4",
-    "lodash": "~4.7.0",
-    "angular-bootstrap": "~1.2.5",
-    "font-awesome": "latest",
-    "angular-scroll": "^1.0.0",
-    "angular-ui-router": "^0.3.0",
-    "angular-growl": "^0.4.0",
-    "ng-fastclick": "^1.0.2"
-  },
-  "resolutions": {
-    "angular": "^1.5.11"
-  },
-  "overrides": {
-    "font-awesome": {
-      "ignore": true
+    "name": "portfolio",
+    "version": "0.0.0",
+    "dependencies": {
+        "jquery": "~3.2.1",
+        "angular": "~1.6.4",
+        "angular-sanitize": "~1.6.4",
+        "angular-animate": "~1.6.4",
+        "angular-material": "^1.1.4",
+        "json3": "~3.3.2",
+        "bootstrap-sass-official": "latest",
+        "lodash": "~4.7.0",
+        "angular-bootstrap": "~1.2.5",
+        "font-awesome": "latest",
+        "angular-scroll": "^1.0.0",
+        "angular-ui-router": "^0.3.0",
+        "angular-growl": "^0.4.0",
+        "ng-fastclick": "^1.0.2"
     },
-    "bootstrap-sass-official": {
-      "ignore": true
+    "resolutions": {
+        "angular": "^1.5.11"
+    },
+    "overrides": {
+        "font-awesome": {
+            "ignore": true
+        },
+        "bootstrap-sass-official": {
+            "ignore": true
+        }
     }
-  }
 }

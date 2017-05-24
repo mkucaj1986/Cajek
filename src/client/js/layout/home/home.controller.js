@@ -7,6 +7,7 @@
     function homeCtrl($window, $rootScope, $scope, $document, $timeout, $location, $anchorScroll, loadService) {
         var vm = this;
         vm.startingLocation = 'home';
+
         vm.loadPlugins = function() {
             loadService.niceScroll();
             loadService.fullPage('main-sections');
@@ -124,5 +125,14 @@
             }
         }, 100);
 
+        vm.swipeUpEvent = function($event) {
+            $event.preventDefault();
+            $rootScope.$broadcast('swipe', 'swipeUp');
+        };
+
+        vm.swipeDownEvent = function($event) {
+            $event.preventDefault();
+            $rootScope.$broadcast('swipe', 'swipeDown');
+        };
     }
 })();
