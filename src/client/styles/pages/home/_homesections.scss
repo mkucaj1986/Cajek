@@ -6,6 +6,7 @@
         display: inline-block;
         float: left;
         padding: 70px 0;
+        position: relative;
         width: 100%;
         overflow: hidden;
         @media screen and (max-width: $mobile) {
@@ -656,3 +657,4 @@
         display: block;
     }
 }
+

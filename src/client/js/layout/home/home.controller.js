@@ -48,7 +48,7 @@
             anchorLinksTargetPagination.addClass('active');
             var someElement = angular.element(document.getElementById(element));
             var isNotLogo = anchor[0].id !== 'logo';
-            $document.scrollToElementAnimated(someElement, 33, 900);
+            $document.scrollToElementAnimated(someElement, 0, 900);
             if (isNotLogo) {
                 $rootScope.$broadcast("setAnchorIndex", anchorIndex);
             }
@@ -56,7 +56,7 @@
         vm.scrollToElementFullpage = function(element, $event) {
             $event.preventDefault();
             var someElement = angular.element(document.getElementById(element));
-            $document.scrollToElementAnimated(someElement, 33, 900);
+            $document.scrollToElementAnimated(someElement, 0, 900);
         };
         vm.isScrollorClick = function() {
             $rootScope.$broadcast("isNotScroll");
