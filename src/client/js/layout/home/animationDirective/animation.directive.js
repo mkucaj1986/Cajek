@@ -14,7 +14,7 @@
 
         function link(scope, element, attrs, vm) {
             if(attrs.slidedirection === 'slideLeft'){
-                $templateRequest('./src/client/views/home/animationTplLeft.hbs').then(function(html) {
+                $templateRequest('views/home/directives/animationTplLeft.hbs').then(function(html) {
                     var template = angular.element(html);
                     element.append(template);
                     element.addClass('slide-left');
@@ -22,7 +22,7 @@
                 });
             }
             if(attrs.slidedirection === 'slideRight'){
-                $templateRequest('src/client/views/home/animationTplRight.hbs').then(function(html) {
+                $templateRequest('views/home/directives/animationTplRight.hbs').then(function(html) {
                     var template = angular.element(html);
                     element.append(template);
                     element.addClass('slide-right');
@@ -30,14 +30,14 @@
                 });
             }
             if(attrs.slidedirection === 'circular'){
-                $templateRequest('src/client/views/home/animationTplCircular.hbs').then(function(html) {
+                $templateRequest('views/home/directives/animationTplCircular.hbs').then(function(html) {
                     var template = angular.element(html);
                     element.append(template);
                     $compile(template)(scope);
                 });
             }
             if(attrs.slidedirection === 'post'){
-                $templateRequest('src/client/views/home/postAnimation.hbs').then(function(html) {
+                $templateRequest('views/home/directives/postAnimation.hbs').then(function(html) {
                     var template = angular.element(html);
                     element.append(template);
                     $compile(template)(scope);

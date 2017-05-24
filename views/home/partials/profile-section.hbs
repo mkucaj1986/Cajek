@@ -1,0 +1,50 @@
+<div class="container relative-container">
+    <div id="profile-animation" class="profile-anim" data-ng-if="$root.profileDir">
+    <animation-directive slideDirection="slideRight" ></animation-directive>
+</div>
+<div class="row">
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="photo-avatar">
+            <img src="./src/client/assets/img/mkucaj.png" alt="michalkucaj" class="img-responsive" />
+        </div>
+        <div class="socials-code-sites">
+            <h3>I'am on Github <br /> please take a look:</h3>
+            <a href="https://github.com/mkucaj1986">
+                <img src="./src/client/assets/img/icons/github.png" alt="michalkucaj" class="img-responsive" />
+            </a>
+            <h3>I'am on Stack Overflow please take a look:</h3>
+            <a href="http://stackoverflow.com/users/3774234/supercomupter">
+                <img src="./src/client/assets/img/icons/stack-overflow.png" alt="michalkucaj" class="img-responsive" />
+            </a>
+        </div>
+        <div id="profile-post-animation" class="dev-lvl-post" data-ng-if="$root.profileDir">
+        <animation-directive slideDirection="post"></animation-directive>
+    </div>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 main-list-box">
+    <ul>
+        <li class="main-list-header">Profile</li>
+        <li class="text-primary">fullname:</li>
+        <li>Michal Kucaj</li>
+        <li class="text-primary">technology:</li>
+        <li>Full Stack Developer Javascript</li>
+        <li class="text-primary">age</li>
+        <li data-ng-bind="home.calculateAge('1986/10/29')"></li>
+        <li class="text-primary">date of birth:</li>
+        <li>29 October 1986</li>
+        <li class="text-primary">nationality:</li>
+        <li>Polish</li>
+        <li class="text-primary">interest:</li>
+        <li>Sport, guitar playing, music</li>
+    </ul>
+</div>
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right code-2">
+    Algorithm of Success <br /><br />
+    if( noSuccess() ){
+    <span>tryAgain()</span> <br />
+    <span>if( dead )</span> <br />
+    <span class="gold-code-color">break;<br /></span>
+    }
+</div>
+</div>
+</div>

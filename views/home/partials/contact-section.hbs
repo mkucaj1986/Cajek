@@ -1,0 +1,46 @@
+<div class="container">
+    <h1>Contact Form</h1>
+    <div growl></div>
+    <div class="contact-box center-block">
+        <form name="contactForm">
+            <div class="form-group">
+                <label for="" data-ng-class="{'validation-main-error': contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched, '':  contactForm.name.$valid || contactForm.name.$valid.$touched}">Name</label>
+                <input ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.name" name="name" type="text" placeholder="name" required data-ng-class="{'validation-main-error-input': contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched}"/>
+                <div class="clearfix"></div>
+                <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">
+                    <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.name.$error.required || contactForm.name.$error.$touched">Please provide your name</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" data-ng-class="{'validation-main-error': contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched, '':  contactForm.email.$valid || contactForm.email.$valid.$touched }">Email:</label>
+                <input ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.email" name="email" type="email" placeholder="email" required data-ng-class="{'validation-main-error-input': contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched}"/>
+                <div class="clearfix"></div>
+                <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.email || contactForm.email.$error.$touched">
+                    <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.required || contactForm.email.$error.$touched">Please provide your email</span>
+                    <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.email.$error.email">Wrong email</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="" data-ng-class="{'validation-main-error': contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touched, '':  contactForm.message.$valid || contactForm.message.$valid.$touched}">Message:</label>
+                <textarea data-ng-class="{'validation-main-error-input': contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touched}" data-ng-focus="contact.hideMobileParts(true)" ng-blur="contact.hideMobileParts(false)" data-ng-model="contact.data.message" name="message" id="" cols="30" rows="10" placeholder="message" required></textarea>
+                <div class="clearfix"></div>
+                <div class="validation-message-box" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">
+                    <span class="validation-message-invalid" data-ng-show="contact.submitClicked && contactForm.message.$error.required || contactForm.message.$error.$touche">Please provide your message</span>
+                </div>
+            </div>
+            <a href="" class="contact-send pull-right" data-ng-click="contact.sendEmail(contactForm)">SEND</a>
+        </form>
+    </div>
+    <div class="contact-code-block">
+        switch ( contact ) <br />
+        <span>case email:</span> <br />
+        <span class="code-switch">fillThisForm( 'contactDetails');</span> <br />
+        <span class="code-switch">break;</span> <br />
+        <span>case skype:</span> <br />
+        <span class="code-switch">callSkype( 'skype: mkucaj1986');</span> <br />
+        <span class="code-switch">break;</span> <br />
+        <span>default:</span> <br />
+        <span class="code-switch">phone( '00 48 570-581-394');</span> <br />
+    </div>
+    <sending-email class="sending-message"></sending-email>
+</div>

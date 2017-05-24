@@ -14,7 +14,7 @@
 
         function link(scope, element, attrs, vm) {
 
-            $templateRequest('src/client/views/home/loadingSpinner.hbs').then(function(html) {
+            $templateRequest('views/home/directives/loadingSpinner.hbs').then(function(html) {
                 var template = angular.element(html);
                 element.append(template);
                 $compile(template)(scope);

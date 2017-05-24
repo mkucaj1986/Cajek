@@ -19,10 +19,10 @@ const environment = process.env.NODE_ENV;
 const hbs = exphbs.create({
     defaultLayout: 'layout',
     extname: '.hbs',
-    layoutsDir:'./src/client/views',
-    partialsDir: './src/client/views'
+    layoutsDir:'views',
+    partialsDir: 'views'
 });
-app.set('views', path.join(__dirname, '/src/client/views'));
+app.set('views', path.join(__dirname, 'views'));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(compression({ threshold: 0 }));

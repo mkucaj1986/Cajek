@@ -13,7 +13,7 @@
         return directive;
 
         function link(scope, element, attrs, vm) {
-            $templateRequest('src/client/views/home/sendingEmail.hbs').then(function(html) {
+            $templateRequest('views/home/directives/sendingEmail.hbs').then(function(html) {
                 var template = angular.element(html);
                 element.append(template);
                 $compile(template)(scope);

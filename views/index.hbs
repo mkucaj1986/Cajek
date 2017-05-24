@@ -1,8 +1,8 @@
 <!-- LAYOUT -->
 <div class="controller-home-wrapp" data-ng-controller="homeCtrl as home">
-<div ng-include="'src/client/views/header/header.hbs'" data-ng-cloak></div>
-<div id="main-sections" full-page class="partials" ng-include="'src/client/views/home/content.hbs'" data-ng-cloak></div>
-<div class="partials footer-main-wrapp" ng-include="'src/client/views/footer/footer.hbs'" data-ng-cloak></div>
+<div ng-include="'views/header/header.hbs'" data-ng-cloak></div>
+<div id="main-sections" full-page class="partials" ng-include="'views/home/content.hbs'" data-ng-cloak></div>
+<div class="partials footer-main-wrapp" ng-include="'views/footer/footer.hbs'" data-ng-cloak></div>
 <div gotop-directive id="go-up-arrow" class="go-up-arrow" data-ng-class="{'go-up-arrow-iOS': $root.iOS}" data-ng-click="home.toTheTop($event)" data-ng-show="goUpArrow" data-ng-cloak></div>
 <pagination-click class="slide-navigation"></pagination-click>
 </div>
