@@ -72,6 +72,9 @@
     position: relative;
     top: -10px;
     width: 258px;
+    img{
+        width: 100%;
+    }
     @media screen and (max-width: $tabletH) {
         background: transparent url(../src/client/assets/img/logo-mobile-w.png) no-repeat center 0;
         width: 90px;
