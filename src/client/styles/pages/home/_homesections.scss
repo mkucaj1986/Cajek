@@ -2,6 +2,11 @@
     height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
+    @media screen and (max-width: $mobile) {
+        height: calc(100vh - 55px);
+        min-height: calc(100vh - 55px);
+        max-height: calc(100vh - 55px);
+    }
 }
 
 .partials {
