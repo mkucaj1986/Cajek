@@ -27,11 +27,13 @@
             var anchorLinks = jQuery('.nav li a').removeClass('active');
             var anchorLinksPagination = jQuery('.nav-pagination li a').removeClass('active');
             var home = jQuery('.nav li a');
+            var sections = document.querySelectorAll('.section');
+            jQuery(sections[0]).addClass('section-is-active');
             home = jQuery(home[0]);
-            $document.scrollTopAnimated(0, 700).then(function() {});
             home.addClass('active');
             var target = jQuery('.nav-pagination li a')[0];
             jQuery(target).addClass('active');
+            $document.scrollTopAnimated(0, 700).then(function() {});
         };
         vm.scrollToElement = function(element, $event, index) {
             $event.preventDefault();
@@ -126,12 +128,10 @@
         }, 100);
 
         vm.swipeUpEvent = function($event) {
-            $event.preventDefault();
             $rootScope.$broadcast('swipe', 'swipeUp');
         };
 
         vm.swipeDownEvent = function($event) {
-            $event.preventDefault();
             $rootScope.$broadcast('swipe', 'swipeDown');
         };
     }
