@@ -113,6 +113,9 @@
         .welcome-box {
             padding: 140px 0 60px;
             position: relative;
+            @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+                padding: 140px 0 30px;
+            }
             .code-first {
                 color: #000;
                 font-family: 'latoblack';
@@ -310,7 +313,7 @@
             width: 100%;
             max-width: 565px;
             @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
-                max-width: 590px;
+                max-width: 505px;
             }
             margin: 0 auto;
             .skills-wrapp-list {
@@ -352,6 +355,10 @@
             width: 205px;
             border: 3px solid #E2C41E;
             background-color: #f5f5f5;
+            @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+                top: 370px;
+                right: 80px;
+            }
             h3 {
                 color: #000;
                 font-family: 'latoblack';
@@ -434,7 +441,7 @@
         left: 0;
     }
     @media screen and (min-width: $mobileStart) and (max-width: $tabletH) {
-        bottom: 0;
+        bottom: 33px;
         right: 0;
     }
 }
@@ -614,16 +621,24 @@
 .welcome-anim {
     position: absolute;
     right: 10%;
+    h1 {
+        @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
+            font-size: 25px;
+        }
+    }
+    @media screen and (max-width: $mobile) {
+        display: none;
+    }
 }
 
 .profile-anim {
     position: absolute;
     left: 0;
     @media screen and (min-width: $mobileStart) and (max-width: $laptop) {
-        bottom: 105px;
+        bottom: 140px;
     }
     @media screen and (max-width: $mobile) {
-        left: 80px;
+        left: 90px;
         top: 50px;
     }
 }
