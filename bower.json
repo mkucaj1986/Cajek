@@ -6,7 +6,7 @@
         "angular": "~1.6.4",
         "angular-sanitize": "~1.6.4",
         "angular-animate": "~1.6.4",
-        "angular-material": "^1.1.4",
+        "angular-touch": "~1.6.4",
         "json3": "~3.3.2",
         "bootstrap-sass-official": "latest",
         "lodash": "~4.7.0",
