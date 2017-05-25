@@ -9,7 +9,7 @@
             'ng-fastclick',
             'duScroll',
             'angular-growl',
-            'ngMaterial',
+            'ngTouch',
             'ui.router'
         ]);
 

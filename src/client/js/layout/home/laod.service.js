@@ -148,15 +148,6 @@
                 }
             }
 
-            $rootScope.$on('swipe', function($event, event) {
-                if (event === 'swipeDown') {
-                    moveUp();
-                }
-                if (event === 'swipeUp') {
-                    moveDown();
-                }
-            });
-
             function startFullPage(index) {
                 fullPagePlugin.init(index);
             }

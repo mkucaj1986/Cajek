@@ -127,12 +127,5 @@
             }
         }, 100);
 
-        vm.swipeUpEvent = function($event) {
-            $rootScope.$broadcast('swipe', 'swipeUp');
-        };
-
-        vm.swipeDownEvent = function($event) {
-            $rootScope.$broadcast('swipe', 'swipeDown');
-        };
     }
 })();

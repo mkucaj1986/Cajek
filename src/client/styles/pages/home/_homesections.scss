@@ -307,6 +307,7 @@
     }
     // SKILLS
     .skills {
+        background-color: $main-background;
         color: #fff;
         .skills-wrapp {
             display: block;
@@ -429,6 +430,7 @@
     position: fixed;
     right: 9px;
     bottom: 35px;
+    outline: 0;
     -webkit-animation: showElementOpacity 1s ease forwards;
     -o-animation: showElementOpacity 1s ease forwards;
     animation: showElementOpacity 1s ease forwards;
