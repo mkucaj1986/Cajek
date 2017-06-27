@@ -26,7 +26,7 @@ router.get('/', function(req, res, next) {
 /* GET portfolio. */
 router.get('/portfolio', function(req, res, next) {
     var vm = {
-        title: 'portfolioPage'
+        title: 'MKucaj | Portfolio'
     };
     res.render('portfolio.hbs', vm);
 });
