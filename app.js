@@ -10,6 +10,7 @@ const config = require('./src/server/config/config');
 const cookieParser = require('cookie-parser');
 const routes = require('./src/server/routes/index');
 const nodemailer = require('./src/server/email/emailTransporter');
+const favicon = require('serve-favicon');
 /**
  * Get port from environment and store in Express.
  */
@@ -21,6 +22,7 @@ const hbs = exphbs.create({
     extname: '.hbs'
 });
 app.set('views', path.join(__dirname, 'views'));
+app.use(favicon(path.join(__dirname, 'src/favico', 'favicon.ico')));
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(compression({ threshold: 0 }));

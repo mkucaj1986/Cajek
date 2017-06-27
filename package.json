@@ -57,6 +57,7 @@
     "nodemailer-sendinblue-transport": "^1.2.3",
     "require-dir": "latest",
     "requirejs": "latest",
+    "serve-favicon": "^2.4.3",
     "supertest": "latest",
     "through": "latest",
     "wiredep": "^4.0.0",

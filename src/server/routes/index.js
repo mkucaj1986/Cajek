@@ -18,7 +18,7 @@ router.use('/*', function(req, res, next) {
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var vm = {
-        title: 'Portfolio'
+        title: 'MKucaj | Portfolio'
     };
     res.render('index.hbs', vm);
 });
